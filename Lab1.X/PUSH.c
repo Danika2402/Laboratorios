@@ -1,0 +1,19 @@
+/*
+ * File:   PUSH.c
+ * Author: HP
+ *
+ * Created on 13 de julio de 2023, 05:07 PM
+ */
+
+#include <stdint.h>
+#include <xc.h>
+#include "PUSH.h"
+
+void IOC_INT(uint8_t a){
+    
+    //Config. PULL UP
+    OPTION_REGbits.nRBPU = 0;
+    WPUBbits.WPUB = a;
+    IOCBbits.IOCB = a;         
+    
+}

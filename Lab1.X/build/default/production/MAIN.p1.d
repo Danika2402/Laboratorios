@@ -1,2 +1,5 @@
 build/default/production/MAIN.p1:  \
-MAIN.c 
+MAIN.c  \
+ADC.h  \
+PUSH.h  \
+TMR.h 

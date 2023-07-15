@@ -1,4 +1,4 @@
-# 1 "MAIN.c"
+# 1 "ADC.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,21 +6,13 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "MAIN.c" 2
-# 12 "MAIN.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
+# 1 "ADC.c" 2
 
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
+
+
+
+
+
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdint.h" 1 3
@@ -156,7 +148,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 26 "MAIN.c" 2
+# 9 "ADC.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
@@ -2643,7 +2635,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 27 "MAIN.c" 2
+# 10 "ADC.c" 2
 
 # 1 "./ADC.h" 1
 # 35 "./ADC.h"
@@ -2656,136 +2648,147 @@ void ADC_INIT(int c);
 int ADC_READ();
 void ADC_CHANGE_CHANNEL(int c,int b);
 int ADC_GET_CHANNEL();
-# 28 "MAIN.c" 2
-
-# 1 "./PUSH.h" 1
-# 35 "./PUSH.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdint.h" 1 3
-# 35 "./PUSH.h" 2
+# 11 "ADC.c" 2
 
 
 
-void IOC_INT(uint8_t a);
-# 29 "MAIN.c" 2
+void ADC_INIT(int c){
+    switch(c){
+        case 0:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 0;
+            break;
 
-# 1 "./TMR.h" 1
-# 35 "./TMR.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdint.h" 1 3
-# 35 "./TMR.h" 2
+        case 1:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 1;
+            break;
 
+        case 2:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS0 = 0;
+            break;
 
+        case 3:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS0 = 1;
+            break;
 
-void PRESCALER_TMR0(uint8_t);
-# 30 "MAIN.c" 2
+        case 4:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 0;
+            break;
 
+        case 5:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 1;
+            break;
 
+        case 6:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS0 = 0;
+            break;
 
+        case 7:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS0 = 1;
+            break;
 
-const char tabla[] = {
-    0xFC,
-    0x60,
-    0xDA,
-    0xF2,
-    0x66,
-    0xB6,
-    0xBE,
-    0xE0,
-    0xFE,
-    0xF6,
-    0xEE,
-    0x3E,
-    0x9C,
-    0x7A,
-    0x9E,
-    0x8E
-};
+        case 8:
+            ADCON0bits.CHS3 = 1;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 0;
+            break;
 
-void setup(void);
+        case 9:
+            ADCON0bits.CHS3 = 1;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 1;
+            break;
 
-void __attribute__((picinterrupt(("")))) isr (void){
+        case 10:
+            ADCON0bits.CHS3 = 1;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS0 = 0;
+            break;
 
-    if (RBIF==1){
-        if (RB0==0){
-            if (RB0==0){
-                PORTA++;
-            }
-        } else if (RB1==0){
-            if (RB1==0){
-                PORTA--;
-            }
+        case 11:
+            ADCON0bits.CHS3 = 1;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS0 = 1;
+            break;
 
+        case 12:
+            ADCON0bits.CHS3 = 1;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 0;
+            break;
+
+        case 13:
+            ADCON0bits.CHS3 = 1;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 1;
+            break;
+
+        default:
+            ADCON0bits.CHS3 = 0;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS0 = 0;
+            break;
+    }
+}
+int ADC_READ(){
+    ADCON0bits.GO = 1;
+    while(ADCON0bits.GO == 1){
+        if (ADCON0bits.GO == 0){
+            return ADRESH;
+
+            _delay((unsigned long)((50)*(4000000/4000000.0)));
+            ADCON0bits.GO = 1;
         }
-        INTCONbits.RBIF=0;
-    }
-
-
-
-
-
-
-}
-
-void main(void) {
-    setup();
-    while(1){
-
-
-            PORTC = ADC_READ();
-
-
-
     }
 }
 
-void setup(void){
+void ADC_CHANGE_CHANNEL(int c, int b){
+    ADCON0bits.GO = 1;
+    while(ADCON0bits.GO == 1){
+        if(ADCON0bits.GO == 0){
+            if(ADCON0bits.CHS == c){
 
-    ANSEL = 0b00100000;
-    ANSELH = 0x00;
+                ADCON0bits.CHS = b;
+            }else if(ADCON0bits.CHS == b){
 
-    TRISA = 0x00;
-    TRISB = 0b00000011;
-    TRISC = 0x00;
-    TRISD = 0x00;
+                ADCON0bits.CHS = c;
+            }
 
-    PORTA = 0x00;
-    PORTB = 0x00;
-    PORTC = 0x00;
-    PORTD = 0x00;
+            ADCON0bits.GO = 1;
+        }
+    }
+}
 
-
-    OSCCONbits.IRCF2 =1;
-    OSCCONbits.IRCF1 =1;
-    OSCCONbits.IRCF0 =0;
-    OSCCONbits.SCS =1;
-
-
-
-
-
-
-    IOC_INT(0b00000011);
-
-
-    ADC_INIT(5);
-
-    ADCON1bits.VCFG0 = 0;
-    ADCON1bits.VCFG1 = 0;
-
-    ADCON0bits.ADCS0 = 0;
-    ADCON0bits.ADCS1 = 0;
-
-    ADCON1bits.ADFM =0;
-
-    ADCON0bits.ADON = 1;
-    _delay((unsigned long)((50)*(4000000/4000000.0)));
-    ADCON0bits.GO_nDONE = 1;
-
-
-    INTCONbits.GIE = 1;
-
-    INTCONbits.RBIE = 1;
-    INTCONbits.RBIF = 0;
-    INTCONbits.T0IF = 0;
-    INTCONbits.T0IE = 1;
-
+int ADC_GET_CHANNEL(){
+    return ADCON0bits.CHS;
 }
