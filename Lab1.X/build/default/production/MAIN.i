@@ -2656,6 +2656,9 @@ void ADC_INIT(int c);
 int ADC_READ();
 void ADC_CHANGE_CHANNEL(int c,int b);
 int ADC_GET_CHANNEL();
+
+uint8_t DECENA(char c);
+uint8_t UNIDAD(char c);
 # 28 "MAIN.c" 2
 
 # 1 "./PUSH.h" 1
@@ -2675,7 +2678,8 @@ void IOC_INT(uint8_t a);
 
 
 
-void PRESCALER_TMR0(uint8_t);
+void OSCILLATOR(uint8_t c);
+void PRESCALER_TMR0(int c);
 # 30 "MAIN.c" 2
 
 
@@ -2683,7 +2687,6 @@ void PRESCALER_TMR0(uint8_t);
 
 uint8_t unidad, decena;
 uint8_t display, POT;
-
 
 const char tabla[] = {
     0xFC,
@@ -2717,7 +2720,6 @@ void __attribute__((picinterrupt(("")))) isr (void){
             if (RB1==0){
                 PORTA--;
             }
-
         }
         INTCONbits.RBIF=0;
     }
@@ -2748,13 +2750,13 @@ void main(void) {
     setup();
     while(1){
         if (ADCON0bits.GO == 0){
-            POT = ADRESH;
+            POT = ADC_READ();
             _delay((unsigned long)((50)*(4000000/4000000.0)));
             ADCON0bits.GO = 1;
         }
 
-        decena = (uint8_t)(POT % 16);
-        unidad = (uint8_t)((POT/16) % 16);
+        decena = DECENA(POT);
+        unidad = UNIDAD(POT);
 
         RB7 = (POT > PORTA) ? 1:0;
     }
@@ -2776,13 +2778,14 @@ void setup(void){
     PORTD = 0x00;
 
 
-    OSCCONbits.IRCF2 =1;
-    OSCCONbits.IRCF1 =1;
-    OSCCONbits.IRCF0 =0;
-    OSCCONbits.SCS =1;
+    OSCILLATOR(2);
 
 
-    PRESCALER_TMR0(0b0111);
+
+
+
+
+    PRESCALER_TMR0(7);
     TMR0 = 244;
 
 
@@ -2792,10 +2795,10 @@ void setup(void){
     ADC_INIT(5);
 
     ADCON1bits.VCFG0 = 0;
-    ADCON1bits.VCFG1 = 1;
+    ADCON1bits.VCFG1 = 0;
 
     ADCON0bits.ADCS0 = 0;
-    ADCON0bits.ADCS1 = 0;
+    ADCON0bits.ADCS1 = 1;
 
     ADCON1bits.ADFM =0;
 

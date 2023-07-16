@@ -35,7 +35,10 @@
 #include <stdint.h>
 #include <proc/pic16f887.h>
 
-void PRESCALER_TMR0(uint8_t);
+void OSCILLATOR(uint8_t c);
+void PRESCALER_TMR0(int c);
+//void TMR1
+//void TMR2
 
 #endif	/* TMR0_H */
 

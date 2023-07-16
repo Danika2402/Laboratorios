@@ -40,5 +40,8 @@ int ADC_READ(); //leer ADRESH del canal
 void ADC_CHANGE_CHANNEL(int c,int b);//cambiar de canal
 int ADC_GET_CHANNEL();//en que canal estamos
 
+uint8_t DECENA(char c);
+uint8_t UNIDAD(char c);
+
 #endif	/* ADC_H */
 

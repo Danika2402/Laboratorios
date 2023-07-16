@@ -2648,9 +2648,22 @@ void ADC_INIT(int c);
 int ADC_READ();
 void ADC_CHANGE_CHANNEL(int c,int b);
 int ADC_GET_CHANNEL();
+
+uint8_t DECENA(char c);
+uint8_t UNIDAD(char c);
 # 11 "ADC.c" 2
 
 
+
+uint8_t DECENA(char c){
+    c = (uint8_t)(c % 16);
+    return c;
+}
+
+uint8_t UNIDAD(char c){
+    c = (uint8_t)((c/16) % 16);
+    return c;
+}
 
 void ADC_INIT(int c){
     switch(c){

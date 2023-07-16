@@ -11,6 +11,16 @@
 #include "ADC.h"
 #define _XTAL_FREQ  4000000
 
+uint8_t DECENA(char c){
+    c = (uint8_t)(c % 16);
+    return c;
+}
+
+uint8_t UNIDAD(char c){
+    c = (uint8_t)((c/16) % 16);
+    return c;
+}
+
 void ADC_INIT(int c){
     switch(c){
         case 0:

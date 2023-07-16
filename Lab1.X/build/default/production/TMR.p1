@@ -1,5 +1,16 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"1353 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc/pic16f887.h
+"1869 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc/pic16f887.h
+[s S70 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 ]
+[n S70 . SCS LTS HTS OSTS IRCF ]
+"1876
+[s S71 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S71 . . IRCF0 IRCF1 IRCF2 ]
+"1868
+[u S69 `S70 1 `S71 1 ]
+[n S69 . . . ]
+"1883
+[v _OSCCONbits `VS69 ~T0 @X0 0 e@143 ]
+"1353
 [s S50 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S50 . PS PSA T0SE T0CS INTEDG nRBPU ]
 "1361
@@ -167,19 +178,341 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3547
 [; <" EECON2 equ 018Dh ;# ">
 "13 TMR.c
-[; ;TMR.c: 13: void PRESCALER_TMR0(uint8_t a){
-[v _PRESCALER_TMR0 `(v ~T0 @X0 1 ef1`uc ]
+[; ;TMR.c: 13: void OSCILLATOR(uint8_t c){
+[v _OSCILLATOR `(v ~T0 @X0 1 ef1`uc ]
 {
-[e :U _PRESCALER_TMR0 ]
-[v _a `uc ~T0 @X0 1 r1 ]
+[e :U _OSCILLATOR ]
+[v _c `uc ~T0 @X0 1 r1 ]
 [f ]
 "14
-[; ;TMR.c: 14:     OPTION_REGbits.T0CS = 0;
-[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
+[; ;TMR.c: 14:     OSCCONbits.SCS =1;
+[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
 "16
-[; ;TMR.c: 16:     OPTION_REGbits.PS = a;
-[e = . . _OPTION_REGbits 0 0 _a ]
+[; ;TMR.c: 16:     switch(c){
+[e $U 140  ]
+{
 "17
-[; ;TMR.c: 17: }
+[; ;TMR.c: 17:         case(1):
+[e :U 141 ]
+"18
+[; ;TMR.c: 18:             OSCCONbits.IRCF2 =1;
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
+"19
+[; ;TMR.c: 19:             OSCCONbits.IRCF1 =1;
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
+"20
+[; ;TMR.c: 20:             OSCCONbits.IRCF0 =1;
+[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
+"21
+[; ;TMR.c: 21:             break;
+[e $U 139  ]
+"23
+[; ;TMR.c: 23:         case(2):
+[e :U 142 ]
+"24
+[; ;TMR.c: 24:             OSCCONbits.IRCF2 =1;
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
+"25
+[; ;TMR.c: 25:             OSCCONbits.IRCF1 =1;
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
+"26
+[; ;TMR.c: 26:             OSCCONbits.IRCF0 =0;
+[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
+"27
+[; ;TMR.c: 27:             break;
+[e $U 139  ]
+"29
+[; ;TMR.c: 29:         case(3):
+[e :U 143 ]
+"30
+[; ;TMR.c: 30:             OSCCONbits.IRCF2 =1;
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
+"31
+[; ;TMR.c: 31:             OSCCONbits.IRCF1 =0;
+[e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
+"32
+[; ;TMR.c: 32:             OSCCONbits.IRCF0 =1;
+[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
+"33
+[; ;TMR.c: 33:             break;
+[e $U 139  ]
+"35
+[; ;TMR.c: 35:         case(4):
+[e :U 144 ]
+"36
+[; ;TMR.c: 36:             OSCCONbits.IRCF2 =1;
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
+"37
+[; ;TMR.c: 37:             OSCCONbits.IRCF1 =0;
+[e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
+"38
+[; ;TMR.c: 38:             OSCCONbits.IRCF0 =0;
+[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
+"39
+[; ;TMR.c: 39:             break;
+[e $U 139  ]
+"41
+[; ;TMR.c: 41:         case(5):
+[e :U 145 ]
+"42
+[; ;TMR.c: 42:             OSCCONbits.IRCF2 =0;
+[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
+"43
+[; ;TMR.c: 43:             OSCCONbits.IRCF1 =1;
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
+"44
+[; ;TMR.c: 44:             OSCCONbits.IRCF0 =1;
+[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
+"45
+[; ;TMR.c: 45:             break;
+[e $U 139  ]
+"47
+[; ;TMR.c: 47:         case(6):
+[e :U 146 ]
+"48
+[; ;TMR.c: 48:             OSCCONbits.IRCF2 =0;
+[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
+"49
+[; ;TMR.c: 49:             OSCCONbits.IRCF1 =1;
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
+"50
+[; ;TMR.c: 50:             OSCCONbits.IRCF0 =0;
+[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
+"51
+[; ;TMR.c: 51:             break;
+[e $U 139  ]
+"53
+[; ;TMR.c: 53:         case(7):
+[e :U 147 ]
+"54
+[; ;TMR.c: 54:             OSCCONbits.IRCF2 =0;
+[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
+"55
+[; ;TMR.c: 55:             OSCCONbits.IRCF1 =0;
+[e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
+"56
+[; ;TMR.c: 56:             OSCCONbits.IRCF0 =1;
+[e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
+"57
+[; ;TMR.c: 57:             break;
+[e $U 139  ]
+"59
+[; ;TMR.c: 59:         case(8):
+[e :U 148 ]
+"60
+[; ;TMR.c: 60:             OSCCONbits.IRCF2 =0;
+[e = . . _OSCCONbits 1 3 -> -> 0 `i `uc ]
+"61
+[; ;TMR.c: 61:             OSCCONbits.IRCF1 =0;
+[e = . . _OSCCONbits 1 2 -> -> 0 `i `uc ]
+"62
+[; ;TMR.c: 62:             OSCCONbits.IRCF0 =0;
+[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
+"63
+[; ;TMR.c: 63:             break;
+[e $U 139  ]
+"65
+[; ;TMR.c: 65:         default:
+[e :U 149 ]
+"66
+[; ;TMR.c: 66:             OSCCONbits.IRCF2 =1;
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
+"67
+[; ;TMR.c: 67:             OSCCONbits.IRCF1 =1;
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
+"68
+[; ;TMR.c: 68:             OSCCONbits.IRCF0 =0;
+[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
+"69
+[; ;TMR.c: 69:             break;
+[e $U 139  ]
+"70
+[; ;TMR.c: 70:     }
+}
+[e $U 139  ]
+[e :U 140 ]
+[e [\ -> _c `i , $ -> 1 `i 141
+ , $ -> 2 `i 142
+ , $ -> 3 `i 143
+ , $ -> 4 `i 144
+ , $ -> 5 `i 145
+ , $ -> 6 `i 146
+ , $ -> 7 `i 147
+ , $ -> 8 `i 148
+ 149 ]
+[e :U 139 ]
+"73
+[; ;TMR.c: 73: }
 [e :UE 138 ]
+}
+"75
+[; ;TMR.c: 75: void PRESCALER_TMR0(int c){
+[v _PRESCALER_TMR0 `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _PRESCALER_TMR0 ]
+[v _c `i ~T0 @X0 1 r1 ]
+[f ]
+"76
+[; ;TMR.c: 76:     OPTION_REGbits.T0CS = 0;
+[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
+"77
+[; ;TMR.c: 77:     OPTION_REGbits.PSA = 0;
+[e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
+"79
+[; ;TMR.c: 79:     switch(c){
+[e $U 152  ]
+{
+"80
+[; ;TMR.c: 80:         case(0):
+[e :U 153 ]
+"81
+[; ;TMR.c: 81:             OPTION_REGbits.PS2 = 0;
+[e = . . _OPTION_REGbits 1 2 -> -> 0 `i `uc ]
+"82
+[; ;TMR.c: 82:             OPTION_REGbits.PS1 = 0;
+[e = . . _OPTION_REGbits 1 1 -> -> 0 `i `uc ]
+"83
+[; ;TMR.c: 83:             OPTION_REGbits.PS0 = 0;
+[e = . . _OPTION_REGbits 1 0 -> -> 0 `i `uc ]
+"84
+[; ;TMR.c: 84:             break;
+[e $U 151  ]
+"86
+[; ;TMR.c: 86:         case(1):
+[e :U 154 ]
+"87
+[; ;TMR.c: 87:             OPTION_REGbits.PS2 = 0;
+[e = . . _OPTION_REGbits 1 2 -> -> 0 `i `uc ]
+"88
+[; ;TMR.c: 88:             OPTION_REGbits.PS1 = 0;
+[e = . . _OPTION_REGbits 1 1 -> -> 0 `i `uc ]
+"89
+[; ;TMR.c: 89:             OPTION_REGbits.PS0 = 1;
+[e = . . _OPTION_REGbits 1 0 -> -> 1 `i `uc ]
+"90
+[; ;TMR.c: 90:             break;
+[e $U 151  ]
+"92
+[; ;TMR.c: 92:         case(2):
+[e :U 155 ]
+"93
+[; ;TMR.c: 93:             OPTION_REGbits.PS2 = 0;
+[e = . . _OPTION_REGbits 1 2 -> -> 0 `i `uc ]
+"94
+[; ;TMR.c: 94:             OPTION_REGbits.PS1 = 1;
+[e = . . _OPTION_REGbits 1 1 -> -> 1 `i `uc ]
+"95
+[; ;TMR.c: 95:             OPTION_REGbits.PS0 = 0;
+[e = . . _OPTION_REGbits 1 0 -> -> 0 `i `uc ]
+"96
+[; ;TMR.c: 96:             break;
+[e $U 151  ]
+"98
+[; ;TMR.c: 98:         case(3):
+[e :U 156 ]
+"99
+[; ;TMR.c: 99:             OPTION_REGbits.PS2 = 0;
+[e = . . _OPTION_REGbits 1 2 -> -> 0 `i `uc ]
+"100
+[; ;TMR.c: 100:             OPTION_REGbits.PS1 = 1;
+[e = . . _OPTION_REGbits 1 1 -> -> 1 `i `uc ]
+"101
+[; ;TMR.c: 101:             OPTION_REGbits.PS0 = 1;
+[e = . . _OPTION_REGbits 1 0 -> -> 1 `i `uc ]
+"102
+[; ;TMR.c: 102:             break;
+[e $U 151  ]
+"105
+[; ;TMR.c: 105:         case(4):
+[e :U 157 ]
+"106
+[; ;TMR.c: 106:             OPTION_REGbits.PS2 = 1;
+[e = . . _OPTION_REGbits 1 2 -> -> 1 `i `uc ]
+"107
+[; ;TMR.c: 107:             OPTION_REGbits.PS1 = 0;
+[e = . . _OPTION_REGbits 1 1 -> -> 0 `i `uc ]
+"108
+[; ;TMR.c: 108:             OPTION_REGbits.PS0 = 0;
+[e = . . _OPTION_REGbits 1 0 -> -> 0 `i `uc ]
+"109
+[; ;TMR.c: 109:             break;
+[e $U 151  ]
+"111
+[; ;TMR.c: 111:         case(5):
+[e :U 158 ]
+"112
+[; ;TMR.c: 112:             OPTION_REGbits.PS2 = 1;
+[e = . . _OPTION_REGbits 1 2 -> -> 1 `i `uc ]
+"113
+[; ;TMR.c: 113:             OPTION_REGbits.PS1 = 0;
+[e = . . _OPTION_REGbits 1 1 -> -> 0 `i `uc ]
+"114
+[; ;TMR.c: 114:             OPTION_REGbits.PS0 = 1;
+[e = . . _OPTION_REGbits 1 0 -> -> 1 `i `uc ]
+"115
+[; ;TMR.c: 115:             break;
+[e $U 151  ]
+"117
+[; ;TMR.c: 117:         case(6):
+[e :U 159 ]
+"118
+[; ;TMR.c: 118:             OPTION_REGbits.PS2 = 1;
+[e = . . _OPTION_REGbits 1 2 -> -> 1 `i `uc ]
+"119
+[; ;TMR.c: 119:             OPTION_REGbits.PS1 = 1;
+[e = . . _OPTION_REGbits 1 1 -> -> 1 `i `uc ]
+"120
+[; ;TMR.c: 120:             OPTION_REGbits.PS0 = 0;
+[e = . . _OPTION_REGbits 1 0 -> -> 0 `i `uc ]
+"121
+[; ;TMR.c: 121:             break;
+[e $U 151  ]
+"123
+[; ;TMR.c: 123:         case(7):
+[e :U 160 ]
+"124
+[; ;TMR.c: 124:             OPTION_REGbits.PS2 = 1;
+[e = . . _OPTION_REGbits 1 2 -> -> 1 `i `uc ]
+"125
+[; ;TMR.c: 125:             OPTION_REGbits.PS1 = 1;
+[e = . . _OPTION_REGbits 1 1 -> -> 1 `i `uc ]
+"126
+[; ;TMR.c: 126:             OPTION_REGbits.PS0 = 1;
+[e = . . _OPTION_REGbits 1 0 -> -> 1 `i `uc ]
+"127
+[; ;TMR.c: 127:             break;
+[e $U 151  ]
+"129
+[; ;TMR.c: 129:         default:
+[e :U 161 ]
+"130
+[; ;TMR.c: 130:             OPTION_REGbits.PS2 = 1;
+[e = . . _OPTION_REGbits 1 2 -> -> 1 `i `uc ]
+"131
+[; ;TMR.c: 131:             OPTION_REGbits.PS1 = 1;
+[e = . . _OPTION_REGbits 1 1 -> -> 1 `i `uc ]
+"132
+[; ;TMR.c: 132:             OPTION_REGbits.PS0 = 1;
+[e = . . _OPTION_REGbits 1 0 -> -> 1 `i `uc ]
+"133
+[; ;TMR.c: 133:             break;
+[e $U 151  ]
+"134
+[; ;TMR.c: 134:     }
+}
+[e $U 151  ]
+[e :U 152 ]
+[e [\ _c , $ -> 0 `i 153
+ , $ -> 1 `i 154
+ , $ -> 2 `i 155
+ , $ -> 3 `i 156
+ , $ -> 4 `i 157
+ , $ -> 5 `i 158
+ , $ -> 6 `i 159
+ , $ -> 7 `i 160
+ 161 ]
+[e :U 151 ]
+"135
+[; ;TMR.c: 135: }
+[e :UE 150 ]
 }

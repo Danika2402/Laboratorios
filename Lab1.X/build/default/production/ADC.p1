@@ -175,403 +175,439 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3547
 [; <" EECON2 equ 018Dh ;# ">
 "14 ADC.c
-[; ;ADC.c: 14: void ADC_INIT(int c){
+[; ;ADC.c: 14: uint8_t DECENA(char c){
+[v _DECENA `(uc ~T0 @X0 1 ef1`uc ]
+{
+[e :U _DECENA ]
+[v _c `uc ~T0 @X0 1 r1 ]
+[f ]
+"15
+[; ;ADC.c: 15:     c = (uint8_t)(c % 16);
+[e = _c -> -> % -> _c `i -> 16 `i `uc `uc ]
+"16
+[; ;ADC.c: 16:     return c;
+[e ) -> _c `uc ]
+[e $UE 138  ]
+"17
+[; ;ADC.c: 17: }
+[e :UE 138 ]
+}
+"19
+[; ;ADC.c: 19: uint8_t UNIDAD(char c){
+[v _UNIDAD `(uc ~T0 @X0 1 ef1`uc ]
+{
+[e :U _UNIDAD ]
+[v _c `uc ~T0 @X0 1 r1 ]
+[f ]
+"20
+[; ;ADC.c: 20:     c = (uint8_t)((c/16) % 16);
+[e = _c -> -> % / -> _c `i -> 16 `i -> 16 `i `uc `uc ]
+"21
+[; ;ADC.c: 21:     return c;
+[e ) -> _c `uc ]
+[e $UE 139  ]
+"22
+[; ;ADC.c: 22: }
+[e :UE 139 ]
+}
+"24
+[; ;ADC.c: 24: void ADC_INIT(int c){
 [v _ADC_INIT `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _ADC_INIT ]
 [v _c `i ~T0 @X0 1 r1 ]
 [f ]
-"15
-[; ;ADC.c: 15:     switch(c){
-[e $U 140  ]
-{
-"16
-[; ;ADC.c: 16:         case 0:
-[e :U 141 ]
-"17
-[; ;ADC.c: 17:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
-"18
-[; ;ADC.c: 18:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
-"19
-[; ;ADC.c: 19:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"20
-[; ;ADC.c: 20:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"21
-[; ;ADC.c: 21:             break;
-[e $U 139  ]
-"23
-[; ;ADC.c: 23:         case 1:
-[e :U 142 ]
-"24
-[; ;ADC.c: 24:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
 "25
-[; ;ADC.c: 25:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+[; ;ADC.c: 25:     switch(c){
+[e $U 142  ]
+{
 "26
-[; ;ADC.c: 26:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"27
-[; ;ADC.c: 27:             ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-"28
-[; ;ADC.c: 28:             break;
-[e $U 139  ]
-"30
-[; ;ADC.c: 30:         case 2:
+[; ;ADC.c: 26:         case 0:
 [e :U 143 ]
+"27
+[; ;ADC.c: 27:             ADCON0bits.CHS3 = 0;
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+"28
+[; ;ADC.c: 28:             ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+"29
+[; ;ADC.c: 29:             ADCON0bits.CHS1 = 0;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+"30
+[; ;ADC.c: 30:             ADCON0bits.CHS0 = 0;
+[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
 "31
-[; ;ADC.c: 31:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
-"32
-[; ;ADC.c: 32:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+[; ;ADC.c: 31:             break;
+[e $U 141  ]
 "33
-[; ;ADC.c: 33:             ADCON0bits.CHS1 = 1;
-[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
-"34
-[; ;ADC.c: 34:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"35
-[; ;ADC.c: 35:             break;
-[e $U 139  ]
-"37
-[; ;ADC.c: 37:         case 3:
+[; ;ADC.c: 33:         case 1:
 [e :U 144 ]
+"34
+[; ;ADC.c: 34:             ADCON0bits.CHS3 = 0;
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+"35
+[; ;ADC.c: 35:             ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+"36
+[; ;ADC.c: 36:             ADCON0bits.CHS1 = 0;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+"37
+[; ;ADC.c: 37:             ADCON0bits.CHS0 = 1;
+[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
 "38
-[; ;ADC.c: 38:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
-"39
-[; ;ADC.c: 39:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+[; ;ADC.c: 38:             break;
+[e $U 141  ]
 "40
-[; ;ADC.c: 40:             ADCON0bits.CHS1 = 1;
-[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
-"41
-[; ;ADC.c: 41:             ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-"42
-[; ;ADC.c: 42:             break;
-[e $U 139  ]
-"44
-[; ;ADC.c: 44:         case 4:
+[; ;ADC.c: 40:         case 2:
 [e :U 145 ]
+"41
+[; ;ADC.c: 41:             ADCON0bits.CHS3 = 0;
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+"42
+[; ;ADC.c: 42:             ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+"43
+[; ;ADC.c: 43:             ADCON0bits.CHS1 = 1;
+[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
+"44
+[; ;ADC.c: 44:             ADCON0bits.CHS0 = 0;
+[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
 "45
-[; ;ADC.c: 45:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
-"46
-[; ;ADC.c: 46:             ADCON0bits.CHS2 = 1;
-[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
+[; ;ADC.c: 45:             break;
+[e $U 141  ]
 "47
-[; ;ADC.c: 47:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"48
-[; ;ADC.c: 48:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"49
-[; ;ADC.c: 49:             break;
-[e $U 139  ]
-"51
-[; ;ADC.c: 51:         case 5:
+[; ;ADC.c: 47:         case 3:
 [e :U 146 ]
+"48
+[; ;ADC.c: 48:             ADCON0bits.CHS3 = 0;
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+"49
+[; ;ADC.c: 49:             ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+"50
+[; ;ADC.c: 50:             ADCON0bits.CHS1 = 1;
+[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
+"51
+[; ;ADC.c: 51:             ADCON0bits.CHS0 = 1;
+[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
 "52
-[; ;ADC.c: 52:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
-"53
-[; ;ADC.c: 53:             ADCON0bits.CHS2 = 1;
-[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
+[; ;ADC.c: 52:             break;
+[e $U 141  ]
 "54
-[; ;ADC.c: 54:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"55
-[; ;ADC.c: 55:             ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-"56
-[; ;ADC.c: 56:             break;
-[e $U 139  ]
-"58
-[; ;ADC.c: 58:         case 6:
+[; ;ADC.c: 54:         case 4:
 [e :U 147 ]
+"55
+[; ;ADC.c: 55:             ADCON0bits.CHS3 = 0;
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+"56
+[; ;ADC.c: 56:             ADCON0bits.CHS2 = 1;
+[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
+"57
+[; ;ADC.c: 57:             ADCON0bits.CHS1 = 0;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+"58
+[; ;ADC.c: 58:             ADCON0bits.CHS0 = 0;
+[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
 "59
-[; ;ADC.c: 59:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
-"60
-[; ;ADC.c: 60:             ADCON0bits.CHS2 = 1;
-[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
+[; ;ADC.c: 59:             break;
+[e $U 141  ]
 "61
-[; ;ADC.c: 61:             ADCON0bits.CHS1 = 1;
-[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
-"62
-[; ;ADC.c: 62:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"63
-[; ;ADC.c: 63:             break;
-[e $U 139  ]
-"65
-[; ;ADC.c: 65:         case 7:
+[; ;ADC.c: 61:         case 5:
 [e :U 148 ]
+"62
+[; ;ADC.c: 62:             ADCON0bits.CHS3 = 0;
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+"63
+[; ;ADC.c: 63:             ADCON0bits.CHS2 = 1;
+[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
+"64
+[; ;ADC.c: 64:             ADCON0bits.CHS1 = 0;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+"65
+[; ;ADC.c: 65:             ADCON0bits.CHS0 = 1;
+[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
 "66
-[; ;ADC.c: 66:             ADCON0bits.CHS3 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
-"67
-[; ;ADC.c: 67:             ADCON0bits.CHS2 = 1;
-[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
+[; ;ADC.c: 66:             break;
+[e $U 141  ]
 "68
-[; ;ADC.c: 68:             ADCON0bits.CHS1 = 1;
-[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
-"69
-[; ;ADC.c: 69:             ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-"70
-[; ;ADC.c: 70:             break;
-[e $U 139  ]
-"72
-[; ;ADC.c: 72:         case 8:
+[; ;ADC.c: 68:         case 6:
 [e :U 149 ]
-"73
-[; ;ADC.c: 73:             ADCON0bits.CHS3 = 1;
-[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
-"74
-[; ;ADC.c: 74:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
-"75
-[; ;ADC.c: 75:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"76
-[; ;ADC.c: 76:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"77
-[; ;ADC.c: 77:             break;
-[e $U 139  ]
-"79
-[; ;ADC.c: 79:         case 9:
-[e :U 150 ]
-"80
-[; ;ADC.c: 80:             ADCON0bits.CHS3 = 1;
-[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
-"81
-[; ;ADC.c: 81:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
-"82
-[; ;ADC.c: 82:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"83
-[; ;ADC.c: 83:             ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-"84
-[; ;ADC.c: 84:             break;
-[e $U 139  ]
-"86
-[; ;ADC.c: 86:         case 10:
-[e :U 151 ]
-"87
-[; ;ADC.c: 87:             ADCON0bits.CHS3 = 1;
-[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
-"88
-[; ;ADC.c: 88:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
-"89
-[; ;ADC.c: 89:             ADCON0bits.CHS1 = 1;
-[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
-"90
-[; ;ADC.c: 90:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"91
-[; ;ADC.c: 91:             break;
-[e $U 139  ]
-"93
-[; ;ADC.c: 93:         case 11:
-[e :U 152 ]
-"94
-[; ;ADC.c: 94:             ADCON0bits.CHS3 = 1;
-[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
-"95
-[; ;ADC.c: 95:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
-"96
-[; ;ADC.c: 96:             ADCON0bits.CHS1 = 1;
-[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
-"97
-[; ;ADC.c: 97:             ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-"98
-[; ;ADC.c: 98:             break;
-[e $U 139  ]
-"100
-[; ;ADC.c: 100:         case 12:
-[e :U 153 ]
-"101
-[; ;ADC.c: 101:             ADCON0bits.CHS3 = 1;
-[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
-"102
-[; ;ADC.c: 102:             ADCON0bits.CHS2 = 1;
-[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
-"103
-[; ;ADC.c: 103:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"104
-[; ;ADC.c: 104:             ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"105
-[; ;ADC.c: 105:             break;
-[e $U 139  ]
-"107
-[; ;ADC.c: 107:         case 13:
-[e :U 154 ]
-"108
-[; ;ADC.c: 108:             ADCON0bits.CHS3 = 1;
-[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
-"109
-[; ;ADC.c: 109:             ADCON0bits.CHS2 = 1;
-[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
-"110
-[; ;ADC.c: 110:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"111
-[; ;ADC.c: 111:             ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-"112
-[; ;ADC.c: 112:             break;
-[e $U 139  ]
-"114
-[; ;ADC.c: 114:         default:
-[e :U 155 ]
-"115
-[; ;ADC.c: 115:             ADCON0bits.CHS3 = 0;
+"69
+[; ;ADC.c: 69:             ADCON0bits.CHS3 = 0;
 [e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
-"116
-[; ;ADC.c: 116:             ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
-"117
-[; ;ADC.c: 117:             ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
-"118
-[; ;ADC.c: 118:             ADCON0bits.CHS0 = 0;
+"70
+[; ;ADC.c: 70:             ADCON0bits.CHS2 = 1;
+[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
+"71
+[; ;ADC.c: 71:             ADCON0bits.CHS1 = 1;
+[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
+"72
+[; ;ADC.c: 72:             ADCON0bits.CHS0 = 0;
 [e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
+"73
+[; ;ADC.c: 73:             break;
+[e $U 141  ]
+"75
+[; ;ADC.c: 75:         case 7:
+[e :U 150 ]
+"76
+[; ;ADC.c: 76:             ADCON0bits.CHS3 = 0;
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+"77
+[; ;ADC.c: 77:             ADCON0bits.CHS2 = 1;
+[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
+"78
+[; ;ADC.c: 78:             ADCON0bits.CHS1 = 1;
+[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
+"79
+[; ;ADC.c: 79:             ADCON0bits.CHS0 = 1;
+[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
+"80
+[; ;ADC.c: 80:             break;
+[e $U 141  ]
+"82
+[; ;ADC.c: 82:         case 8:
+[e :U 151 ]
+"83
+[; ;ADC.c: 83:             ADCON0bits.CHS3 = 1;
+[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
+"84
+[; ;ADC.c: 84:             ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+"85
+[; ;ADC.c: 85:             ADCON0bits.CHS1 = 0;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+"86
+[; ;ADC.c: 86:             ADCON0bits.CHS0 = 0;
+[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
+"87
+[; ;ADC.c: 87:             break;
+[e $U 141  ]
+"89
+[; ;ADC.c: 89:         case 9:
+[e :U 152 ]
+"90
+[; ;ADC.c: 90:             ADCON0bits.CHS3 = 1;
+[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
+"91
+[; ;ADC.c: 91:             ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+"92
+[; ;ADC.c: 92:             ADCON0bits.CHS1 = 0;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+"93
+[; ;ADC.c: 93:             ADCON0bits.CHS0 = 1;
+[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
+"94
+[; ;ADC.c: 94:             break;
+[e $U 141  ]
+"96
+[; ;ADC.c: 96:         case 10:
+[e :U 153 ]
+"97
+[; ;ADC.c: 97:             ADCON0bits.CHS3 = 1;
+[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
+"98
+[; ;ADC.c: 98:             ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+"99
+[; ;ADC.c: 99:             ADCON0bits.CHS1 = 1;
+[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
+"100
+[; ;ADC.c: 100:             ADCON0bits.CHS0 = 0;
+[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
+"101
+[; ;ADC.c: 101:             break;
+[e $U 141  ]
+"103
+[; ;ADC.c: 103:         case 11:
+[e :U 154 ]
+"104
+[; ;ADC.c: 104:             ADCON0bits.CHS3 = 1;
+[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
+"105
+[; ;ADC.c: 105:             ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+"106
+[; ;ADC.c: 106:             ADCON0bits.CHS1 = 1;
+[e = . . _ADCON0bits 1 3 -> -> 1 `i `uc ]
+"107
+[; ;ADC.c: 107:             ADCON0bits.CHS0 = 1;
+[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
+"108
+[; ;ADC.c: 108:             break;
+[e $U 141  ]
+"110
+[; ;ADC.c: 110:         case 12:
+[e :U 155 ]
+"111
+[; ;ADC.c: 111:             ADCON0bits.CHS3 = 1;
+[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
+"112
+[; ;ADC.c: 112:             ADCON0bits.CHS2 = 1;
+[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
+"113
+[; ;ADC.c: 113:             ADCON0bits.CHS1 = 0;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+"114
+[; ;ADC.c: 114:             ADCON0bits.CHS0 = 0;
+[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
+"115
+[; ;ADC.c: 115:             break;
+[e $U 141  ]
+"117
+[; ;ADC.c: 117:         case 13:
+[e :U 156 ]
+"118
+[; ;ADC.c: 118:             ADCON0bits.CHS3 = 1;
+[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
 "119
-[; ;ADC.c: 119:             break;
-[e $U 139  ]
+[; ;ADC.c: 119:             ADCON0bits.CHS2 = 1;
+[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
 "120
-[; ;ADC.c: 120:     }
-}
-[e $U 139  ]
-[e :U 140 ]
-[e [\ _c , $ -> 0 `i 141
- , $ -> 1 `i 142
- , $ -> 2 `i 143
- , $ -> 3 `i 144
- , $ -> 4 `i 145
- , $ -> 5 `i 146
- , $ -> 6 `i 147
- , $ -> 7 `i 148
- , $ -> 8 `i 149
- , $ -> 9 `i 150
- , $ -> 10 `i 151
- , $ -> 11 `i 152
- , $ -> 12 `i 153
- , $ -> 13 `i 154
- 155 ]
-[e :U 139 ]
+[; ;ADC.c: 120:             ADCON0bits.CHS1 = 0;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
 "121
-[; ;ADC.c: 121:     return;
-[e $UE 138  ]
+[; ;ADC.c: 121:             ADCON0bits.CHS0 = 1;
+[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
 "122
-[; ;ADC.c: 122: }
-[e :UE 138 ]
+[; ;ADC.c: 122:             break;
+[e $U 141  ]
+"124
+[; ;ADC.c: 124:         default:
+[e :U 157 ]
+"125
+[; ;ADC.c: 125:             ADCON0bits.CHS3 = 0;
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+"126
+[; ;ADC.c: 126:             ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+"127
+[; ;ADC.c: 127:             ADCON0bits.CHS1 = 0;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+"128
+[; ;ADC.c: 128:             ADCON0bits.CHS0 = 0;
+[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
+"129
+[; ;ADC.c: 129:             break;
+[e $U 141  ]
+"130
+[; ;ADC.c: 130:     }
 }
-"123
-[; ;ADC.c: 123: int ADC_READ(){
+[e $U 141  ]
+[e :U 142 ]
+[e [\ _c , $ -> 0 `i 143
+ , $ -> 1 `i 144
+ , $ -> 2 `i 145
+ , $ -> 3 `i 146
+ , $ -> 4 `i 147
+ , $ -> 5 `i 148
+ , $ -> 6 `i 149
+ , $ -> 7 `i 150
+ , $ -> 8 `i 151
+ , $ -> 9 `i 152
+ , $ -> 10 `i 153
+ , $ -> 11 `i 154
+ , $ -> 12 `i 155
+ , $ -> 13 `i 156
+ 157 ]
+[e :U 141 ]
+"131
+[; ;ADC.c: 131:     return;
+[e $UE 140  ]
+"132
+[; ;ADC.c: 132: }
+[e :UE 140 ]
+}
+"133
+[; ;ADC.c: 133: int ADC_READ(){
 [v _ADC_READ `(i ~T0 @X0 1 ef ]
 {
 [e :U _ADC_READ ]
 [f ]
-"127
-[; ;ADC.c: 127:             return ADRESH;
+"137
+[; ;ADC.c: 137:             return ADRESH;
 [e ) -> _ADRESH `i ]
-[e $UE 156  ]
-"134
-[; ;ADC.c: 134: }
-[e :UE 156 ]
+[e $UE 158  ]
+"144
+[; ;ADC.c: 144: }
+[e :UE 158 ]
 }
-"136
-[; ;ADC.c: 136: void ADC_CHANGE_CHANNEL(int c, int b){
+"146
+[; ;ADC.c: 146: void ADC_CHANGE_CHANNEL(int c, int b){
 [v _ADC_CHANGE_CHANNEL `(v ~T0 @X0 1 ef2`i`i ]
 {
 [e :U _ADC_CHANGE_CHANNEL ]
 [v _c `i ~T0 @X0 1 r1 ]
 [v _b `i ~T0 @X0 1 r2 ]
 [f ]
-"137
-[; ;ADC.c: 137:     ADCON0bits.GO = 1;
+"147
+[; ;ADC.c: 147:     ADCON0bits.GO = 1;
 [e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"138
-[; ;ADC.c: 138:     while(ADCON0bits.GO == 1){
-[e $U 158  ]
-[e :U 159 ]
-{
-"139
-[; ;ADC.c: 139:         if(ADCON0bits.GO == 0){
-[e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 161  ]
-{
-"140
-[; ;ADC.c: 140:             if(ADCON0bits.CHS == c){
-[e $ ! == -> . . _ADCON0bits 0 2 `i _c 162  ]
-{
-"142
-[; ;ADC.c: 142:                 ADCON0bits.CHS = b;
-[e = . . _ADCON0bits 0 2 -> _b `uc ]
-"143
-[; ;ADC.c: 143:             }else if(ADCON0bits.CHS == b){
-}
-[e $U 163  ]
-[e :U 162 ]
-[e $ ! == -> . . _ADCON0bits 0 2 `i _b 164  ]
-{
-"145
-[; ;ADC.c: 145:                 ADCON0bits.CHS = c;
-[e = . . _ADCON0bits 0 2 -> _c `uc ]
-"146
-[; ;ADC.c: 146:             }
-}
-[e :U 164 ]
-[e :U 163 ]
 "148
-[; ;ADC.c: 148:             ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"149
-[; ;ADC.c: 149:         }
-}
+[; ;ADC.c: 148:     while(ADCON0bits.GO == 1){
+[e $U 160  ]
 [e :U 161 ]
+{
+"149
+[; ;ADC.c: 149:         if(ADCON0bits.GO == 0){
+[e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 163  ]
+{
 "150
-[; ;ADC.c: 150:     }
-}
-[e :U 158 ]
-"138
-[; ;ADC.c: 138:     while(ADCON0bits.GO == 1){
-[e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 159  ]
-[e :U 160 ]
-"151
-[; ;ADC.c: 151:     return;
-[e $UE 157  ]
+[; ;ADC.c: 150:             if(ADCON0bits.CHS == c){
+[e $ ! == -> . . _ADCON0bits 0 2 `i _c 164  ]
+{
 "152
-[; ;ADC.c: 152: }
-[e :UE 157 ]
+[; ;ADC.c: 152:                 ADCON0bits.CHS = b;
+[e = . . _ADCON0bits 0 2 -> _b `uc ]
+"153
+[; ;ADC.c: 153:             }else if(ADCON0bits.CHS == b){
 }
-"154
-[; ;ADC.c: 154: int ADC_GET_CHANNEL(){
+[e $U 165  ]
+[e :U 164 ]
+[e $ ! == -> . . _ADCON0bits 0 2 `i _b 166  ]
+{
+"155
+[; ;ADC.c: 155:                 ADCON0bits.CHS = c;
+[e = . . _ADCON0bits 0 2 -> _c `uc ]
+"156
+[; ;ADC.c: 156:             }
+}
+[e :U 166 ]
+[e :U 165 ]
+"158
+[; ;ADC.c: 158:             ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+"159
+[; ;ADC.c: 159:         }
+}
+[e :U 163 ]
+"160
+[; ;ADC.c: 160:     }
+}
+[e :U 160 ]
+"148
+[; ;ADC.c: 148:     while(ADCON0bits.GO == 1){
+[e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 161  ]
+[e :U 162 ]
+"161
+[; ;ADC.c: 161:     return;
+[e $UE 159  ]
+"162
+[; ;ADC.c: 162: }
+[e :UE 159 ]
+}
+"164
+[; ;ADC.c: 164: int ADC_GET_CHANNEL(){
 [v _ADC_GET_CHANNEL `(i ~T0 @X0 1 ef ]
 {
 [e :U _ADC_GET_CHANNEL ]
 [f ]
-"155
-[; ;ADC.c: 155:     return ADCON0bits.CHS;
+"165
+[; ;ADC.c: 165:     return ADCON0bits.CHS;
 [e ) -> . . _ADCON0bits 0 2 `i ]
-[e $UE 165  ]
-"156
-[; ;ADC.c: 156: }
-[e :UE 165 ]
+[e $UE 167  ]
+"166
+[; ;ADC.c: 166: }
+[e :UE 167 ]
 }

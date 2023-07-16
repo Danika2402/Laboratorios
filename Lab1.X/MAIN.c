@@ -34,7 +34,6 @@
 uint8_t unidad, decena;
 uint8_t display, POT;
 
-
 const char tabla[] = {
     0xFC,   //0
     0x60,   //1
@@ -66,8 +65,7 @@ void __interrupt() isr (void){
         } else if (RB1==0){
             if (RB1==0){
                 PORTA--;
-            }
-            
+            }  
         }
         INTCONbits.RBIF=0;
     }
@@ -98,13 +96,13 @@ void main(void) {
     setup();
     while(1){
         if (ADCON0bits.GO == 0){
-            POT = ADRESH;
+            POT = ADC_READ();
             __delay_us(50); 
             ADCON0bits.GO = 1;
         }
         
-        decena = (uint8_t)(POT % 16);
-        unidad = (uint8_t)((POT/16) % 16);
+        decena = DECENA(POT);
+        unidad = UNIDAD(POT);
         
         RB7 = (POT > PORTA) ? 1:0;
     }
@@ -126,28 +124,29 @@ void setup(void){
     PORTD = 0x00;
     
     //oscilador a 4M Hz
-    OSCCONbits.IRCF2 =1;    
+    OSCILLATOR(2);
+    /*OSCCONbits.IRCF2 =1;    
     OSCCONbits.IRCF1 =1;
     OSCCONbits.IRCF0 =0;
-    OSCCONbits.SCS   =1;
+    OSCCONbits.SCS   =1;*/
     
     //configuracion TMR0
-    PRESCALER_TMR0(0b0111);  //1:256
+    PRESCALER_TMR0(7);  //1:256
     TMR0 = tmr0_value; 
     
     //Config. PULL UP
     IOC_INT(0b00000011);     //pines 1 y 2 se realizaran la interrupcion
     
     //Config. ADC
-    ADC_INIT(5);
+    ADC_INIT(5);            //canal 5
     
     ADCON1bits.VCFG0 = 0;   //VDD referencias internas
-    ADCON1bits.VCFG1 = 1;   //VSS
+    ADCON1bits.VCFG1 = 0;   //VSS
     
-    ADCON0bits.ADCS0 = 0;   //fosc/2
-    ADCON0bits.ADCS1 = 0;
+    ADCON0bits.ADCS0 = 0;   //fosc/32
+    ADCON0bits.ADCS1 = 1;
 
-    ADCON1bits.ADFM =0;     //izquierda
+    ADCON1bits.ADFM =0;     //justificado izquierda
     
     ADCON0bits.ADON = 1;    //Habilito modulo ADC 
     __delay_us(50);
