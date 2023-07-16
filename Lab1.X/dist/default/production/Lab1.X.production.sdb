@@ -5,8 +5,8 @@
 [d frameptr 0 ]
 "14 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\ADC.c
 [v _ADC_INIT ADC_INIT `(v  1 e 1 0 ]
-"122
-[v _ADC_READ ADC_READ `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
@@ -15,15 +15,19 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"55 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\MAIN.c
+"59 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\MAIN.c
 [v _isr isr `II(v  1 e 1 0 ]
-"78
+"97
 [v _main main `(v  1 e 1 0 ]
-"90
+"113
 [v _setup setup `(v  1 e 1 0 ]
 "12 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\PUSH.c
 [v _IOC_INT IOC_INT `(v  1 e 1 0 ]
-"167 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc/pic16f887.h
+"13 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\TMR.c
+[v _PRESCALER_TMR0 PRESCALER_TMR0 `(v  1 e 1 0 ]
+"60 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc/pic16f887.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"167
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "229
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
@@ -50,13 +54,13 @@
 [v _INTCONbits INTCONbits `VES40  1 e 1 @11 ]
 "1239
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S126 . 1 `uc 1 ADON 1 0 :1:0 
+[s S68 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1277
-[s S131 . 1 `uc 1 . 1 0 :1:0 
+[s S73 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -65,15 +69,15 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S140 . 1 `uc 1 . 1 0 :1:0 
+[s S82 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S143 . 1 `uc 1 . 1 0 :1:0 
+[s S85 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S146 . 1 `S126 1 . 1 0 `S131 1 . 1 0 `S140 1 . 1 0 `S143 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES146  1 e 1 @31 ]
-[s S224 . 1 `uc 1 PS 1 0 :3:0 
+[u S88 . 1 `S68 1 . 1 0 `S73 1 . 1 0 `S82 1 . 1 0 `S85 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES88  1 e 1 @31 ]
+[s S235 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -81,12 +85,12 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1367
-[s S231 . 1 `uc 1 PS0 1 0 :1:0 
+[s S242 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S235 . 1 `S224 1 . 1 0 `S231 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES235  1 e 1 @129 ]
+[u S246 . 1 `S235 1 . 1 0 `S242 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES246  1 e 1 @129 ]
 "1417
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1479
@@ -95,24 +99,24 @@
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1603
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S75 . 1 `uc 1 SCS 1 0 :1:0 
+[s S129 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1883
-[s S81 . 1 `uc 1 . 1 0 :4:0 
+[s S135 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S86 . 1 `S75 1 . 1 0 `S81 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES86  1 e 1 @143 ]
-[s S250 . 1 `uc 1 WPUB 1 0 :8:0 
+[u S140 . 1 `S129 1 . 1 0 `S135 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES140  1 e 1 @143 ]
+[s S261 . 1 `uc 1 WPUB 1 0 :8:0 
 ]
 "2367
-[s S252 . 1 `uc 1 WPUB0 1 0 :1:0 
+[s S263 . 1 `uc 1 WPUB0 1 0 :1:0 
 `uc 1 WPUB1 1 0 :1:1 
 `uc 1 WPUB2 1 0 :1:2 
 `uc 1 WPUB3 1 0 :1:3 
@@ -121,12 +125,12 @@
 `uc 1 WPUB6 1 0 :1:6 
 `uc 1 WPUB7 1 0 :1:7 
 ]
-[u S261 . 1 `S250 1 . 1 0 `S252 1 . 1 0 ]
-[v _WPUBbits WPUBbits `VES261  1 e 1 @149 ]
-[s S276 . 1 `uc 1 IOCB 1 0 :8:0 
+[u S272 . 1 `S261 1 . 1 0 `S263 1 . 1 0 ]
+[v _WPUBbits WPUBbits `VES272  1 e 1 @149 ]
+[s S287 . 1 `uc 1 IOCB 1 0 :8:0 
 ]
 "2437
-[s S278 . 1 `uc 1 IOCB0 1 0 :1:0 
+[s S289 . 1 `uc 1 IOCB0 1 0 :1:0 
 `uc 1 IOCB1 1 0 :1:1 
 `uc 1 IOCB2 1 0 :1:2 
 `uc 1 IOCB3 1 0 :1:3 
@@ -135,17 +139,17 @@
 `uc 1 IOCB6 1 0 :1:6 
 `uc 1 IOCB7 1 0 :1:7 
 ]
-[u S287 . 1 `S276 1 . 1 0 `S278 1 . 1 0 ]
-[v _IOCBbits IOCBbits `VES287  1 e 1 @150 ]
-[s S111 . 1 `uc 1 . 1 0 :4:0 
+[u S298 . 1 `S287 1 . 1 0 `S289 1 . 1 0 ]
+[v _IOCBbits IOCBbits `VES298  1 e 1 @150 ]
+[s S170 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2992
-[u S117 . 1 `S111 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES117  1 e 1 @159 ]
+[u S176 . 1 `S170 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES176  1 e 1 @159 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
@@ -154,17 +158,41 @@
 [v _RB0 RB0 `VEb  1 e 0 @48 ]
 "4111
 [v _RB1 RB1 `VEb  1 e 0 @49 ]
+"4129
+[v _RB7 RB7 `VEb  1 e 0 @55 ]
 "4135
 [v _RBIF RBIF `VEb  1 e 0 @88 ]
-"78 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\MAIN.c
+"4186
+[v _RD0 RD0 `VEb  1 e 0 @64 ]
+"4189
+[v _RD1 RD1 `VEb  1 e 0 @65 ]
+"4327
+[v _T0IF T0IF `VEb  1 e 0 @90 ]
+"34 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\MAIN.c
+[v _unidad unidad `uc  1 e 1 0 ]
+[v _decena decena `uc  1 e 1 0 ]
+"35
+[v _display display `uc  1 e 1 0 ]
+[v _POT POT `uc  1 e 1 0 ]
+"38
+[v _tabla tabla `DC[16]uc  1 e 16 0 ]
+"97
 [v _main main `(v  1 e 1 0 ]
 {
-"88
+"111
 } 0
-"90
+"113
 [v _setup setup `(v  1 e 1 0 ]
 {
-"141
+"170
+} 0
+"13 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\TMR.c
+[v _PRESCALER_TMR0 PRESCALER_TMR0 `(v  1 e 1 0 ]
+{
+[v PRESCALER_TMR0@a a `uc  1 a 1 wreg ]
+[v PRESCALER_TMR0@a a `uc  1 a 1 wreg ]
+[v PRESCALER_TMR0@a a `uc  1 a 1 0 ]
+"17
 } 0
 "12 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\PUSH.c
 [v _IOC_INT IOC_INT `(v  1 e 1 0 ]
@@ -172,22 +200,30 @@
 [v IOC_INT@a a `uc  1 a 1 wreg ]
 [v IOC_INT@a a `uc  1 a 1 wreg ]
 "15
-[v IOC_INT@a a `uc  1 a 1 3 ]
+[v IOC_INT@a a `uc  1 a 1 0 ]
 "19
 } 0
 "14 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\ADC.c
 [v _ADC_INIT ADC_INIT `(v  1 e 1 0 ]
 {
-[v ADC_INIT@c c `i  1 p 2 3 ]
-"121
-} 0
+[v ADC_INIT@c c `i  1 p 2 0 ]
 "122
-[v _ADC_READ ADC_READ `(i  1 e 2 0 ]
-{
-"132
 } 0
-"55 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\MAIN.c
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"59 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\MAIN.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"76
+"95
 } 0

@@ -2759,17 +2759,19 @@ void ADC_INIT(int c){
             ADCON0bits.CHS0 = 0;
             break;
     }
+    return;
 }
 int ADC_READ(){
-    ADCON0bits.GO = 1;
-    while(ADCON0bits.GO == 1){
-        if (ADCON0bits.GO == 0){
+
+
+
             return ADRESH;
 
-            _delay((unsigned long)((50)*(4000000/4000000.0)));
-            ADCON0bits.GO = 1;
-        }
-    }
+
+
+
+
+
 }
 
 void ADC_CHANGE_CHANNEL(int c, int b){
@@ -2787,6 +2789,7 @@ void ADC_CHANGE_CHANNEL(int c, int b){
             ADCON0bits.GO = 1;
         }
     }
+    return;
 }
 
 int ADC_GET_CHANNEL(){

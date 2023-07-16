@@ -29,7 +29,11 @@
 #include "PUSH.h"
 #include "TMR.h"
 #define _XTAL_FREQ  4000000
-#define tmr0_value 240      //4ms
+#define tmr0_value 244      //3ms
+
+uint8_t unidad, decena;
+uint8_t display, POT;
+
 
 const char tabla[] = {
     0xFC,   //0
@@ -67,23 +71,42 @@ void __interrupt() isr (void){
         }
         INTCONbits.RBIF=0;
     }
-    /*else if(T0IF == 1){
-        ++PORTD;
-        __delay_us(50); 
+    else if(T0IF == 1){
+        PORTD = 0x00;
+        //__delay_us(50); 
+        
+        if(display == 1){
+            RD0 = 1;
+            PORTC = tabla[unidad];
+            
+        }else if(display == 2){
+            RD1 = 1;
+            PORTC = tabla[decena];
+            
+        }else if(display == 3){
+            display = 0;
+        }
+        
+        ++display;
         INTCONbits.T0IF = 0;
         TMR0 = tmr0_value;
-    }*/
+    }
+    return;
 }
 
 void main(void) {
     setup();
     while(1){
-        //if (ADCON0bits.GO == 0){
-        //ADCON0bits.GO = 1;
-            PORTC = ADC_READ();
-            //__delay_us(50); 
-          //  ADCON0bits.GO = 1;
-        //}  
+        if (ADCON0bits.GO == 0){
+            POT = ADRESH;
+            __delay_us(50); 
+            ADCON0bits.GO = 1;
+        }
+        
+        decena = (uint8_t)(POT % 16);
+        unidad = (uint8_t)((POT/16) % 16);
+        
+        RB7 = (POT > PORTA) ? 1:0;
     }
 }
 
@@ -109,8 +132,8 @@ void setup(void){
     OSCCONbits.SCS   =1;
     
     //configuracion TMR0
-    //PRESCALER_TMR0(0b0111);  //1:256
-   //TMR0 = tmr0_value; 
+    PRESCALER_TMR0(0b0111);  //1:256
+    TMR0 = tmr0_value; 
     
     //Config. PULL UP
     IOC_INT(0b00000011);     //pines 1 y 2 se realizaran la interrupcion
@@ -119,7 +142,7 @@ void setup(void){
     ADC_INIT(5);
     
     ADCON1bits.VCFG0 = 0;   //VDD referencias internas
-    ADCON1bits.VCFG1 = 0;   //VSS
+    ADCON1bits.VCFG1 = 1;   //VSS
     
     ADCON0bits.ADCS0 = 0;   //fosc/2
     ADCON0bits.ADCS1 = 0;
@@ -138,4 +161,10 @@ void setup(void){
     INTCONbits.T0IF = 0;    //interrupcion TMR0
     INTCONbits.T0IE = 1;
 
+    unidad = 0; 
+    decena = 0;
+    display = 0;
+    POT = 0;
+    
+    return;
 }

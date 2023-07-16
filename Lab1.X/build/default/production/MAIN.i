@@ -2681,6 +2681,10 @@ void PRESCALER_TMR0(uint8_t);
 
 
 
+uint8_t unidad, decena;
+uint8_t display, POT;
+
+
 const char tabla[] = {
     0xFC,
     0x60,
@@ -2717,23 +2721,42 @@ void __attribute__((picinterrupt(("")))) isr (void){
         }
         INTCONbits.RBIF=0;
     }
+    else if(T0IF == 1){
+        PORTD = 0x00;
 
 
+        if(display == 1){
+            RD0 = 1;
+            PORTC = tabla[unidad];
 
+        }else if(display == 2){
+            RD1 = 1;
+            PORTC = tabla[decena];
 
+        }else if(display == 3){
+            display = 0;
+        }
 
-
+        ++display;
+        INTCONbits.T0IF = 0;
+        TMR0 = 244;
+    }
+    return;
 }
 
 void main(void) {
     setup();
     while(1){
+        if (ADCON0bits.GO == 0){
+            POT = ADRESH;
+            _delay((unsigned long)((50)*(4000000/4000000.0)));
+            ADCON0bits.GO = 1;
+        }
 
+        decena = (uint8_t)(POT % 16);
+        unidad = (uint8_t)((POT/16) % 16);
 
-            PORTC = ADC_READ();
-
-
-
+        RB7 = (POT > PORTA) ? 1:0;
     }
 }
 
@@ -2759,8 +2782,8 @@ void setup(void){
     OSCCONbits.SCS =1;
 
 
-
-
+    PRESCALER_TMR0(0b0111);
+    TMR0 = 244;
 
 
     IOC_INT(0b00000011);
@@ -2769,7 +2792,7 @@ void setup(void){
     ADC_INIT(5);
 
     ADCON1bits.VCFG0 = 0;
-    ADCON1bits.VCFG1 = 0;
+    ADCON1bits.VCFG1 = 1;
 
     ADCON0bits.ADCS0 = 0;
     ADCON0bits.ADCS1 = 0;
@@ -2788,4 +2811,10 @@ void setup(void){
     INTCONbits.T0IF = 0;
     INTCONbits.T0IE = 1;
 
+    unidad = 0;
+    decena = 0;
+    display = 0;
+    POT = 0;
+
+    return;
 }
