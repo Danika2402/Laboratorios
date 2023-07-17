@@ -5,8 +5,18 @@
  * Created on 12 de julio de 2023, 07:38 PM
  */
 //*****************************************************************************
-/*
+/* Electronica Digital 2 - 2023
+ * Laboratorio 1 - Interrupciones y librerias
+ * Uso de 2 botones, 2 displays 7 segmentos multiplexados y leds
  * 
+ * TMR0 = multiplexado de displays
+ * ADC = lectura de potenciometro
+ * PULL UP = incrementar/decrementar puerto
+ * 
+ * FUNCION: el contador y el potenciometro son comparados, si el pot es mayor 
+ * que el contador se enciende un led (alarma)
+ * el valor del contador se muestra en un puerto y el valor del potenciometro
+ * se muestra en 2 displays de 6 segmentos
 */
 //*****************************************************************************
 #pragma config  FOSC    = INTRC_NOCLKOUT

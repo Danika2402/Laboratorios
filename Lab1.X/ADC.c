@@ -1,6 +1,6 @@
 /*
  * File:   ADC.c
- * Author: HP
+ * Author: Danika Andrino
  *
  * Created on 13 de julio de 2023, 05:26 PM
  */

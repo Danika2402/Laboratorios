@@ -1,6 +1,6 @@
 /*
  * File:   TMR.c
- * Author: HP
+ * Author: Danika Andrino
  *
  * Created on 15 de julio de 2023, 03:57 PM
  */
