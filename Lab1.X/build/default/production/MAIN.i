@@ -2726,7 +2726,6 @@ void __attribute__((picinterrupt(("")))) isr (void){
     else if(T0IF == 1){
         PORTD = 0x00;
 
-
         if(display == 1){
             RD0 = 1;
             PORTC = tabla[unidad];
@@ -2749,11 +2748,8 @@ void __attribute__((picinterrupt(("")))) isr (void){
 void main(void) {
     setup();
     while(1){
-        if (ADCON0bits.GO == 0){
-            POT = ADC_READ();
-            _delay((unsigned long)((50)*(4000000/4000000.0)));
-            ADCON0bits.GO = 1;
-        }
+
+        POT = ADC_READ();
 
         decena = DECENA(POT);
         unidad = UNIDAD(POT);
@@ -2781,10 +2777,6 @@ void setup(void){
     OSCILLATOR(2);
 
 
-
-
-
-
     PRESCALER_TMR0(7);
     TMR0 = 244;
 
@@ -2805,6 +2797,7 @@ void setup(void){
     ADCON0bits.ADON = 1;
     _delay((unsigned long)((50)*(4000000/4000000.0)));
     ADCON0bits.GO_nDONE = 1;
+
 
 
     INTCONbits.GIE = 1;

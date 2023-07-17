@@ -23,9 +23,9 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "58 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\MAIN.c
 [v _isr isr `II(v  1 e 1 0 ]
-"95
+"94
 [v _main main `(v  1 e 1 0 ]
-"111
+"107
 [v _setup setup `(v  1 e 1 0 ]
 "12 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\PUSH.c
 [v _IOC_INT IOC_INT `(v  1 e 1 0 ]
@@ -62,13 +62,13 @@
 [v _INTCONbits INTCONbits `VES40  1 e 1 @11 ]
 "1239
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S68 . 1 `uc 1 ADON 1 0 :1:0 
+[s S125 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1277
-[s S73 . 1 `uc 1 . 1 0 :1:0 
+[s S130 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -77,14 +77,14 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S82 . 1 `uc 1 . 1 0 :1:0 
+[s S139 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S85 . 1 `uc 1 . 1 0 :1:0 
+[s S142 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S88 . 1 `S68 1 . 1 0 `S73 1 . 1 0 `S82 1 . 1 0 `S85 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES88  1 e 1 @31 ]
+[u S145 . 1 `S125 1 . 1 0 `S130 1 . 1 0 `S139 1 . 1 0 `S142 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES145  1 e 1 @31 ]
 [s S218 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
@@ -149,15 +149,15 @@
 ]
 [u S281 . 1 `S270 1 . 1 0 `S272 1 . 1 0 ]
 [v _IOCBbits IOCBbits `VES281  1 e 1 @150 ]
-[s S162 . 1 `uc 1 . 1 0 :4:0 
+[s S110 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2992
-[u S168 . 1 `S162 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES168  1 e 1 @159 ]
+[u S116 . 1 `S110 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES116  1 e 1 @159 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
@@ -184,15 +184,15 @@
 [v _POT POT `uc  1 e 1 0 ]
 "37
 [v _tabla tabla `DC[16]uc  1 e 16 0 ]
-"95
+"94
 [v _main main `(v  1 e 1 0 ]
 {
-"109
+"105
 } 0
-"111
+"107
 [v _setup setup `(v  1 e 1 0 ]
 {
-"169
+"162
 } 0
 "75 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\TMR.c
 [v _PRESCALER_TMR0 PRESCALER_TMR0 `(v  1 e 1 0 ]
@@ -255,10 +255,10 @@
 "133
 [v _ADC_READ ADC_READ `(i  1 e 2 0 ]
 {
-"144
+"142
 } 0
 "58 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab1.X\MAIN.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"93
+"92
 } 0

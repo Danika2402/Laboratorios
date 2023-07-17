@@ -57,31 +57,30 @@ void setup(void);
 
 void __interrupt() isr (void){
     
-    if (RBIF==1){
+    if (RBIF==1){               //Interrupciones de botones en PORTB con PULL UP
         if (RB0==0){
-            if (RB0==0){
+            if (RB0==0){        //RB0 incrementa PORTA
                 PORTA++;
             }
-        } else if (RB1==0){
+        } else if (RB1==0){     //RB1 decrementa PORTA
             if (RB1==0){
                 PORTA--;
             }  
         }
         INTCONbits.RBIF=0;
     }
-    else if(T0IF == 1){
-        PORTD = 0x00;
-        //__delay_us(50); 
+    else if(T0IF == 1){             //Interrupciones de TMR0
+        PORTD = 0x00;               //Limpiamos PORTD, donde esta el display
         
-        if(display == 1){
-            RD0 = 1;
-            PORTC = tabla[unidad];
-            
-        }else if(display == 2){
-            RD1 = 1;
+        if(display == 1){           //Con la variable display, que se incremeta
+            RD0 = 1;                //con tmr0, cambiamos entre 2 bits
+            PORTC = tabla[unidad];  //RD0 y RD1, que son los bits de cada display
+                                    //que se encuentran multiplexados con transistores
+        }else if(display == 2){     //al activar este bit PORTC es igual a la tabla
+            RD1 = 1;                
             PORTC = tabla[decena];
             
-        }else if(display == 3){
+        }else if(display == 3){     //reinicio de variable
             display = 0;
         }
         
@@ -95,26 +94,23 @@ void __interrupt() isr (void){
 void main(void) {
     setup();
     while(1){
-        if (ADCON0bits.GO == 0){
-            POT = ADC_READ();
-            __delay_us(50); 
-            ADCON0bits.GO = 1;
-        }
+           
+        POT = ADC_READ();       //leemos potenciometro
         
-        decena = DECENA(POT);
+        decena = DECENA(POT);   //calculo de bits a hex
         unidad = UNIDAD(POT);
         
-        RB7 = (POT > PORTA) ? 1:0;
+        RB7 = (POT > PORTA) ? 1:0;  //alarma
     }
 }
 
 void setup(void){
     
-    ANSEL = 0b00100000;
+    ANSEL = 0b00100000;     //activo canal 5
     ANSELH = 0x00;
     
     TRISA = 0x00;
-    TRISB = 0b00000011;
+    TRISB = 0b00000011;     //RB1 y RB0 entradas
     TRISC = 0x00;
     TRISD = 0x00;
 
@@ -125,10 +121,6 @@ void setup(void){
     
     //oscilador a 4M Hz
     OSCILLATOR(2);
-    /*OSCCONbits.IRCF2 =1;    
-    OSCCONbits.IRCF1 =1;
-    OSCCONbits.IRCF0 =0;
-    OSCCONbits.SCS   =1;*/
     
     //configuracion TMR0
     PRESCALER_TMR0(7);  //1:256
@@ -151,6 +143,7 @@ void setup(void){
     ADCON0bits.ADON = 1;    //Habilito modulo ADC 
     __delay_us(50);
     ADCON0bits.GO_nDONE = 1;
+    
     //Config. interrupciones
     
     INTCONbits.GIE  = 1;
@@ -160,7 +153,7 @@ void setup(void){
     INTCONbits.T0IF = 0;    //interrupcion TMR0
     INTCONbits.T0IE = 1;
 
-    unidad = 0; 
+    unidad = 0;             //datos iniciales
     decena = 0;
     display = 0;
     POT = 0;

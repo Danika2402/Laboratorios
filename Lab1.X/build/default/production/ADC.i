@@ -2775,15 +2775,13 @@ void ADC_INIT(int c){
     return;
 }
 int ADC_READ(){
-
-
-
+    ADCON0bits.GO = 1;
+    while(ADCON0bits.GO == 1){
+        if (ADCON0bits.GO == 0){
             return ADRESH;
-
-
-
-
-
+            ADCON0bits.GO = 1;
+        }
+    }
 
 }
 
@@ -2792,13 +2790,10 @@ void ADC_CHANGE_CHANNEL(int c, int b){
     while(ADCON0bits.GO == 1){
         if(ADCON0bits.GO == 0){
             if(ADCON0bits.CHS == c){
-
                 ADCON0bits.CHS = b;
             }else if(ADCON0bits.CHS == b){
-
                 ADCON0bits.CHS = c;
             }
-
             ADCON0bits.GO = 1;
         }
     }

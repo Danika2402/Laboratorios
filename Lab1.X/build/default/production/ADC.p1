@@ -525,89 +525,116 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _ADC_READ ]
 [f ]
+"134
+[; ;ADC.c: 134:     ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+"135
+[; ;ADC.c: 135:     while(ADCON0bits.GO == 1){
+[e $U 159  ]
+[e :U 160 ]
+{
+"136
+[; ;ADC.c: 136:         if (ADCON0bits.GO == 0){
+[e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 162  ]
+{
 "137
 [; ;ADC.c: 137:             return ADRESH;
 [e ) -> _ADRESH `i ]
 [e $UE 158  ]
-"144
-[; ;ADC.c: 144: }
+"138
+[; ;ADC.c: 138:             ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+"139
+[; ;ADC.c: 139:         }
+}
+[e :U 162 ]
+"140
+[; ;ADC.c: 140:     }
+}
+[e :U 159 ]
+"135
+[; ;ADC.c: 135:     while(ADCON0bits.GO == 1){
+[e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 160  ]
+[e :U 161 ]
+"142
+[; ;ADC.c: 142: }
 [e :UE 158 ]
 }
-"146
-[; ;ADC.c: 146: void ADC_CHANGE_CHANNEL(int c, int b){
+"144
+[; ;ADC.c: 144: void ADC_CHANGE_CHANNEL(int c, int b){
 [v _ADC_CHANGE_CHANNEL `(v ~T0 @X0 1 ef2`i`i ]
 {
 [e :U _ADC_CHANGE_CHANNEL ]
 [v _c `i ~T0 @X0 1 r1 ]
 [v _b `i ~T0 @X0 1 r2 ]
 [f ]
-"147
-[; ;ADC.c: 147:     ADCON0bits.GO = 1;
+"145
+[; ;ADC.c: 145:     ADCON0bits.GO = 1;
 [e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+"146
+[; ;ADC.c: 146:     while(ADCON0bits.GO == 1){
+[e $U 164  ]
+[e :U 165 ]
+{
+"147
+[; ;ADC.c: 147:         if(ADCON0bits.GO == 0){
+[e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 167  ]
+{
 "148
-[; ;ADC.c: 148:     while(ADCON0bits.GO == 1){
-[e $U 160  ]
-[e :U 161 ]
+[; ;ADC.c: 148:             if(ADCON0bits.CHS == c){
+[e $ ! == -> . . _ADCON0bits 0 2 `i _c 168  ]
 {
 "149
-[; ;ADC.c: 149:         if(ADCON0bits.GO == 0){
-[e $ ! == -> . . _ADCON0bits 1 1 `i -> 0 `i 163  ]
-{
-"150
-[; ;ADC.c: 150:             if(ADCON0bits.CHS == c){
-[e $ ! == -> . . _ADCON0bits 0 2 `i _c 164  ]
-{
-"152
-[; ;ADC.c: 152:                 ADCON0bits.CHS = b;
+[; ;ADC.c: 149:                 ADCON0bits.CHS = b;
 [e = . . _ADCON0bits 0 2 -> _b `uc ]
-"153
-[; ;ADC.c: 153:             }else if(ADCON0bits.CHS == b){
+"150
+[; ;ADC.c: 150:             }else if(ADCON0bits.CHS == b){
 }
-[e $U 165  ]
-[e :U 164 ]
-[e $ ! == -> . . _ADCON0bits 0 2 `i _b 166  ]
+[e $U 169  ]
+[e :U 168 ]
+[e $ ! == -> . . _ADCON0bits 0 2 `i _b 170  ]
 {
-"155
-[; ;ADC.c: 155:                 ADCON0bits.CHS = c;
+"151
+[; ;ADC.c: 151:                 ADCON0bits.CHS = c;
 [e = . . _ADCON0bits 0 2 -> _c `uc ]
-"156
-[; ;ADC.c: 156:             }
+"152
+[; ;ADC.c: 152:             }
 }
-[e :U 166 ]
-[e :U 165 ]
-"158
-[; ;ADC.c: 158:             ADCON0bits.GO = 1;
+[e :U 170 ]
+[e :U 169 ]
+"153
+[; ;ADC.c: 153:             ADCON0bits.GO = 1;
 [e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+"154
+[; ;ADC.c: 154:         }
+}
+[e :U 167 ]
+"155
+[; ;ADC.c: 155:     }
+}
+[e :U 164 ]
+"146
+[; ;ADC.c: 146:     while(ADCON0bits.GO == 1){
+[e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 165  ]
+[e :U 166 ]
+"156
+[; ;ADC.c: 156:     return;
+[e $UE 163  ]
+"157
+[; ;ADC.c: 157: }
+[e :UE 163 ]
+}
 "159
-[; ;ADC.c: 159:         }
-}
-[e :U 163 ]
-"160
-[; ;ADC.c: 160:     }
-}
-[e :U 160 ]
-"148
-[; ;ADC.c: 148:     while(ADCON0bits.GO == 1){
-[e $ == -> . . _ADCON0bits 1 1 `i -> 1 `i 161  ]
-[e :U 162 ]
-"161
-[; ;ADC.c: 161:     return;
-[e $UE 159  ]
-"162
-[; ;ADC.c: 162: }
-[e :UE 159 ]
-}
-"164
-[; ;ADC.c: 164: int ADC_GET_CHANNEL(){
+[; ;ADC.c: 159: int ADC_GET_CHANNEL(){
 [v _ADC_GET_CHANNEL `(i ~T0 @X0 1 ef ]
 {
 [e :U _ADC_GET_CHANNEL ]
 [f ]
-"165
-[; ;ADC.c: 165:     return ADCON0bits.CHS;
+"160
+[; ;ADC.c: 160:     return ADCON0bits.CHS;
 [e ) -> . . _ADCON0bits 0 2 `i ]
-[e $UE 167  ]
-"166
-[; ;ADC.c: 166: }
-[e :UE 167 ]
+[e $UE 171  ]
+"161
+[; ;ADC.c: 161: }
+[e :UE 171 ]
 }

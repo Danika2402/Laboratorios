@@ -10,7 +10,7 @@
 #include "TMR.h"
 #define _XTAL_FREQ  4000000
 
-void OSCILLATOR(uint8_t c){
+void OSCILLATOR(uint8_t c){         //Escogo que frecuencia quiero para el oscilador
     OSCCONbits.SCS   =1;
     
     switch(c){
@@ -72,7 +72,7 @@ void OSCILLATOR(uint8_t c){
     
 }
 
-void PRESCALER_TMR0(int c){
+void PRESCALER_TMR0(int c){         //prescaler del TMR0
     OPTION_REGbits.T0CS = 0;
     OPTION_REGbits.PSA = 0;
     

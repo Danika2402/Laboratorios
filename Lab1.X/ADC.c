@@ -11,17 +11,17 @@
 #include "ADC.h"
 #define _XTAL_FREQ  4000000
 
-uint8_t DECENA(char c){
+uint8_t DECENA(char c){         //se calcula los bits mayores en hex
     c = (uint8_t)(c % 16);
     return c;
 }
 
-uint8_t UNIDAD(char c){
+uint8_t UNIDAD(char c){         //se calcula los bits menores en hex
     c = (uint8_t)((c/16) % 16);
     return c;
 }
 
-void ADC_INIT(int c){
+void ADC_INIT(int c){               //Seleccion de canales
     switch(c){
         case 0:
             ADCON0bits.CHS3 = 0;    //canal 0
@@ -130,37 +130,32 @@ void ADC_INIT(int c){
     }
     return;
 }
-int ADC_READ(){
-    //ADCON0bits.GO = 1;
-    //while(ADCON0bits.GO == 1){
-        //if (ADCON0bits.GO == 0){
-            return ADRESH;
-            //adc = ADRESH;
-            //__delay_us(50);            
-            //ADCON0bits.GO = 1;
-        //}
-    //}
+int ADC_READ(){                     //funcion que lee el potenciometro
+    ADCON0bits.GO = 1;
+    while(ADCON0bits.GO == 1){
+        if (ADCON0bits.GO == 0){
+            return ADRESH;           
+            ADCON0bits.GO = 1;
+        }
+    }
     //return;
 }
 
-void ADC_CHANGE_CHANNEL(int c, int b){
-    ADCON0bits.GO = 1;
+void ADC_CHANGE_CHANNEL(int c, int b){      //cambio de canales, si utilizamos
+    ADCON0bits.GO = 1;                      //varios
     while(ADCON0bits.GO == 1){
         if(ADCON0bits.GO == 0){
             if(ADCON0bits.CHS == c){
-                //return ADRESH;
                 ADCON0bits.CHS = b;   
             }else if(ADCON0bits.CHS == b){
-                //return ADRESH;
                 ADCON0bits.CHS = c;
             }
-            //__delay_us(50);
             ADCON0bits.GO = 1;
         }
     }
     return;
 }
 
-int ADC_GET_CHANNEL(){
+int ADC_GET_CHANNEL(){          //nos dice en que canal estamos
     return ADCON0bits.CHS;
 }
