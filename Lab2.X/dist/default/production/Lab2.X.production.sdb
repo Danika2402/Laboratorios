@@ -1,0 +1,179 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"23 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+[v _OSCILLATOR OSCILLATOR `(v  1 e 1 0 ]
+"85
+[v _ADC_INIT ADC_INIT `(v  1 e 1 0 ]
+"194
+[v _ADC_READ ADC_READ `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"13 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+[v _LCD_INIT4 LCD_INIT4 `(v  1 e 1 0 ]
+"52
+[v _LCD_COM4 LCD_COM4 `(v  1 e 1 0 ]
+"93
+[v _LCD_CADENA4 LCD_CADENA4 `(v  1 e 1 0 ]
+"101
+[v _LCD_DATA4 LCD_DATA4 `(v  1 e 1 0 ]
+"39 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\Pre_lab.c
+[v _main main `(v  1 e 1 0 ]
+"53
+[v _setup setup `(v  1 e 1 0 ]
+"167 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc/pic16f887.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"291
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+[s S171 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"308
+[u S180 . 1 `S171 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES180  1 e 1 @7 ]
+"353
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S68 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1277
+[s S73 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S82 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S85 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[u S88 . 1 `S68 1 . 1 0 `S73 1 . 1 0 `S82 1 . 1 0 `S85 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES88  1 e 1 @31 ]
+"1417
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1541
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+[s S150 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1558
+[u S159 . 1 `S150 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES159  1 e 1 @135 ]
+"1603
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+[s S53 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 VCFG0 1 0 :1:4 
+`uc 1 VCFG1 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"2992
+[u S59 . 1 `S53 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES59  1 e 1 @159 ]
+"3388
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3450
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"1239 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+[s S230 . 1 `uc 1 SCS 1 0 :1:0 
+`uc 1 LTS 1 0 :1:1 
+`uc 1 HTS 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 IRCF 1 0 :3:4 
+]
+"1883
+[s S236 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 IRCF0 1 0 :1:4 
+`uc 1 IRCF1 1 0 :1:5 
+`uc 1 IRCF2 1 0 :1:6 
+]
+[u S241 . 1 `S230 1 . 1 0 `S236 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES241  1 e 1 @143 ]
+"39 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\Pre_lab.c
+[v _main main `(v  1 e 1 0 ]
+{
+"51
+} 0
+"53
+[v _setup setup `(v  1 e 1 0 ]
+{
+"86
+} 0
+"23 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+[v _OSCILLATOR OSCILLATOR `(v  1 e 1 0 ]
+{
+[v OSCILLATOR@f f `uc  1 a 1 wreg ]
+[v OSCILLATOR@f f `uc  1 a 1 wreg ]
+[v OSCILLATOR@f f `uc  1 a 1 2 ]
+"82
+} 0
+"13 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+[v _LCD_INIT4 LCD_INIT4 `(v  1 e 1 0 ]
+{
+"51
+} 0
+"52
+[v _LCD_COM4 LCD_COM4 `(v  1 e 1 0 ]
+{
+[v LCD_COM4@cmd cmd `uc  1 a 1 wreg ]
+[v LCD_COM4@cmd cmd `uc  1 a 1 wreg ]
+[v LCD_COM4@cmd cmd `uc  1 a 1 1 ]
+"82
+} 0
+"85 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+[v _ADC_INIT ADC_INIT `(v  1 e 1 0 ]
+{
+[v ADC_INIT@c c `i  1 p 2 0 ]
+"193
+} 0
+"93 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+[v _LCD_CADENA4 LCD_CADENA4 `(v  1 e 1 0 ]
+{
+[v LCD_CADENA4@dato dato `*.24DCuc  1 a 1 wreg ]
+[v LCD_CADENA4@dato dato `*.24DCuc  1 a 1 wreg ]
+[v LCD_CADENA4@dato dato `*.24DCuc  1 a 1 3 ]
+"100
+} 0
+"101
+[v _LCD_DATA4 LCD_DATA4 `(v  1 e 1 0 ]
+{
+[v LCD_DATA4@data data `uc  1 a 1 wreg ]
+[v LCD_DATA4@data data `uc  1 a 1 wreg ]
+[v LCD_DATA4@data data `uc  1 a 1 1 ]
+"126
+} 0
+"194 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+[v _ADC_READ ADC_READ `(i  1 e 2 0 ]
+{
+"203
+} 0
