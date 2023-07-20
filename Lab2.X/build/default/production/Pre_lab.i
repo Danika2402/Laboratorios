@@ -2653,11 +2653,15 @@ extern __bank0 __bit __timeout;
 
 
 
+void LCD_PORT4(char a);
+void LCD_COM4(char a);
+void LCD_CLEAR4(void);
+void LCD_XY4(char x, char y);
 void LCD_INIT4(void);
-void LCD_COM4(unsigned char dato);
-void LCD_XY4(unsigned char x, unsigned char y);
-void LCD_CADENA4(const char *dato);
-void LCD_DATA4(char data);
+void LCD_CHAR4(char a);
+void LCD_STRING4(char *a);
+void LCD_RIGHT4(void);
+void LCD_LEFT4(void);
 # 29 "Pre_lab.c" 2
 
 # 1 "./ADC.h" 1
@@ -2682,20 +2686,34 @@ uint8_t UNIDAD(unsigned char c);
 
 
 
-
+uint8_t POT;
+uint8_t unidad, decena,centena;
 
 void setup(void);
 
 void main(void) {
+
     setup();
     while(1){
-        PORTA = ADC_READ();
 
+        POT = ADC_READ();
+        centena = (uint8_t)((POT*1.9607)/100);
+        decena = (uint8_t)((POT*1.9607) - centena*100)/10;
+        unidad = (uint8_t)((POT*1.9607) - centena*100 - decena*10);
 
-        LCD_CADENA4("HOLA MUNDO");
+        centena += 48;
+        decena += 48;
+        unidad += 48;
 
-
-
+        LCD_CLEAR4();
+        LCD_XY4(1,1);
+        LCD_STRING4("POTENCIOMETRO");
+        LCD_XY4(2,1);
+        LCD_CHAR4(centena);
+        LCD_STRING4(".");
+        LCD_CHAR4(decena);
+        LCD_CHAR4(unidad);
+# 101 "Pre_lab.c"
     }
     return;
 }
@@ -2705,16 +2723,16 @@ void setup(void){
     ANSEL = 0b00100000;
     ANSELH = 0x00;
 
-    TRISA = 0x00;
-    TRISC = 0x00;
+
     TRISD = 0x00;
 
-    PORTA = 0x00;
-    PORTC = 0x00;
+
+
+
     PORTD = 0x00;
 
 
-    OSCILLATOR(2);
+    OSCILLATOR(1);
 
 
     ADC_INIT(5);
@@ -2728,7 +2746,7 @@ void setup(void){
     ADCON1bits.ADFM =0;
 
     ADCON0bits.ADON = 1;
-    _delay((unsigned long)((50)*(4000000/4000000.0)));
+    _delay((unsigned long)((50)*(8000000/4000000.0)));
     ADCON0bits.GO_nDONE = 1;
 
     LCD_INIT4();

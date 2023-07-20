@@ -8,7 +8,7 @@
 #include <stdint.h>
 #include <xc.h>
 #include "ADC.h"
-#define _XTAL_FREQ  4000000
+#define _XTAL_FREQ  8000000
 
 uint8_t DECENA(unsigned char c){         //se calcula los bits mayores en hex
     c = (uint8_t)(c % 16);

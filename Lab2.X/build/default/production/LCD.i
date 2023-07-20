@@ -2644,126 +2644,109 @@ extern __bank0 __bit __timeout;
 
 
 
+void LCD_PORT4(char a);
+void LCD_COM4(char a);
+void LCD_CLEAR4(void);
+void LCD_XY4(char x, char y);
 void LCD_INIT4(void);
-void LCD_COM4(unsigned char dato);
-void LCD_XY4(unsigned char x, unsigned char y);
-void LCD_CADENA4(const char *dato);
-void LCD_DATA4(char data);
+void LCD_CHAR4(char a);
+void LCD_STRING4(char *a);
+void LCD_RIGHT4(void);
+void LCD_LEFT4(void);
 # 10 "LCD.c" 2
 
 
 
+void LCD_PORT4(char a){
+    if (a & 1)
+        PORTDbits.RD4 = 1;
+    else
+        PORTDbits.RD4 = 0;
+
+    if (a & 2)
+        PORTDbits.RD5 = 1;
+    else
+        PORTDbits.RD5 = 0;
+
+    if (a & 4)
+        PORTDbits.RD6 = 1;
+    else
+        PORTDbits.RD6 = 0;
+
+    if (a & 8)
+        PORTDbits.RD7 = 1;
+    else
+        PORTDbits.RD7 = 0;
+}
+void LCD_COM4(char a){
+    PORTDbits.RD2 = 0;
+    LCD_PORT4(a);
+    PORTDbits.RD3 = 1;
+    _delay((unsigned long)((4)*(8000000/4000.0)));
+    PORTDbits.RD3 = 0;
+}
+void LCD_CLEAR4(void){
+    LCD_PORT4(0);
+    LCD_PORT4(1);
+}
+
+void LCD_XY4(char x, char y){
+    char temp,z,q;
+    if(x == 1){
+        temp = 0x80 + y - 1;
+        z = temp >> 4;
+        q = temp & 0x0F;
+        LCD_COM4(z);
+        LCD_COM4(q);
+    }else if (x == 2){
+        temp = 0xC0 + y - 1;
+        z = temp >> 4;
+        q = temp & 0x0F;
+        LCD_COM4(z);
+        LCD_COM4(q);
+    }
+}
 void LCD_INIT4(void){
-    PORTD = PORTD & 0xf0;
-    TRISD &= 0xf0;
+    LCD_PORT4(0x00);
+    _delay((unsigned long)((20)*(8000000/4000.0)));
+    LCD_COM4(0x03);
+    _delay((unsigned long)((5)*(8000000/4000.0)));
+    LCD_COM4(0x03);
+    _delay((unsigned long)((11)*(8000000/4000.0)));
+    LCD_COM4(0x03);
 
-    TRISCbits.TRISC0 = 0;
-    TRISCbits.TRISC1 = 0;
-    TRISCbits.TRISC2 = 0;
-
-    PORTCbits.RC0 = 0;
-    PORTCbits.RC1 = 0;
-    PORTCbits.RC2 = 0;
-
-    _delay((unsigned long)((15)*(4000000/4000.0)));
-    LCD_COM4(0x30);
-    _delay((unsigned long)((5)*(4000000/4000.0)));
-    LCD_COM4(0x30);
-    _delay((unsigned long)((100)*(4000000/4000000.0)));
-    LCD_COM4(0x32);
-    _delay((unsigned long)((100)*(4000000/4000000.0)));
-
-
-    _delay((unsigned long)((100)*(4000000/4000000.0)));
-    LCD_COM4(0x28);
-    _delay((unsigned long)((100)*(4000000/4000000.0)));
+    LCD_COM4(0x02);
+    LCD_COM4(0x02);
     LCD_COM4(0x08);
-    _delay((unsigned long)((100)*(4000000/4000000.0)));
-    LCD_COM4(0x0f);
-    _delay((unsigned long)((100)*(4000000/4000000.0)));
-    LCD_COM4(0x01);
-    _delay((unsigned long)((100)*(4000000/4000000.0)));
-    LCD_COM4(0x04);
-    _delay((unsigned long)((100)*(4000000/4000000.0)));
-
-    _delay((unsigned long)((100)*(4000000/4000000.0)));
-    LCD_COM4(0x06);
+    LCD_COM4(0x00);
     LCD_COM4(0x0C);
-
-    return;
+    LCD_COM4(0x00);
+    LCD_COM4(0x06);
 }
-void LCD_COM4(unsigned char cmd){
-    PORTD &= 0xf0;
-    TRISD &= 0xf0;
-
-    PORTD = PORTD | ((cmd>>4)& 0x0f);
-
-
-
-
-
-
-    PORTCbits.RC1 = 0;
-    PORTCbits.RC0 = 0;
-    _delay((unsigned long)((10)*(4000000/4000000.0)));
-    PORTCbits.RC2 = 1;
-    _delay((unsigned long)((10)*(4000000/4000000.0)));
-    PORTCbits.RC2 = 0;
-
-
-    PORTD &= 0xf0;
-    PORTD |= cmd & 0x0f;
-
-    _delay((unsigned long)((10)*(4000000/4000000.0)));
-    PORTCbits.RC2 = 1;
-    _delay((unsigned long)((10)*(4000000/4000000.0)));
-    PORTCbits.RC2 = 0;
-
-    TRISD |= 0x0f;
-
-    return;
+void LCD_CHAR4(char a){
+    char temp, y;
+    temp = a & 0x0F;
+    y = a & 0xF0;
+    PORTDbits.RD2 = 1;
+    LCD_PORT4(y >> 4);
+    PORTDbits.RD3 = 1;
+    _delay((unsigned long)((40)*(8000000/4000000.0)));
+    PORTDbits.RD3 = 0;
+    LCD_PORT4(temp);
+    PORTDbits.RD3 = 1;
+    _delay((unsigned long)((40)*(8000000/4000000.0)));
+    PORTDbits.RD3 = 0;
 }
-void LCD_XY4(unsigned char x, unsigned char y){
-    if(x>0){
-        LCD_COM4(0xC0 + y);
-    }
-    else{
-        LCD_COM4(0x80 + y);
-    }
-    return;
-
+void LCD_STRING4(char *a){
+    int i;
+    for (i = 0; a[i] != '\0'; i++)
+        LCD_CHAR4(a[i]);
 }
-void LCD_CADENA4(const char *dato){
-    while(*dato){
-        _delay((unsigned long)((100)*(4000000/4000000.0)));
-        LCD_DATA4(*dato);
-        dato++;
-    }
-    return;
+void LCD_RIGHT4(void){
+    LCD_COM4(0x01);
+    LCD_COM4(0x0C);
 }
-void LCD_DATA4(char data){
-    _delay((unsigned long)((100)*(4000000/4000000.0)));
-
-    PORTD &= 0xf0;
-    TRISD &= 0xf0;
-
-    PORTD = PORTD | ((data>>4) & 0x0f);
-
-    PORTCbits.RC1 = 0;
-    PORTCbits.RC0 = 1;
-    _delay((unsigned long)((10)*(4000000/4000000.0)));
-    PORTCbits.RC2 = 1;
-    _delay((unsigned long)((10)*(4000000/4000000.0)));
-    PORTCbits.RC2 = 0;
-
-    PORTD &= 0xf0;
-    PORTD |= data & 0x0f;
-
-    _delay((unsigned long)((10)*(4000000/4000000.0)));
-    PORTCbits.RC2 = 1;
-    _delay((unsigned long)((10)*(4000000/4000000.0)));
-    PORTCbits.RC2 = 0;
-
-    TRISD |= 0x0f;
-    return;
+void LCD_LEFT4(void){
+    LCD_COM4(0x01);
+    LCD_COM4(0x08);
 }
