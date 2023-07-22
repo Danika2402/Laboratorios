@@ -54,6 +54,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
 "1141
 [v _RCREG `Vuc ~T0 @X0 0 e@26 ]
+[v F36 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
+[v __delay `JF36 ~T0 @X0 0 e ]
+[p i __delay ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc/pic16f887.h
 [; <" INDF equ 00h ;# ">
 "62
@@ -314,19 +318,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _USART_READ ]
 [f ]
-"42
-[; ;USART.c: 42:     if(PIR1bits.RCIF == 1){
+"43
+[; ;USART.c: 43:     if(PIR1bits.RCIF == 1){
 [e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 148  ]
 {
-"43
-[; ;USART.c: 43:         return RCREG;
+"44
+[; ;USART.c: 44:         return RCREG;
 [e ) -> _RCREG `uc ]
 [e $UE 147  ]
-"44
-[; ;USART.c: 44:     }
+"45
+[; ;USART.c: 45:     }
 }
 [e :U 148 ]
-"45
-[; ;USART.c: 45: }
+"46
+[; ;USART.c: 46:     _delay((unsigned long)((1)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"47
+[; ;USART.c: 47: }
 [e :UE 147 ]
 }

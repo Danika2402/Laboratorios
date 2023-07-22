@@ -8,7 +8,7 @@
 
 #include <stdint.h>
 #include <xc.h>
-#include "USART.H"
+#include "USART.h"
 #define _XTAL_FREQ  8000000
 
 void USART_INIT(uint16_t BAUD){
@@ -39,7 +39,9 @@ void USART_WRITE(char *c){
     }
 }
 char USART_READ(){
+    //RCIF = 1;
     if(PIR1bits.RCIF == 1){
         return RCREG;
     }
+    __delay_us(1);
 }

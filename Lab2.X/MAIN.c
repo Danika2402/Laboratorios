@@ -57,22 +57,26 @@ void main(void) {
         decena += 48;
         unidad += 48;
         
-        cont = USART_READ();
+        //if(PIR1bits.RCIF == 1){
+            cont = USART_READ();
+        //}
         
         if(cont == '+'){
             PORTA++;
         }else if(cont == '-'){
             PORTA--;
         }
+        cont = 0;
         
         if(old_pot != POT){
             USART_WRITE("\n\r+ Aumentar contador\n\r");
             USART_WRITE("- Disminuir contador\n\r");
-            USART_WRITE("Voltaje de POT:");
+            USART_WRITE("Voltaje de POT: ");
             USART_CHAR(centena);
             USART_WRITE(".");
             USART_CHAR(decena);
             USART_CHAR(unidad);
+            USART_WRITE("V");
             USART_WRITE("\n\r\n\r");
         }
         
@@ -135,8 +139,15 @@ void setup(void){
     
     ADCON0bits.ADON = 1;    //Habilito modulo ADC 
     __delay_us(50);
-    ADCON0bits.GO_nDONE = 0;
+    ADCON0bits.GO_nDONE = 1;
     
+    POT = 0;
+    cont = 0;
+    unidad = 0; 
+    decena = 0;
+    centena = 0;
+    old_pot = 0;
+
     LCD_INIT8();
     USART_INIT(9600);
     return;

@@ -2637,10 +2637,10 @@ extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
 # 10 "USART.c" 2
 
-# 1 "./USART.H" 1
-# 14 "./USART.H"
+# 1 "./USART.h" 1
+# 14 "./USART.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdint.h" 1 3
-# 14 "./USART.H" 2
+# 14 "./USART.h" 2
 
 
 
@@ -2680,7 +2680,9 @@ void USART_WRITE(char *c){
     }
 }
 char USART_READ(){
+
     if(PIR1bits.RCIF == 1){
         return RCREG;
     }
+    _delay((unsigned long)((1)*(8000000/4000000.0)));
 }
