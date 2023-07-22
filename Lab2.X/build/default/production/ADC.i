@@ -2652,17 +2652,22 @@ int ADC_GET_CHANNEL();
 
 uint8_t DECENA(unsigned char c);
 uint8_t UNIDAD(unsigned char c);
+uint8_t CENTENA(unsigned char c);
 # 10 "ADC.c" 2
 
 
 
+uint8_t CENTENA(unsigned char c){
+    c = (uint8_t)((c*1.9607)/100);
+    return c;
+}
 uint8_t DECENA(unsigned char c){
-    c = (uint8_t)(c % 16);
+    c = (uint8_t)((c*1.9607) - CENTENA(c)*100)/10;
     return c;
 }
 
 uint8_t UNIDAD(unsigned char c){
-    c = (uint8_t)((c/16) % 16);
+    c = (uint8_t)((c*1.9607) - CENTENA(c)*100 - DECENA(c)*10);
     return c;
 }
 
@@ -2845,6 +2850,7 @@ int ADC_READ(){
             ADCON0bits.GO = 1;
         }
     }
+    _delay((unsigned long)((1)*(8000000/4000000.0)));
 
 }
 

@@ -1,4 +1,4 @@
-# 1 "LCD.c"
+# 1 "USART.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "LCD.c" 2
+# 1 "USART.c" 2
+
 
 
 
@@ -147,7 +148,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 8 "LCD.c" 2
+# 9 "USART.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
@@ -2634,77 +2635,52 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 9 "LCD.c" 2
+# 10 "USART.c" 2
 
-# 1 "./LCD.h" 1
-# 14 "./LCD.h"
+# 1 "./USART.H" 1
+# 14 "./USART.H"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdint.h" 1 3
-# 14 "./LCD.h" 2
-# 28 "./LCD.h"
-void LCD_PORT8(char a);
-void LCD_COM8(char a);
-void LCD_CLEAR8(void);
-void LCD_XY8(char x, char y);
-void LCD_INIT8(void);
-void LCD_CHAR8(char a);
-void LCD_STRING8(char *a);
-void LCD_RIGHT8(void);
-void LCD_LEFT8(void);
-# 10 "LCD.c" 2
+# 14 "./USART.H" 2
 
 
 
-void LCD_PORT8(char a){
-    PORTD = a;
-}
-void LCD_COM8(char a){
-    RC0 = 0;
-    LCD_PORT8(a);
-    RC1 = 1;
-    _delay((unsigned long)((5)*(8000000/4000.0)));
-    RC1 = 0;
-}
-void LCD_CLEAR8(void){
-    LCD_PORT8(0);
-    LCD_PORT8(1);
-}
-void LCD_XY8(char x, char y){
-    if(x == 1)
-   LCD_COM8(0x80 + y);
- else if(x == 2)
-  LCD_COM8(0xC0 + y);
-}
-void LCD_INIT8(void){
-    LCD_PORT8(0x00);
- RC0 = 0;
- _delay((unsigned long)((25)*(8000000/4000.0)));
+void USART_INIT(uint16_t BAUD);
+void USART_CHAR(char d);
+void USART_WRITE(char *c);
+char USART_READ();
+# 11 "USART.c" 2
 
-    LCD_COM8(0x30);
-  _delay((unsigned long)((5)*(8000000/4000.0)));
-    LCD_COM8(0x30);
-      _delay((unsigned long)((15)*(8000000/4000.0)));
-    LCD_COM8(0x30);
 
-    LCD_COM8(0x38);
-    LCD_COM8(0x0C);
-    LCD_COM8(0x01);
-    LCD_COM8(0x06);
+
+void USART_INIT(uint16_t BAUD){
+    unsigned char n;
+    n = ((8000000/BAUD)/4) -1;
+
+    TXSTAbits.SYNC = 0;
+    TXSTAbits.BRGH = 1;
+    BAUDCTLbits.BRG16 = 1;
+
+    SPBRG = n;
+    SPBRGH = 0;
+
+    RCSTAbits.SPEN = 1;
+    TXSTAbits.TX9 = 0;
+    RCSTAbits.RX9 = 0;
+    TXSTAbits.TXEN = 1;
+    RCSTAbits.CREN = 1;
 }
-void LCD_CHAR8(char a){
-    RC0 = 1;
-    LCD_PORT8(a);
-    RC1 = 1;
-   _delay((unsigned long)((4)*(8000000/4000.0)));
-    RC1 = 0;
+void USART_CHAR(char d){
+    while(TXSTAbits.TRMT == 0);
+    TXREG = d;
 }
-void LCD_STRING8(char *a){
-    int i;
- for(i=0;a[i]!='\0';i++)
-  LCD_CHAR8(a[i]);
+void USART_WRITE(char *c){
+    while(*c != '\0'){
+        USART_CHAR(*c);
+        c++;
+    }
 }
-void LCD_RIGHT8(void){
-    LCD_COM8(0x1C);
-}
-void LCD_LEFT8(void){
-    LCD_COM8(0x18);
+char USART_READ(){
+    if(PIR1bits.RCIF == 1){
+        return RCREG;
+    }
 }

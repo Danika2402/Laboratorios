@@ -1,4 +1,4 @@
-# 1 "Pre_lab.c"
+# 1 "MAIN.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Pre_lab.c" 2
-# 13 "Pre_lab.c"
+# 1 "MAIN.c" 2
+# 13 "MAIN.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -156,7 +156,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 27 "Pre_lab.c" 2
+# 27 "MAIN.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
@@ -2643,26 +2643,23 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 28 "Pre_lab.c" 2
+# 28 "MAIN.c" 2
 
 # 1 "./LCD.h" 1
 # 14 "./LCD.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdint.h" 1 3
 # 14 "./LCD.h" 2
-
-
-
-
-void LCD_PORT4(char a);
-void LCD_COM4(char a);
-void LCD_CLEAR4(void);
-void LCD_XY4(char x, char y);
-void LCD_INIT4(void);
-void LCD_CHAR4(char a);
-void LCD_STRING4(char *a);
-void LCD_RIGHT4(void);
-void LCD_LEFT4(void);
-# 29 "Pre_lab.c" 2
+# 28 "./LCD.h"
+void LCD_PORT8(char a);
+void LCD_COM8(char a);
+void LCD_CLEAR8(void);
+void LCD_XY8(char x, char y);
+void LCD_INIT8(void);
+void LCD_CHAR8(char a);
+void LCD_STRING8(char *a);
+void LCD_RIGHT8(void);
+void LCD_LEFT8(void);
+# 29 "MAIN.c" 2
 
 # 1 "./ADC.h" 1
 # 14 "./ADC.h"
@@ -2680,14 +2677,29 @@ int ADC_GET_CHANNEL();
 
 uint8_t DECENA(unsigned char c);
 uint8_t UNIDAD(unsigned char c);
-# 30 "Pre_lab.c" 2
+uint8_t CENTENA(unsigned char c);
+# 30 "MAIN.c" 2
 
+# 1 "./USART.h" 1
+# 14 "./USART.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdint.h" 1 3
+# 14 "./USART.h" 2
+
+
+
+void USART_INIT(uint16_t BAUD);
+void USART_CHAR(char d);
+void USART_WRITE(char *c);
+char USART_READ();
+# 31 "MAIN.c" 2
 
 
 
 
 uint8_t POT;
+char cont;
 uint8_t unidad, decena,centena;
+char old_pot;
 
 void setup(void);
 
@@ -2695,25 +2707,66 @@ void main(void) {
 
     setup();
     while(1){
-
+        old_pot = POT;
         POT = ADC_READ();
-        centena = (uint8_t)((POT*1.9607)/100);
-        decena = (uint8_t)((POT*1.9607) - centena*100)/10;
-        unidad = (uint8_t)((POT*1.9607) - centena*100 - decena*10);
+
+
+
+
+        centena = CENTENA(POT);
+        decena = DECENA(POT);
+        unidad = UNIDAD(POT);
 
         centena += 48;
         decena += 48;
         unidad += 48;
 
-        LCD_CLEAR4();
-        LCD_XY4(1,1);
-        LCD_STRING4("POTENCIOMETRO");
-        LCD_XY4(2,1);
-        LCD_CHAR4(centena);
-        LCD_STRING4(".");
-        LCD_CHAR4(decena);
-        LCD_CHAR4(unidad);
-# 101 "Pre_lab.c"
+        cont = USART_READ();
+
+        if(cont == '+'){
+            PORTA++;
+        }else if(cont == '-'){
+            PORTA--;
+        }
+
+        if(old_pot != POT){
+            USART_WRITE("\n\r+ Aumentar contador\n\r");
+            USART_WRITE("- Disminuir contador\n\r");
+            USART_WRITE("Voltaje de POT:");
+            USART_CHAR(centena);
+            USART_WRITE(".");
+            USART_CHAR(decena);
+            USART_CHAR(unidad);
+            USART_WRITE("\n\r\n\r");
+        }
+
+        LCD_CLEAR8();
+        LCD_XY8(1,1);
+        LCD_STRING8("POT");
+        LCD_XY8(2,1);
+        LCD_CHAR8(centena);
+        LCD_STRING8(".");
+        LCD_CHAR8(decena);
+        LCD_CHAR8(unidad);
+        LCD_STRING8("V");
+
+        centena = CENTENA(PORTA);
+        decena = DECENA(PORTA);
+        unidad = UNIDAD(PORTA);
+
+        centena += 48;
+        decena += 48;
+        unidad += 48;
+
+        LCD_XY8(1,10);
+        LCD_STRING8("CPU:");
+        LCD_XY8(2,10);
+        LCD_CHAR8(centena);
+        LCD_STRING8(".");
+        LCD_CHAR8(decena);
+        LCD_CHAR8(unidad);
+        LCD_STRING8("V");
+
     }
     return;
 }
@@ -2723,14 +2776,13 @@ void setup(void){
     ANSEL = 0b00100000;
     ANSELH = 0x00;
 
-
+    TRISA = 0x00;
     TRISD = 0x00;
+    TRISC = 0b10000000;
 
-
-
-
+    PORTA = 0x00;
     PORTD = 0x00;
-
+    PORTC = 0X00;
 
     OSCILLATOR(1);
 
@@ -2747,8 +2799,9 @@ void setup(void){
 
     ADCON0bits.ADON = 1;
     _delay((unsigned long)((50)*(8000000/4000000.0)));
-    ADCON0bits.GO_nDONE = 1;
+    ADCON0bits.GO_nDONE = 0;
 
-    LCD_INIT4();
+    LCD_INIT8();
+    USART_INIT(9600);
     return;
 }

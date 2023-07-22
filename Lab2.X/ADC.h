@@ -12,7 +12,7 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h>
-#include <pic16f887.h>
+#include <proc/pic16f887.h>
 
 void OSCILLATOR(uint8_t f);
 
@@ -23,6 +23,7 @@ int ADC_GET_CHANNEL();//en que canal estamos
 
 uint8_t DECENA(unsigned char c);
 uint8_t UNIDAD(unsigned char c);
+uint8_t CENTENA(unsigned char c);
 
 #endif	/* ADC_H */
 

@@ -1,0 +1,332 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"2563 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc/pic16f887.h
+[s S99 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S99 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"2573
+[s S100 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S100 . TXD8 . nTX8 ]
+"2578
+[s S101 :6 `uc 1 :1 `uc 1 ]
+[n S101 . . TX8_9 ]
+"2562
+[u S98 `S99 1 `S100 1 `S101 1 ]
+[n S98 . . . . ]
+"2583
+[v _TXSTAbits `VS98 ~T0 @X0 0 e@152 ]
+"3342
+[s S131 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S131 . ABDEN WUE . BRG16 SCKP . RCIDL ABDOVF ]
+"3341
+[u S130 `S131 1 ]
+[n S130 . . ]
+"3353
+[v _BAUDCTLbits `VS130 ~T0 @X0 0 e@391 ]
+"2643
+[v _SPBRG `Vuc ~T0 @X0 0 e@153 ]
+"2705
+[v _SPBRGH `Vuc ~T0 @X0 0 e@154 ]
+"1045
+[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S37 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"1055
+[s S38 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S38 . RCD8 . RC9 ]
+"1060
+[s S39 :6 `uc 1 :1 `uc 1 ]
+[n S39 . . nRC8 ]
+"1064
+[s S40 :6 `uc 1 :1 `uc 1 ]
+[n S40 . . RC8_9 ]
+"1044
+[u S36 `S37 1 `S38 1 `S39 1 `S40 1 ]
+[n S36 . . . . . ]
+"1069
+[v _RCSTAbits `VS36 ~T0 @X0 0 e@24 ]
+"1134
+[v _TXREG `Vuc ~T0 @X0 0 e@25 ]
+"544
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"543
+[u S18 `S19 1 ]
+[n S18 . . ]
+"554
+[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
+"1141
+[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
+"55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc/pic16f887.h
+[; <" INDF equ 00h ;# ">
+"62
+[; <" TMR0 equ 01h ;# ">
+"69
+[; <" PCL equ 02h ;# ">
+"76
+[; <" STATUS equ 03h ;# ">
+"162
+[; <" FSR equ 04h ;# ">
+"169
+[; <" PORTA equ 05h ;# ">
+"231
+[; <" PORTB equ 06h ;# ">
+"293
+[; <" PORTC equ 07h ;# ">
+"355
+[; <" PORTD equ 08h ;# ">
+"417
+[; <" PORTE equ 09h ;# ">
+"455
+[; <" PCLATH equ 0Ah ;# ">
+"462
+[; <" INTCON equ 0Bh ;# ">
+"540
+[; <" PIR1 equ 0Ch ;# ">
+"596
+[; <" PIR2 equ 0Dh ;# ">
+"653
+[; <" TMR1 equ 0Eh ;# ">
+"660
+[; <" TMR1L equ 0Eh ;# ">
+"667
+[; <" TMR1H equ 0Fh ;# ">
+"674
+[; <" T1CON equ 010h ;# ">
+"768
+[; <" TMR2 equ 011h ;# ">
+"775
+[; <" T2CON equ 012h ;# ">
+"846
+[; <" SSPBUF equ 013h ;# ">
+"853
+[; <" SSPCON equ 014h ;# ">
+"923
+[; <" CCPR1 equ 015h ;# ">
+"930
+[; <" CCPR1L equ 015h ;# ">
+"937
+[; <" CCPR1H equ 016h ;# ">
+"944
+[; <" CCP1CON equ 017h ;# ">
+"1041
+[; <" RCSTA equ 018h ;# ">
+"1136
+[; <" TXREG equ 019h ;# ">
+"1143
+[; <" RCREG equ 01Ah ;# ">
+"1150
+[; <" CCPR2 equ 01Bh ;# ">
+"1157
+[; <" CCPR2L equ 01Bh ;# ">
+"1164
+[; <" CCPR2H equ 01Ch ;# ">
+"1171
+[; <" CCP2CON equ 01Dh ;# ">
+"1241
+[; <" ADRESH equ 01Eh ;# ">
+"1248
+[; <" ADCON0 equ 01Fh ;# ">
+"1349
+[; <" OPTION_REG equ 081h ;# ">
+"1419
+[; <" TRISA equ 085h ;# ">
+"1481
+[; <" TRISB equ 086h ;# ">
+"1543
+[; <" TRISC equ 087h ;# ">
+"1605
+[; <" TRISD equ 088h ;# ">
+"1667
+[; <" TRISE equ 089h ;# ">
+"1705
+[; <" PIE1 equ 08Ch ;# ">
+"1761
+[; <" PIE2 equ 08Dh ;# ">
+"1818
+[; <" PCON equ 08Eh ;# ">
+"1865
+[; <" OSCCON equ 08Fh ;# ">
+"1930
+[; <" OSCTUNE equ 090h ;# ">
+"1982
+[; <" SSPCON2 equ 091h ;# ">
+"2044
+[; <" PR2 equ 092h ;# ">
+"2051
+[; <" SSPADD equ 093h ;# ">
+"2058
+[; <" SSPMSK equ 093h ;# ">
+"2063
+[; <" MSK equ 093h ;# ">
+"2180
+[; <" SSPSTAT equ 094h ;# ">
+"2349
+[; <" WPUB equ 095h ;# ">
+"2419
+[; <" IOCB equ 096h ;# ">
+"2489
+[; <" VRCON equ 097h ;# ">
+"2559
+[; <" TXSTA equ 098h ;# ">
+"2645
+[; <" SPBRG equ 099h ;# ">
+"2707
+[; <" SPBRGH equ 09Ah ;# ">
+"2777
+[; <" PWM1CON equ 09Bh ;# ">
+"2847
+[; <" ECCPAS equ 09Ch ;# ">
+"2929
+[; <" PSTRCON equ 09Dh ;# ">
+"2973
+[; <" ADRESL equ 09Eh ;# ">
+"2980
+[; <" ADCON1 equ 09Fh ;# ">
+"3014
+[; <" WDTCON equ 0105h ;# ">
+"3067
+[; <" CM1CON0 equ 0107h ;# ">
+"3132
+[; <" CM2CON0 equ 0108h ;# ">
+"3197
+[; <" CM2CON1 equ 0109h ;# ">
+"3248
+[; <" EEDATA equ 010Ch ;# ">
+"3253
+[; <" EEDAT equ 010Ch ;# ">
+"3260
+[; <" EEADR equ 010Dh ;# ">
+"3267
+[; <" EEDATH equ 010Eh ;# ">
+"3274
+[; <" EEADRH equ 010Fh ;# ">
+"3281
+[; <" SRCON equ 0185h ;# ">
+"3338
+[; <" BAUDCTL equ 0187h ;# ">
+"3390
+[; <" ANSEL equ 0188h ;# ">
+"3452
+[; <" ANSELH equ 0189h ;# ">
+"3502
+[; <" EECON1 equ 018Ch ;# ">
+"3547
+[; <" EECON2 equ 018Dh ;# ">
+"14 USART.c
+[; ;USART.c: 14: void USART_INIT(uint16_t BAUD){
+[v _USART_INIT `(v ~T0 @X0 1 ef1`ui ]
+{
+[e :U _USART_INIT ]
+[v _BAUD `ui ~T0 @X0 1 r1 ]
+[f ]
+"15
+[; ;USART.c: 15:     unsigned char n;
+[v _n `uc ~T0 @X0 1 a ]
+"16
+[; ;USART.c: 16:     n = ((8000000/BAUD)/4) -1;
+[e = _n -> - / / -> 8000000 `l -> _BAUD `l -> -> 4 `i `l -> -> 1 `i `l `uc ]
+"18
+[; ;USART.c: 18:     TXSTAbits.SYNC = 0;
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"19
+[; ;USART.c: 19:     TXSTAbits.BRGH = 1;
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+"20
+[; ;USART.c: 20:     BAUDCTLbits.BRG16 = 1;
+[e = . . _BAUDCTLbits 0 3 -> -> 1 `i `uc ]
+"22
+[; ;USART.c: 22:     SPBRG = n;
+[e = _SPBRG _n ]
+"23
+[; ;USART.c: 23:     SPBRGH = 0;
+[e = _SPBRGH -> -> 0 `i `uc ]
+"25
+[; ;USART.c: 25:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"26
+[; ;USART.c: 26:     TXSTAbits.TX9 = 0;
+[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
+"27
+[; ;USART.c: 27:     RCSTAbits.RX9 = 0;
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+"28
+[; ;USART.c: 28:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"29
+[; ;USART.c: 29:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"30
+[; ;USART.c: 30: }
+[e :UE 138 ]
+}
+"31
+[; ;USART.c: 31: void USART_CHAR(char d){
+[v _USART_CHAR `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _USART_CHAR ]
+[v _d `uc ~T0 @X0 1 r1 ]
+[f ]
+"32
+[; ;USART.c: 32:     while(TXSTAbits.TRMT == 0);
+[e $U 140  ]
+[e :U 141 ]
+[e :U 140 ]
+[e $ == -> . . _TXSTAbits 0 1 `i -> 0 `i 141  ]
+[e :U 142 ]
+"33
+[; ;USART.c: 33:     TXREG = d;
+[e = _TXREG -> _d `uc ]
+"34
+[; ;USART.c: 34: }
+[e :UE 139 ]
+}
+"35
+[; ;USART.c: 35: void USART_WRITE(char *c){
+[v _USART_WRITE `(v ~T0 @X0 1 ef1`*uc ]
+{
+[e :U _USART_WRITE ]
+[v _c `*uc ~T0 @X0 1 r1 ]
+[f ]
+"36
+[; ;USART.c: 36:     while(*c != '\0'){
+[e $U 144  ]
+[e :U 145 ]
+{
+"37
+[; ;USART.c: 37:         USART_CHAR(*c);
+[e ( _USART_CHAR (1 *U _c ]
+"38
+[; ;USART.c: 38:         c++;
+[e ++ _c * -> -> 1 `i `x -> -> # *U _c `i `x ]
+"39
+[; ;USART.c: 39:     }
+}
+[e :U 144 ]
+"36
+[; ;USART.c: 36:     while(*c != '\0'){
+[e $ != -> *U _c `ui -> 0 `ui 145  ]
+[e :U 146 ]
+"40
+[; ;USART.c: 40: }
+[e :UE 143 ]
+}
+"41
+[; ;USART.c: 41: char USART_READ(){
+[v _USART_READ `(uc ~T0 @X0 1 ef ]
+{
+[e :U _USART_READ ]
+[f ]
+"42
+[; ;USART.c: 42:     if(PIR1bits.RCIF == 1){
+[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 148  ]
+{
+"43
+[; ;USART.c: 43:         return RCREG;
+[e ) -> _RCREG `uc ]
+[e $UE 147  ]
+"44
+[; ;USART.c: 44:     }
+}
+[e :U 148 ]
+"45
+[; ;USART.c: 45: }
+[e :UE 147 ]
+}

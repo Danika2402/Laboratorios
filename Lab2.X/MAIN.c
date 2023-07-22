@@ -28,12 +28,14 @@
 #include <xc.h>
 #include "LCD.h"
 #include "ADC.h"
-
+#include "USART.h"
 
 #define _XTAL_FREQ  8000000
 //#define tmr0_value 244      //3ms
 uint8_t POT;
+char cont;
 uint8_t unidad, decena,centena;
+char old_pot;
 
 void setup(void);
 
@@ -41,63 +43,66 @@ void main(void) {
     //unsigned int a;
     setup();
     while(1){
-        
+        old_pot = POT;
         POT = ADC_READ();
-        centena = (uint8_t)((POT*1.9607)/100);
-        decena = (uint8_t)((POT*1.9607) - centena*100)/10;
-        unidad = (uint8_t)((POT*1.9607) - centena*100 - decena*10);
+        /*if (ADCON0bits.GO == 0){
+            POT= ADRESH;           
+            ADCON0bits.GO = 1;
+        }*/
+        centena = CENTENA(POT);
+        decena = DECENA(POT);
+        unidad = UNIDAD(POT);
         
         centena += 48;
         decena += 48;
         unidad += 48;
         
-        LCD_CLEAR4();
-        LCD_XY4(1,1);
-        LCD_STRING4("POTENCIOMETRO");
-        LCD_XY4(2,1);
-        LCD_CHAR4(centena);
-        LCD_STRING4(".");
-        LCD_CHAR4(decena);
-        LCD_CHAR4(unidad);
+        cont = USART_READ();
         
-        /*LCD_CLEAR4();
-        LCD_XY4(1,1);
-        LCD_STRING4("LCD Library for");
-        LCD_XY4(2,1);
-        LCD_STRING4("MPLAB XC8");
-        __delay_ms(2000);
-        LCD_CLEAR4();
-        LCD_XY4(1,1);
-        LCD_STRING4("Developed By");
-        LCD_XY4(2,1);
-        LCD_STRING4("electroSome");
-        __delay_ms(2000);
-        LCD_CLEAR4();
-        LCD_XY4(1,1);
-        LCD_STRING4("www.electroSome.com");
-
-        for(a=0;a<15;a++)
-        {
-            __delay_ms(300);
-            LCD_LEFT4();
+        if(cont == '+'){
+            PORTA++;
+        }else if(cont == '-'){
+            PORTA--;
         }
-
-        for(a=0;a<15;a++)
-        {
-            __delay_ms(300);
-            LCD_RIGHT4();
+        
+        if(old_pot != POT){
+            USART_WRITE("\n\r+ Aumentar contador\n\r");
+            USART_WRITE("- Disminuir contador\n\r");
+            USART_WRITE("Voltaje de POT:");
+            USART_CHAR(centena);
+            USART_WRITE(".");
+            USART_CHAR(decena);
+            USART_CHAR(unidad);
+            USART_WRITE("\n\r\n\r");
         }
-
-        LCD_CLEAR4();
-        LCD_XY4(2,1);
-        LCD_CHAR4('H');
-        LCD_CHAR4('o');
-        LCD_CHAR4('l');
-        LCD_CHAR4('a');
-        LCD_XY4(1,1);
-        LCD_STRING4("Hola Mundo");
-        __delay_ms(2000);*/
-
+        
+        LCD_CLEAR8();
+        LCD_XY8(1,1);
+        LCD_STRING8("POT");
+        LCD_XY8(2,1);
+        LCD_CHAR8(centena);
+        LCD_STRING8(".");
+        LCD_CHAR8(decena);
+        LCD_CHAR8(unidad);
+        LCD_STRING8("V");
+        
+        centena = CENTENA(PORTA);
+        decena = DECENA(PORTA);
+        unidad = UNIDAD(PORTA);
+        
+        centena += 48;
+        decena += 48;
+        unidad += 48;
+        
+        LCD_XY8(1,10);
+        LCD_STRING8("CPU:");
+        LCD_XY8(2,10);
+        LCD_CHAR8(centena);
+        LCD_STRING8(".");
+        LCD_CHAR8(decena);
+        LCD_CHAR8(unidad);
+        LCD_STRING8("V");
+        
     }
     return;
 }
@@ -107,14 +112,13 @@ void setup(void){
     ANSEL =  0b00100000;     //activo canal 5
     ANSELH = 0x00;
     
-    //TRISA = 0x00;
+    TRISA = 0x00;
     TRISD = 0x00;
+    TRISC = 0b10000000;
     
-    
-    //PORTA = 0x00;
-    //PORTC = 0x00;
+    PORTA = 0x00;
     PORTD = 0x00;
-    
+    PORTC = 0X00;
     //oscilador a 8M Hz
     OSCILLATOR(1);
     
@@ -131,8 +135,9 @@ void setup(void){
     
     ADCON0bits.ADON = 1;    //Habilito modulo ADC 
     __delay_us(50);
-    ADCON0bits.GO_nDONE = 1;
+    ADCON0bits.GO_nDONE = 0;
     
-    LCD_INIT4();
+    LCD_INIT8();
+    USART_INIT(9600);
     return;
 }
