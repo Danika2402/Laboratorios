@@ -7,7 +7,16 @@
 //*****************************************************************************
 /* Electronica Digital 2 - 2023
  * Laboratorio 2 - LCD
+ * Uso de un potenciometro, leds, pantalla LCD y comunicacion USART
  * 
+ * ADC = lectura de potenciometro
+ * USART = lectura del voltaje del pot y contador
+ * LCD = lectura del voltaje del pot y el contador
+ * 
+ * Funcion: con ADC leemos el voltaje del potenciometro, este valor es mostrado 
+ * en la pantalla LCD, al igual que la terminar por medio de USART, 
+ * a la ves usar la comunicacion para incrementar y decrementar un contador
+ * con el teclado de la computadora, a la ver mostrando su valor en el LCD.
 */
 //*****************************************************************************
 #pragma config  FOSC    = INTRC_NOCLKOUT
@@ -31,44 +40,47 @@
 #include "USART.h"
 
 #define _XTAL_FREQ  8000000
-//#define tmr0_value 244      //3ms
+
+//Variables utilizadas
+char old_pot;
 uint8_t POT;
 char cont;
 uint8_t unidad, decena,centena;
-char old_pot;
+
 
 void setup(void);
 
 void main(void) {
-    //unsigned int a;
+
     setup();
     while(1){
         old_pot = POT;
-        POT = ADC_READ();
-        /*if (ADCON0bits.GO == 0){
-            POT= ADRESH;           
+        
+        //POT = ADC_READ();
+        if (ADCON0bits.GO == 0){    //leemos el chanal 5 y guardamos
+            POT= ADC_READ();        //los datos en la variable
             ADCON0bits.GO = 1;
-        }*/
-        centena = CENTENA(POT);
-        decena = DECENA(POT);
+        }
+        
+        centena = CENTENA(POT);     //Aqui separamos el valor para poder
+        decena = DECENA(POT);       //imprimirlos despues
         unidad = UNIDAD(POT);
         
-        centena += 48;
-        decena += 48;
+        centena += 48;              //por ser idioma ASCII 48 significa 0
+        decena += 48;               //de esta forma obtenemos numeros y no palabras
         unidad += 48;
         
-        //if(PIR1bits.RCIF == 1){
-            cont = USART_READ();
-        //}
-        
-        if(cont == '+'){
-            PORTA++;
+        cont = USART_READ();        //leemos si recivimos algun caracter de la compu
+
+        if(cont == '+'){            //dependiendo de si es + o -
+            PORTA++;                //incrementamos o decrementamos el puerto
         }else if(cont == '-'){
-            PORTA--;
-        }
-        cont = 0;
+            PORTA--;                //reiniciamos variables para que no este 
+        }                           //continuamente incrementando o aumentado
+        cont = 0;                   
         
-        if(old_pot != POT){
+        if(old_pot != POT){         //utilizamos esta subrutina para evitar que la 
+            __delay_ms(100);        //terminal este imprimiendo todo el tiempo
             USART_WRITE("\n\r+ Aumentar contador\n\r");
             USART_WRITE("- Disminuir contador\n\r");
             USART_WRITE("Voltaje de POT: ");
@@ -78,9 +90,11 @@ void main(void) {
             USART_CHAR(unidad);
             USART_WRITE("V");
             USART_WRITE("\n\r\n\r");
+            __delay_ms(100);
         }
         
-        LCD_CLEAR8();
+        
+        LCD_CLEAR8();               //aqui imprimimos para el LCD
         LCD_XY8(1,1);
         LCD_STRING8("POT");
         LCD_XY8(2,1);
@@ -90,7 +104,7 @@ void main(void) {
         LCD_CHAR8(unidad);
         LCD_STRING8("V");
         
-        centena = CENTENA(PORTA);
+        centena = CENTENA(PORTA);   //separamos el valor del contador
         decena = DECENA(PORTA);
         unidad = UNIDAD(PORTA);
         
@@ -118,7 +132,7 @@ void setup(void){
     
     TRISA = 0x00;
     TRISD = 0x00;
-    TRISC = 0b10000000;
+    TRISC = 0b10000000;     //RX como entrada
     
     PORTA = 0x00;
     PORTD = 0x00;
@@ -141,7 +155,7 @@ void setup(void){
     __delay_us(50);
     ADCON0bits.GO_nDONE = 1;
     
-    POT = 0;
+    POT = 0;                //Estados iniciales de las variables
     cont = 0;
     unidad = 0; 
     decena = 0;

@@ -2843,14 +2843,14 @@ void ADC_INIT(int c){
     return;
 }
 int ADC_READ(){
-    ADCON0bits.GO = 1;
-    while(ADCON0bits.GO == 1){
-        if (ADCON0bits.GO == 0){
+
+
+
             return ADRESH;
-            ADCON0bits.GO = 1;
-        }
-    }
-    _delay((unsigned long)((1)*(8000000/4000000.0)));
+
+
+
+
 
 }
 

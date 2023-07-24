@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "MAIN.c" 2
-# 13 "MAIN.c"
+# 22 "MAIN.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -156,7 +156,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 27 "MAIN.c" 2
+# 36 "MAIN.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
@@ -2643,7 +2643,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 28 "MAIN.c" 2
+# 37 "MAIN.c" 2
 
 # 1 "./LCD.h" 1
 # 14 "./LCD.h"
@@ -2659,7 +2659,7 @@ void LCD_CHAR8(char a);
 void LCD_STRING8(char *a);
 void LCD_RIGHT8(void);
 void LCD_LEFT8(void);
-# 29 "MAIN.c" 2
+# 38 "MAIN.c" 2
 
 # 1 "./ADC.h" 1
 # 14 "./ADC.h"
@@ -2678,7 +2678,7 @@ int ADC_GET_CHANNEL();
 uint8_t DECENA(unsigned char c);
 uint8_t UNIDAD(unsigned char c);
 uint8_t CENTENA(unsigned char c);
-# 30 "MAIN.c" 2
+# 39 "MAIN.c" 2
 
 # 1 "./USART.h" 1
 # 14 "./USART.h"
@@ -2691,15 +2691,17 @@ void USART_INIT(uint16_t BAUD);
 void USART_CHAR(char d);
 void USART_WRITE(char *c);
 char USART_READ();
-# 31 "MAIN.c" 2
+# 40 "MAIN.c" 2
 
 
 
 
+
+char old_pot;
 uint8_t POT;
 char cont;
 uint8_t unidad, decena,centena;
-char old_pot;
+
 
 void setup(void);
 
@@ -2708,10 +2710,12 @@ void main(void) {
     setup();
     while(1){
         old_pot = POT;
-        POT = ADC_READ();
 
 
-
+        if (ADCON0bits.GO == 0){
+            POT= ADC_READ();
+            ADCON0bits.GO = 1;
+        }
 
         centena = CENTENA(POT);
         decena = DECENA(POT);
@@ -2721,9 +2725,7 @@ void main(void) {
         decena += 48;
         unidad += 48;
 
-
-            cont = USART_READ();
-
+        cont = USART_READ();
 
         if(cont == '+'){
             PORTA++;
@@ -2733,6 +2735,7 @@ void main(void) {
         cont = 0;
 
         if(old_pot != POT){
+            _delay((unsigned long)((100)*(8000000/4000.0)));
             USART_WRITE("\n\r+ Aumentar contador\n\r");
             USART_WRITE("- Disminuir contador\n\r");
             USART_WRITE("Voltaje de POT: ");
@@ -2742,6 +2745,7 @@ void main(void) {
             USART_CHAR(unidad);
             USART_WRITE("V");
             USART_WRITE("\n\r\n\r");
+            _delay((unsigned long)((100)*(8000000/4000.0)));
         }
 
         LCD_CLEAR8();

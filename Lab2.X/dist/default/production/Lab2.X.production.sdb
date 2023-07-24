@@ -53,9 +53,9 @@
 [v _LCD_CHAR8 LCD_CHAR8 `(v  1 e 1 0 ]
 "56
 [v _LCD_STRING8 LCD_STRING8 `(v  1 e 1 0 ]
-"42 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+"53 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
 [v _main main `(v  1 e 1 0 ]
-"114
+"127
 [v _setup setup `(v  1 e 1 0 ]
 "14 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
 [v _USART_INIT USART_INIT `(v  1 e 1 0 ]
@@ -71,7 +71,7 @@
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "353
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S268 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S266 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -80,9 +80,9 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "554
-[u S276 . 1 `S268 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES276  1 e 1 @12 ]
-[s S223 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S274 . 1 `S266 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES274  1 e 1 @12 ]
+[s S221 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -92,18 +92,18 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1069
-[s S232 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S230 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S236 . 1 `uc 1 . 1 0 :6:0 
+[s S234 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S239 . 1 `uc 1 . 1 0 :6:0 
+[s S237 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S242 . 1 `S223 1 . 1 0 `S232 1 . 1 0 `S236 1 . 1 0 `S239 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES242  1 e 1 @24 ]
+[u S240 . 1 `S221 1 . 1 0 `S230 1 . 1 0 `S234 1 . 1 0 `S237 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES240  1 e 1 @24 ]
 "1134
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1141
@@ -153,7 +153,7 @@
 ]
 [u S61 . 1 `S50 1 . 1 0 `S56 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES61  1 e 1 @143 ]
-[s S163 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S161 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -163,29 +163,29 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2583
-[s S172 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S170 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S176 . 1 `uc 1 . 1 0 :6:0 
+[s S174 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S179 . 1 `S163 1 . 1 0 `S172 1 . 1 0 `S176 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES179  1 e 1 @152 ]
+[u S177 . 1 `S161 1 . 1 0 `S170 1 . 1 0 `S174 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES177  1 e 1 @152 ]
 "2643
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2705
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @154 ]
-[s S355 . 1 `uc 1 . 1 0 :4:0 
+[s S381 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2992
-[u S361 . 1 `S355 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES361  1 e 1 @159 ]
-[s S200 . 1 `uc 1 ABDEN 1 0 :1:0 
+[u S387 . 1 `S381 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES387  1 e 1 @159 ]
+[s S198 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -195,8 +195,8 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "3353
-[u S209 . 1 `S200 1 . 1 0 ]
-[v _BAUDCTLbits BAUDCTLbits `VES209  1 e 1 @391 ]
+[u S207 . 1 `S198 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES207  1 e 1 @391 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
@@ -205,25 +205,25 @@
 [v _RC0 RC0 `VEb  1 e 0 @56 ]
 "4141
 [v _RC1 RC1 `VEb  1 e 0 @57 ]
-"35 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+"45 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+[v _old_pot old_pot `uc  1 e 1 0 ]
+"46
 [v _POT POT `uc  1 e 1 0 ]
-"36
+"47
 [v _cont cont `uc  1 e 1 0 ]
-"37
+"48
 [v _unidad unidad `uc  1 e 1 0 ]
 [v _decena decena `uc  1 e 1 0 ]
 [v _centena centena `uc  1 e 1 0 ]
-"38
-[v _old_pot old_pot `uc  1 e 1 0 ]
-"42
+"53
 [v _main main `(v  1 e 1 0 ]
 {
-"112
+"125
 } 0
-"114
+"127
 [v _setup setup `(v  1 e 1 0 ]
 {
-"154
+"167
 } 0
 "14 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
 [v _USART_INIT USART_INIT `(v  1 e 1 0 ]
@@ -385,17 +385,17 @@
 "8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S734 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S732 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S739 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S742 . 4 `l 1 i 4 0 `d 1 f 4 0 `S734 1 fAsBytes 4 0 `S739 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S742  1 a 4 20 ]
+[s S737 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S740 . 4 `l 1 i 4 0 `d 1 f 4 0 `S732 1 fAsBytes 4 0 `S737 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S740  1 a 4 20 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 14 ]
-[s S811 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S809 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S814 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S811 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S814  1 a 2 24 ]
+[u S812 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S809 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S812  1 a 2 24 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 19 ]
 "11

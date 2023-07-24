@@ -10,16 +10,16 @@
 #include "ADC.h"
 #define _XTAL_FREQ  8000000
 
-uint8_t CENTENA(unsigned char c){
+uint8_t CENTENA(unsigned char c){    //se separa el bit mas significativo   
     c = (uint8_t)((c*1.9607)/100);
     return c;
 }
-uint8_t DECENA(unsigned char c){         //se calcula los bits mayores en hex
+uint8_t DECENA(unsigned char c){         //se separa el bit medio significativo
     c = (uint8_t)((c*1.9607) - CENTENA(c)*100)/10;
     return c;
 }
 
-uint8_t UNIDAD(unsigned char c){         //se calcula los bits menores en hex
+uint8_t UNIDAD(unsigned char c){         // se separa el bit menos significativo
     c = (uint8_t)((c*1.9607) - CENTENA(c)*100 - DECENA(c)*10);
     return c;
 }
@@ -196,14 +196,14 @@ void ADC_INIT(int c){               //Seleccion de canales
     return;
 }
 int ADC_READ(){                     //funcion que lee el potenciometro
-    ADCON0bits.GO = 1;
-    while(ADCON0bits.GO == 1){
-        if (ADCON0bits.GO == 0){
+    //ADCON0bits.GO = 1;
+    //while(ADCON0bits.GO == 1){
+        //if (ADCON0bits.GO == 0){
             return ADRESH;           
-            ADCON0bits.GO = 1;
-        }
-    }
-    __delay_us(1);
+            //ADCON0bits.GO = 1;
+        //}
+    //}
+    //__delay_us(1);
     //return;
 }
 

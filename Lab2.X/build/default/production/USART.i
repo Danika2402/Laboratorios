@@ -2671,7 +2671,7 @@ void USART_INIT(uint16_t BAUD){
 }
 void USART_CHAR(char d){
     while(TXSTAbits.TRMT == 0);
-    TXREG = d;
+        TXREG = d;
 }
 void USART_WRITE(char *c){
     while(*c != '\0'){
@@ -2684,5 +2684,5 @@ char USART_READ(){
     if(PIR1bits.RCIF == 1){
         return RCREG;
     }
-    _delay((unsigned long)((1)*(8000000/4000000.0)));
+    _delay((unsigned long)((100)*(8000000/4000.0)));
 }

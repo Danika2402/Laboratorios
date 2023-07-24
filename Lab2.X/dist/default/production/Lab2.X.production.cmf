@@ -11,46 +11,46 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\HP\AppData\Local\Temp\xcAsg3k.o
+$C:\Users\HP\AppData\Local\Temp\xcAs4mo.o
 idloc IDLOC 5 2000 2000 4 2 1
 end_init CODE 0 0 0 3 2 1
 config CONFIG 4 2007 2007 2 2 1
 $dist/default/production\Lab2.X.production.o
 cinit CODE 0 7F4 7F4 C 2 1
 idloc IDLOC 5 2000 2000 4 2 1
-text1 CODE 0 86D 86D 4D 2 1
-text2 CODE 0 908 908 59 2 1
-text3 CODE 0 B5F B5F 9D 2 1
-text4 CODE 0 17B4 17B4 4C 2 1
-text5 CODE 0 8BA 8BA 4E 2 1
-text6 CODE 0 AC3 AC3 9C 2 1
-text7 CODE 0 16FE 16FE 1F 2 1
-text8 CODE 0 16A6 16A6 C 2 1
-text9 CODE 0 169C 169C A 2 1
-text10 CODE 0 D8F D8F 112 2 1
-text11 CODE 0 CB6 CB6 D9 2 1
-text12 CODE 0 178D 178D 27 2 1
-text13 CODE 0 171D 171D 24 2 1
+text1 CODE 0 17B3 17B3 4D 2 1
+text2 CODE 0 8DF 8DF 59 2 1
+text3 CODE 0 B36 B36 9D 2 1
+text4 CODE 0 1767 1767 4C 2 1
+text5 CODE 0 891 891 4E 2 1
+text6 CODE 0 A9A A9A 9C 2 1
+text7 CODE 0 16D8 16D8 1F 2 1
+text8 CODE 0 1680 1680 C 2 1
+text9 CODE 0 168C 168C 16 2 1
+text10 CODE 0 D66 D66 112 2 1
+text11 CODE 0 C8D C8D D9 2 1
+text12 CODE 0 86A 86A 27 2 1
+text13 CODE 0 16F7 16F7 24 2 1
 text14 CODE 0 1FB 1FB 298 2 1
-text15 CODE 0 A38 A38 8B 2 1
-text16 CODE 0 961 961 5B 2 1
-text17 CODE 0 BFC BFC BA 2 1
-text18 CODE 0 9BC 9BC 7C 2 1
+text15 CODE 0 A0F A0F 8B 2 1
+text16 CODE 0 938 938 5B 2 1
+text17 CODE 0 BD3 BD3 BA 2 1
+text18 CODE 0 993 993 7C 2 1
 text19 CODE 0 493 493 361 2 1
-text20 CODE 0 1766 1766 27 2 1
+text20 CODE 0 1740 1740 27 2 1
 text21 CODE 0 1E 1E 1DD 2 1
-text22 CODE 0 16E2 16E2 1C 2 1
+text22 CODE 0 16BC 16BC 1C 2 1
 text23 CODE 0 4 4 1A 2 1
-text24 CODE 0 1741 1741 25 2 1
-text25 CODE 0 16C8 16C8 1A 2 1
-text26 CODE 0 860 860 D 2 1
-text27 CODE 0 85A 85A 6 2 1
-text28 CODE 0 16B2 16B2 16 2 1
-maintext CODE 0 EA1 EA1 15F 2 1
+text24 CODE 0 171B 171B 25 2 1
+text25 CODE 0 16A2 16A2 1A 2 1
+text26 CODE 0 85D 85D D 2 1
+text27 CODE 0 1670 1670 6 2 1
+text28 CODE 0 1676 1676 A 2 1
+maintext CODE 0 E78 E78 188 2 1
 cstackCOMMON COMMON 1 70 70 E 1 1
 cstackBANK0 BANK0 1 20 20 50 1 1
-cstackBANK1 BANK1 1 A0 A0 28 1 1
-bssBANK1 BANK1 1 C8 C8 6 1 1
+cstackBANK1 BANK1 1 A0 A0 2A 1 1
+bssBANK1 BANK1 1 CA CA 6 1 1
 strings STRING 0 800 800 58 2 1
 config CONFIG 4 2007 2007 2 2 1
 # %UNUSED Section
@@ -59,23 +59,23 @@ config CONFIG 4 2007 2007 2 2 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM CE-EF 1
+RAM D0-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK1 CE-EF 1
+BANK1 D0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 858-859 2
-CONST 1000-169B 2
+CONST 858-85C 2
+CONST 1000-166F 2
 CONST 1800-1FFF 2
 ENTRY 3-3 2
-ENTRY 858-859 2
-ENTRY 1000-169B 2
+ENTRY 858-85C 2
+ENTRY 1000-166F 2
 ENTRY 1800-1FFF 2
 CODE 3-3 2
-CODE 858-859 2
-CODE 1000-169B 2
+CODE 858-85C 2
+CODE 1000-166F 2
 CODE 1800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -83,12 +83,12 @@ SFR2 100-10F 1
 SFR3 180-18F 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 858-859 2
-STRCODE 1000-169B 2
+STRCODE 858-85C 2
+STRCODE 1000-166F 2
 STRCODE 1800-1FFF 2
 STRING 3-3 2
-STRING 858-859 2
-STRING 1000-169B 2
+STRING 858-85C 2
+STRING 1000-166F 2
 STRING 1800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -104,48 +104,42 @@ STRING 1800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab2.X.production.o
-7F4 cinit CODE >1116:C:\Users\HP\AppData\Local\Temp\xcAsg3k.s
-7F4 cinit CODE >1119:C:\Users\HP\AppData\Local\Temp\xcAsg3k.s
-7F4 cinit CODE >1145:C:\Users\HP\AppData\Local\Temp\xcAsg3k.s
-7F5 cinit CODE >1146:C:\Users\HP\AppData\Local\Temp\xcAsg3k.s
-7F6 cinit CODE >1147:C:\Users\HP\AppData\Local\Temp\xcAsg3k.s
-7F7 cinit CODE >1148:C:\Users\HP\AppData\Local\Temp\xcAsg3k.s
-7F8 cinit CODE >1149:C:\Users\HP\AppData\Local\Temp\xcAsg3k.s
-7F9 cinit CODE >1150:C:\Users\HP\AppData\Local\Temp\xcAsg3k.s
-7FA cinit CODE >1151:C:\Users\HP\AppData\Local\Temp\xcAsg3k.s
-7FB cinit CODE >1152:C:\Users\HP\AppData\Local\Temp\xcAsg3k.s
-7FC cinit CODE >1158:C:\Users\HP\AppData\Local\Temp\xcAsg3k.s
-7FC cinit CODE >1160:C:\Users\HP\AppData\Local\Temp\xcAsg3k.s
-7FD cinit CODE >1161:C:\Users\HP\AppData\Local\Temp\xcAsg3k.s
-16B2 text28 CODE >198:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-16B2 text28 CODE >199:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-16B5 text28 CODE >200:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-16B6 text28 CODE >201:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-16BA text28 CODE >202:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-16C2 text28 CODE >200:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-16C2 text28 CODE >205:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-16C6 text28 CODE >206:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-16C7 text28 CODE >208:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-85A text27 CODE >13:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-85B text27 CODE >14:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-85F text27 CODE >15:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-860 text26 CODE >23:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-860 text26 CODE >24:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-866 text26 CODE >25:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-86C text26 CODE >26:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-16C8 text25 CODE >49:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-16C9 text25 CODE >50:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-16CC text25 CODE >51:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-16D2 text25 CODE >52:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-16D5 text25 CODE >53:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-16DE text25 CODE >54:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-16E1 text25 CODE >55:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-1741 text24 CODE >56:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-1742 text24 CODE >58:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-1745 text24 CODE >59:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-1754 text24 CODE >59:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-1761 text24 CODE >59:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-1765 text24 CODE >60:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+7F4 cinit CODE >1116:C:\Users\HP\AppData\Local\Temp\xcAs4mo.s
+7F4 cinit CODE >1119:C:\Users\HP\AppData\Local\Temp\xcAs4mo.s
+7F4 cinit CODE >1145:C:\Users\HP\AppData\Local\Temp\xcAs4mo.s
+7F5 cinit CODE >1146:C:\Users\HP\AppData\Local\Temp\xcAs4mo.s
+7F6 cinit CODE >1147:C:\Users\HP\AppData\Local\Temp\xcAs4mo.s
+7F7 cinit CODE >1148:C:\Users\HP\AppData\Local\Temp\xcAs4mo.s
+7F8 cinit CODE >1149:C:\Users\HP\AppData\Local\Temp\xcAs4mo.s
+7F9 cinit CODE >1150:C:\Users\HP\AppData\Local\Temp\xcAs4mo.s
+7FA cinit CODE >1151:C:\Users\HP\AppData\Local\Temp\xcAs4mo.s
+7FB cinit CODE >1152:C:\Users\HP\AppData\Local\Temp\xcAs4mo.s
+7FC cinit CODE >1158:C:\Users\HP\AppData\Local\Temp\xcAs4mo.s
+7FC cinit CODE >1160:C:\Users\HP\AppData\Local\Temp\xcAs4mo.s
+7FD cinit CODE >1161:C:\Users\HP\AppData\Local\Temp\xcAs4mo.s
+1676 text28 CODE >198:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1676 text28 CODE >202:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+167F text28 CODE >208:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1670 text27 CODE >13:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+1671 text27 CODE >14:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+1675 text27 CODE >15:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+85D text26 CODE >23:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+85D text26 CODE >24:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+863 text26 CODE >25:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+869 text26 CODE >26:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+16A2 text25 CODE >49:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+16A3 text25 CODE >50:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+16A6 text25 CODE >51:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+16AC text25 CODE >52:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+16AF text25 CODE >53:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+16B8 text25 CODE >54:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+16BB text25 CODE >55:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+171B text24 CODE >56:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+171C text24 CODE >58:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+171F text24 CODE >59:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+172E text24 CODE >59:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+173B text24 CODE >59:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+173F text24 CODE >60:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
 4 text23 CODE >16:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
 5 text23 CODE >17:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
 8 text23 CODE >18:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
@@ -153,12 +147,12 @@ E text23 CODE >19:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digita
 11 text23 CODE >20:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
 1A text23 CODE >21:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
 1D text23 CODE >22:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-16E2 text22 CODE >27:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-16E3 text22 CODE >28:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-16E8 text22 CODE >29:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-16F0 text22 CODE >30:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-16F6 text22 CODE >31:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-16FD text22 CODE >32:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+16BC text22 CODE >27:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+16BD text22 CODE >28:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+16C2 text22 CODE >29:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+16CA text22 CODE >30:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+16D0 text22 CODE >31:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+16D7 text22 CODE >32:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
 1E text21 CODE >8:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcdiv.c
 1E text21 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcdiv.c
 25 text21 CODE >27:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcdiv.c
@@ -273,20 +267,20 @@ FC text21 CODE >112:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\
 1F0 text21 CODE >182:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcdiv.c
 1F5 text21 CODE >183:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcdiv.c
 1FA text21 CODE >185:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcdiv.c
-1766 text20 CODE >4:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
-1767 text20 CODE >5:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
-1769 text20 CODE >6:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
-1770 text20 CODE >51:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
-1774 text20 CODE >52:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
-1776 text20 CODE >52:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
-177A text20 CODE >53:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
-177A text20 CODE >54:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
-177B text20 CODE >54:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
-177F text20 CODE >54:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
-1781 text20 CODE >55:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
-1783 text20 CODE >56:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
-1788 text20 CODE >59:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
-178C text20 CODE >60:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+1740 text20 CODE >4:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+1741 text20 CODE >5:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+1743 text20 CODE >6:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+174A text20 CODE >51:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+174E text20 CODE >52:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+1750 text20 CODE >52:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+1754 text20 CODE >53:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+1754 text20 CODE >54:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+1755 text20 CODE >54:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+1759 text20 CODE >54:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+175B text20 CODE >55:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+175D text20 CODE >56:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+1762 text20 CODE >59:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
+1766 text20 CODE >60:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul8_16.c
 493 text19 CODE >8:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcmul.c
 493 text19 CODE >17:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcmul.c
 49A text19 CODE >18:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcmul.c
@@ -491,120 +485,120 @@ FC text21 CODE >112:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\
 7E7 text19 CODE >201:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcmul.c
 7EB text19 CODE >203:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcmul.c
 7F3 text19 CODE >205:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcmul.c
-9BC text18 CODE >43:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-9BC text18 CODE >47:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-9C9 text18 CODE >48:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-9D2 text18 CODE >49:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-9DB text18 CODE >49:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-9E1 text18 CODE >49:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-9E7 text18 CODE >50:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-9E8 text18 CODE >51:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-9F0 text18 CODE >52:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-9F2 text18 CODE >53:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-9F6 text18 CODE >54:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-9F9 text18 CODE >54:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-9FE text18 CODE >57:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-9FF text18 CODE >57:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A05 text18 CODE >57:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A07 text18 CODE >58:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A10 text18 CODE >60:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A12 text18 CODE >60:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A17 text18 CODE >63:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A19 text18 CODE >63:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A20 text18 CODE >64:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A22 text18 CODE >62:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A22 text18 CODE >65:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A27 text18 CODE >67:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A2C text18 CODE >68:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A31 text18 CODE >68:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A33 text18 CODE >68:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A35 text18 CODE >68:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-A37 text18 CODE >70:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
-BFC text17 CODE >10:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-BFD text17 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C06 text17 CODE >16:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C0F text17 CODE >16:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C11 text17 CODE >16:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C13 text17 CODE >16:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C15 text17 CODE >17:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C16 text17 CODE >19:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C1E text17 CODE >20:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C1E text17 CODE >21:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C22 text17 CODE >21:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C26 text17 CODE >22:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C2F text17 CODE >23:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C33 text17 CODE >24:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C34 text17 CODE >25:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C38 text17 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C39 text17 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C3F text17 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C41 text17 CODE >24:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C48 text17 CODE >29:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C4C text17 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C4F text17 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C53 text17 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C57 text17 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C5A text17 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C5B text17 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C61 text17 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C63 text17 CODE >28:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C63 text17 CODE >32:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C6A text17 CODE >34:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C6C text17 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C6E text17 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C75 text17 CODE >33:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C7B text17 CODE >33:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C7F text17 CODE >37:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C83 text17 CODE >38:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C8B text17 CODE >39:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C8D text17 CODE >40:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C93 text17 CODE >40:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-C99 text17 CODE >40:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-CA3 text17 CODE >41:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-CAC text17 CODE >42:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-CAD text17 CODE >43:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-CB5 text17 CODE >44:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
-961 text16 CODE >13:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-964 text16 CODE >14:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-9BA text16 CODE >15:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-9BB text16 CODE >16:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-A38 text15 CODE >5:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A38 text15 CODE >13:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A3B text15 CODE >14:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A41 text15 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A44 text15 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A46 text15 CODE >16:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A4A text15 CODE >18:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A4F text15 CODE >19:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A52 text15 CODE >19:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A54 text15 CODE >20:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A5A text15 CODE >22:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A5E text15 CODE >23:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A66 text15 CODE >24:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A6A text15 CODE >25:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A6B text15 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A6C text15 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A70 text15 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A72 text15 CODE >27:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A78 text15 CODE >25:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A7E text15 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A81 text15 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A85 text15 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A87 text15 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A8B text15 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A8F text15 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A93 text15 CODE >32:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A96 text15 CODE >32:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A99 text15 CODE >33:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A9C text15 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-A9E text15 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-AA2 text15 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-AA4 text15 CODE >36:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-AAC text15 CODE >38:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-AB3 text15 CODE >39:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-AB6 text15 CODE >39:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-AB8 text15 CODE >40:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
-AC2 text15 CODE >41:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+993 text18 CODE >43:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+993 text18 CODE >47:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9A0 text18 CODE >48:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9A9 text18 CODE >49:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9B2 text18 CODE >49:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9B8 text18 CODE >49:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9BE text18 CODE >50:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9BF text18 CODE >51:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9C7 text18 CODE >52:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9C9 text18 CODE >53:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9CD text18 CODE >54:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9D0 text18 CODE >54:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9D5 text18 CODE >57:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9D6 text18 CODE >57:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9DC text18 CODE >57:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9DE text18 CODE >58:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9E7 text18 CODE >60:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9E9 text18 CODE >60:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9EE text18 CODE >63:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9F0 text18 CODE >63:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9F7 text18 CODE >64:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9F9 text18 CODE >62:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9F9 text18 CODE >65:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+9FE text18 CODE >67:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+A03 text18 CODE >68:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+A08 text18 CODE >68:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+A0A text18 CODE >68:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+A0C text18 CODE >68:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+A0E text18 CODE >70:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\fltol.c
+BD3 text17 CODE >10:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+BD4 text17 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+BDD text17 CODE >16:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+BE6 text17 CODE >16:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+BE8 text17 CODE >16:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+BEA text17 CODE >16:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+BEC text17 CODE >17:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+BED text17 CODE >19:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+BF5 text17 CODE >20:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+BF5 text17 CODE >21:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+BF9 text17 CODE >21:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+BFD text17 CODE >22:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C06 text17 CODE >23:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C0A text17 CODE >24:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C0B text17 CODE >25:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C0F text17 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C10 text17 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C16 text17 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C18 text17 CODE >24:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C1F text17 CODE >29:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C23 text17 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C26 text17 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C2A text17 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C2E text17 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C31 text17 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C32 text17 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C38 text17 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C3A text17 CODE >28:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C3A text17 CODE >32:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C41 text17 CODE >34:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C43 text17 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C45 text17 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C4C text17 CODE >33:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C52 text17 CODE >33:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C56 text17 CODE >37:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C5A text17 CODE >38:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C62 text17 CODE >39:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C64 text17 CODE >40:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C6A text17 CODE >40:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C70 text17 CODE >40:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C7A text17 CODE >41:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C83 text17 CODE >42:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C84 text17 CODE >43:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+C8C text17 CODE >44:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\xxtofl.c
+938 text16 CODE >13:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+93B text16 CODE >14:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+991 text16 CODE >15:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+992 text16 CODE >16:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+A0F text15 CODE >5:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A0F text15 CODE >13:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A12 text15 CODE >14:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A18 text15 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A1B text15 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A1D text15 CODE >16:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A21 text15 CODE >18:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A26 text15 CODE >19:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A29 text15 CODE >19:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A2B text15 CODE >20:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A31 text15 CODE >22:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A35 text15 CODE >23:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A3D text15 CODE >24:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A41 text15 CODE >25:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A42 text15 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A43 text15 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A47 text15 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A49 text15 CODE >27:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A4F text15 CODE >25:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A55 text15 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A58 text15 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A5C text15 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A5E text15 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A62 text15 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A66 text15 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A6A text15 CODE >32:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A6D text15 CODE >32:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A70 text15 CODE >33:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A73 text15 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A75 text15 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A79 text15 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A7B text15 CODE >36:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A83 text15 CODE >38:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A8A text15 CODE >39:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A8D text15 CODE >39:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A8F text15 CODE >40:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
+A99 text15 CODE >41:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\awdiv.c
 1FB text14 CODE >10:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
 1FB text14 CODE >21:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
 202 text14 CODE >22:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
@@ -768,370 +762,373 @@ AC2 text15 CODE >41:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\
 491 text14 CODE >234:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
 492 text14 CODE >235:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
 492 text14 CODE >237:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
-171D text13 CODE >242:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
-171D text13 CODE >248:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
-1721 text13 CODE >249:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
-1740 text13 CODE >250:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
-178D text12 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
-178D text12 CODE >43:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
-1791 text12 CODE >45:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
-1795 text12 CODE >46:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
-1797 text12 CODE >46:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
-179B text12 CODE >47:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
-179C text12 CODE >47:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
-17A0 text12 CODE >47:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
-17A2 text12 CODE >48:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
-17A3 text12 CODE >48:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
-17A7 text12 CODE >48:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
-17A9 text12 CODE >49:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
-17AF text12 CODE >52:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
-17B3 text12 CODE >53:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
-CB6 text11 CODE >17:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-CB9 text11 CODE >18:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-D8D text11 CODE >19:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-D8E text11 CODE >20:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-D8F text10 CODE >22:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-D92 text10 CODE >23:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-E9F text10 CODE >24:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-EA0 text10 CODE >25:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-169C text9 CODE >41:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-169C text9 CODE >43:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-16A2 text9 CODE >44:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-16A4 text9 CODE >45:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-16A4 text9 CODE >46:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-16A5 text9 CODE >47:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-16A6 text8 CODE >31:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-16A7 text8 CODE >32:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-16AD text8 CODE >33:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-16B1 text8 CODE >34:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-16FE text7 CODE >35:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-16FF text7 CODE >36:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-1700 text7 CODE >37:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-170C text7 CODE >38:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-1710 text7 CODE >36:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-1718 text7 CODE >36:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-171C text7 CODE >40:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-AC3 text6 CODE >89:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AC3 text6 CODE >90:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AC4 text6 CODE >91:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AC4 text6 CODE >92:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AC7 text6 CODE >93:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AC8 text6 CODE >94:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AC9 text6 CODE >95:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-ACA text6 CODE >96:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-ACB text6 CODE >98:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-ACB text6 CODE >99:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-ACE text6 CODE >100:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-ACF text6 CODE >101:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AD0 text6 CODE >102:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AD1 text6 CODE >103:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AD2 text6 CODE >105:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AD2 text6 CODE >106:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AD5 text6 CODE >107:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AD6 text6 CODE >108:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AD7 text6 CODE >109:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AD8 text6 CODE >110:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AD9 text6 CODE >112:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AD9 text6 CODE >113:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-ADC text6 CODE >114:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-ADD text6 CODE >115:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-ADE text6 CODE >116:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-ADF text6 CODE >117:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AE0 text6 CODE >119:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AE0 text6 CODE >120:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AE3 text6 CODE >121:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AE4 text6 CODE >122:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AE5 text6 CODE >123:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AE6 text6 CODE >124:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AE7 text6 CODE >126:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AE7 text6 CODE >127:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AEA text6 CODE >128:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AEB text6 CODE >129:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AEC text6 CODE >130:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AED text6 CODE >131:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AEE text6 CODE >133:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AEE text6 CODE >134:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AF1 text6 CODE >135:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AF2 text6 CODE >136:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AF3 text6 CODE >137:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AF4 text6 CODE >138:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AF5 text6 CODE >140:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AF5 text6 CODE >141:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AF8 text6 CODE >142:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AF9 text6 CODE >143:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AFA text6 CODE >144:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AFB text6 CODE >145:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AFC text6 CODE >147:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AFC text6 CODE >148:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-AFF text6 CODE >149:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B00 text6 CODE >150:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B01 text6 CODE >151:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B02 text6 CODE >152:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B03 text6 CODE >154:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B03 text6 CODE >155:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B06 text6 CODE >156:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B07 text6 CODE >157:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B08 text6 CODE >158:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B09 text6 CODE >159:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B0A text6 CODE >161:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B0A text6 CODE >162:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B0D text6 CODE >163:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B0E text6 CODE >164:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B0F text6 CODE >165:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B10 text6 CODE >166:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B11 text6 CODE >168:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B11 text6 CODE >169:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B14 text6 CODE >170:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B15 text6 CODE >171:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B16 text6 CODE >172:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B17 text6 CODE >173:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B18 text6 CODE >175:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B18 text6 CODE >176:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B1B text6 CODE >177:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B1C text6 CODE >178:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B1D text6 CODE >179:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B1E text6 CODE >180:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B1F text6 CODE >182:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B1F text6 CODE >183:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B22 text6 CODE >184:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B23 text6 CODE >185:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B24 text6 CODE >186:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B25 text6 CODE >187:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B26 text6 CODE >189:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B26 text6 CODE >190:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B29 text6 CODE >191:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B2A text6 CODE >192:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B2B text6 CODE >193:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B2C text6 CODE >194:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B2D text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+16F7 text13 CODE >242:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
+16F7 text13 CODE >248:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
+16FB text13 CODE >249:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
+171A text13 CODE >250:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcadd.c
+86A text12 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+86A text12 CODE >43:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+86E text12 CODE >45:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+872 text12 CODE >46:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+874 text12 CODE >46:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+878 text12 CODE >47:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+879 text12 CODE >47:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+87D text12 CODE >47:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+87F text12 CODE >48:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+880 text12 CODE >48:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+884 text12 CODE >48:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+886 text12 CODE >49:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+88C text12 CODE >52:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+890 text12 CODE >53:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\Umul16.c
+C8D text11 CODE >17:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+C90 text11 CODE >18:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+D64 text11 CODE >19:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+D65 text11 CODE >20:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+D66 text10 CODE >22:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+D69 text10 CODE >23:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+E76 text10 CODE >24:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+E77 text10 CODE >25:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+168C text9 CODE >41:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+168C text9 CODE >43:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+1692 text9 CODE >44:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+1694 text9 CODE >46:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+16A1 text9 CODE >47:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+1680 text8 CODE >31:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+1681 text8 CODE >32:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+1687 text8 CODE >33:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+168B text8 CODE >34:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+16D8 text7 CODE >35:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+16D9 text7 CODE >36:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+16DA text7 CODE >37:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+16E6 text7 CODE >38:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+16EA text7 CODE >36:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+16F2 text7 CODE >36:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+16F6 text7 CODE >40:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+A9A text6 CODE >89:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+A9A text6 CODE >90:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+A9B text6 CODE >91:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+A9B text6 CODE >92:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+A9E text6 CODE >93:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+A9F text6 CODE >94:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AA0 text6 CODE >95:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AA1 text6 CODE >96:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AA2 text6 CODE >98:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AA2 text6 CODE >99:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AA5 text6 CODE >100:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AA6 text6 CODE >101:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AA7 text6 CODE >102:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AA8 text6 CODE >103:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AA9 text6 CODE >105:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AA9 text6 CODE >106:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AAC text6 CODE >107:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AAD text6 CODE >108:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AAE text6 CODE >109:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AAF text6 CODE >110:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AB0 text6 CODE >112:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AB0 text6 CODE >113:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AB3 text6 CODE >114:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AB4 text6 CODE >115:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AB5 text6 CODE >116:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AB6 text6 CODE >117:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AB7 text6 CODE >119:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AB7 text6 CODE >120:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ABA text6 CODE >121:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ABB text6 CODE >122:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ABC text6 CODE >123:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ABD text6 CODE >124:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ABE text6 CODE >126:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ABE text6 CODE >127:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AC1 text6 CODE >128:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AC2 text6 CODE >129:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AC3 text6 CODE >130:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AC4 text6 CODE >131:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AC5 text6 CODE >133:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AC5 text6 CODE >134:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AC8 text6 CODE >135:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AC9 text6 CODE >136:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ACA text6 CODE >137:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ACB text6 CODE >138:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ACC text6 CODE >140:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ACC text6 CODE >141:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ACF text6 CODE >142:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AD0 text6 CODE >143:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AD1 text6 CODE >144:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AD2 text6 CODE >145:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AD3 text6 CODE >147:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AD3 text6 CODE >148:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AD6 text6 CODE >149:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AD7 text6 CODE >150:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AD8 text6 CODE >151:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AD9 text6 CODE >152:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ADA text6 CODE >154:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ADA text6 CODE >155:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ADD text6 CODE >156:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ADE text6 CODE >157:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+ADF text6 CODE >158:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AE0 text6 CODE >159:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AE1 text6 CODE >161:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AE1 text6 CODE >162:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AE4 text6 CODE >163:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AE5 text6 CODE >164:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AE6 text6 CODE >165:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AE7 text6 CODE >166:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AE8 text6 CODE >168:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AE8 text6 CODE >169:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AEB text6 CODE >170:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AEC text6 CODE >171:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AED text6 CODE >172:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AEE text6 CODE >173:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AEF text6 CODE >175:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AEF text6 CODE >176:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AF2 text6 CODE >177:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AF3 text6 CODE >178:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AF4 text6 CODE >179:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AF5 text6 CODE >180:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AF6 text6 CODE >182:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AF6 text6 CODE >183:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AF9 text6 CODE >184:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AFA text6 CODE >185:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AFB text6 CODE >186:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AFC text6 CODE >187:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AFD text6 CODE >189:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+AFD text6 CODE >190:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B00 text6 CODE >191:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B01 text6 CODE >192:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B02 text6 CODE >193:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B03 text6 CODE >194:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B04 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B06 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B0B text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B0E text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B11 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B14 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B17 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B1A text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B1D text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B20 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B23 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B26 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B29 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B2C text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
 B2F text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B34 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B37 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B3A text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B3D text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B40 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B43 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B46 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B49 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B4C text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B4F text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B52 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B55 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B58 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B5B text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B5E text6 CODE >197:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-8BA text5 CODE >33:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-8BA text5 CODE >34:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-8C0 text5 CODE >35:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-8C3 text5 CODE >36:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-8CC text5 CODE >38:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-8D2 text5 CODE >39:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-8DB text5 CODE >40:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-8E1 text5 CODE >41:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-8E9 text5 CODE >42:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-8EF text5 CODE >44:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-8F5 text5 CODE >45:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-8FB text5 CODE >46:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-901 text5 CODE >47:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-907 text5 CODE >48:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
-17B4 text4 CODE >27:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17B5 text4 CODE >28:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17B8 text4 CODE >30:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17B9 text4 CODE >31:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17B9 text4 CODE >32:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17BA text4 CODE >33:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17BB text4 CODE >34:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17BC text4 CODE >35:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17BD text4 CODE >37:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17BD text4 CODE >38:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17BE text4 CODE >39:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17BF text4 CODE >40:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17C0 text4 CODE >41:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17C1 text4 CODE >43:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17C1 text4 CODE >44:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17C2 text4 CODE >45:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17C3 text4 CODE >46:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17C4 text4 CODE >47:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17C5 text4 CODE >49:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17C5 text4 CODE >50:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17C6 text4 CODE >51:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17C7 text4 CODE >52:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17C8 text4 CODE >53:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17C9 text4 CODE >55:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17C9 text4 CODE >56:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17CA text4 CODE >57:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17CB text4 CODE >58:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17CC text4 CODE >59:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17CD text4 CODE >61:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17CD text4 CODE >62:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17CE text4 CODE >63:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17CF text4 CODE >64:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17D0 text4 CODE >65:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17D1 text4 CODE >67:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17D1 text4 CODE >68:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17D2 text4 CODE >69:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17D3 text4 CODE >70:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17D4 text4 CODE >71:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17D5 text4 CODE >73:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17D5 text4 CODE >74:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17D6 text4 CODE >75:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17D7 text4 CODE >76:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17D8 text4 CODE >77:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17D9 text4 CODE >79:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17D9 text4 CODE >80:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17DA text4 CODE >81:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17DB text4 CODE >82:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17DC text4 CODE >83:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17DD text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17E2 text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17E7 text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17EA text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17ED text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17F0 text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17F3 text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17F6 text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17F9 text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17FC text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-17FF text4 CODE >86:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
-B5F text3 CODE >5:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B5F text3 CODE >13:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B62 text3 CODE >14:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B66 text3 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B6B text3 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B6D text3 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B6F text3 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B71 text3 CODE >16:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B73 text3 CODE >17:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B73 text3 CODE >18:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B77 text3 CODE >19:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B7C text3 CODE >19:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B7E text3 CODE >19:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B80 text3 CODE >19:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B82 text3 CODE >20:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B86 text3 CODE >22:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B8E text3 CODE >23:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B92 text3 CODE >23:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B96 text3 CODE >24:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B98 text3 CODE >25:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B99 text3 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-B9B text3 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BA2 text3 CODE >27:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BA6 text3 CODE >25:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BAA text3 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BAC text3 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BB3 text3 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BB5 text3 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BB9 text3 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BBD text3 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BC1 text3 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BC5 text3 CODE >32:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BC8 text3 CODE >32:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BCC text3 CODE >32:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BD0 text3 CODE >32:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BD3 text3 CODE >33:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BD4 text3 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BD5 text3 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BDB text3 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BDD text3 CODE >36:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BE3 text3 CODE >38:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BE8 text3 CODE >39:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BED text3 CODE >39:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BEF text3 CODE >39:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BF1 text3 CODE >39:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BF3 text3 CODE >40:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-BFB text3 CODE >41:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
-908 text2 CODE >14:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-908 text2 CODE >16:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-943 text2 CODE >18:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-946 text2 CODE >19:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-947 text2 CODE >20:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-94A text2 CODE >22:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-950 text2 CODE >23:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-951 text2 CODE >25:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-954 text2 CODE >26:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-957 text2 CODE >27:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-95A text2 CODE >28:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-95D text2 CODE >29:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-960 text2 CODE >30:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
-86D text1 CODE >114:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-86D text1 CODE >116:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-871 text1 CODE >117:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-872 text1 CODE >119:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-875 text1 CODE >120:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-876 text1 CODE >121:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-878 text1 CODE >123:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-87B text1 CODE >124:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-87C text1 CODE >125:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-87D text1 CODE >127:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-883 text1 CODE >130:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-88C text1 CODE >132:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-88F text1 CODE >133:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-890 text1 CODE >135:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-893 text1 CODE >136:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-894 text1 CODE >138:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-897 text1 CODE >140:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-89A text1 CODE >141:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-89E text1 CODE >142:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-8A1 text1 CODE >144:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-8A4 text1 CODE >145:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-8A5 text1 CODE >146:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-8A6 text1 CODE >147:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-8A7 text1 CODE >148:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-8A8 text1 CODE >149:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-8A9 text1 CODE >151:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-8AE text1 CODE >152:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-8B9 text1 CODE >154:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-EA1 maintext CODE >42:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-EA1 maintext CODE >44:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-EA6 maintext CODE >46:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-EAC maintext CODE >47:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-EB7 maintext CODE >52:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-EC2 maintext CODE >53:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-ECD maintext CODE >54:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-ED8 maintext CODE >56:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-EDC maintext CODE >57:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-EE0 maintext CODE >58:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-EE4 maintext CODE >61:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-EEE maintext CODE >64:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-EF4 maintext CODE >65:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-EFA maintext CODE >66:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F01 maintext CODE >67:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F05 maintext CODE >69:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F08 maintext CODE >71:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F0A maintext CODE >71:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F0E maintext CODE >72:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F14 maintext CODE >73:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F1A maintext CODE >74:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F20 maintext CODE >75:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F28 maintext CODE >76:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F2E maintext CODE >77:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F36 maintext CODE >78:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F3E maintext CODE >79:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F44 maintext CODE >80:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F4A maintext CODE >81:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F4A maintext CODE >83:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F4F maintext CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F57 maintext CODE >85:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F5D maintext CODE >86:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F65 maintext CODE >87:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F6D maintext CODE >88:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F73 maintext CODE >89:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F7B maintext CODE >90:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F83 maintext CODE >91:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F89 maintext CODE >93:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-F96 maintext CODE >94:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-FA3 maintext CODE >95:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-FB0 maintext CODE >97:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-FB4 maintext CODE >98:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-FB8 maintext CODE >99:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-FBC maintext CODE >101:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-FC6 maintext CODE >102:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-FCC maintext CODE >103:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-FD8 maintext CODE >104:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-FE0 maintext CODE >105:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-FE6 maintext CODE >106:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-FEE maintext CODE >107:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
-FF6 maintext CODE >108:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+B32 text6 CODE >195:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B35 text6 CODE >197:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+891 text5 CODE >33:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+891 text5 CODE >34:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+897 text5 CODE >35:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+89A text5 CODE >36:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+8A3 text5 CODE >38:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+8A9 text5 CODE >39:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+8B2 text5 CODE >40:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+8B8 text5 CODE >41:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+8C0 text5 CODE >42:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+8C6 text5 CODE >44:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+8CC text5 CODE >45:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+8D2 text5 CODE >46:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+8D8 text5 CODE >47:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+8DE text5 CODE >48:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\LCD.c
+1767 text4 CODE >27:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1768 text4 CODE >28:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+176B text4 CODE >30:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+176C text4 CODE >31:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+176C text4 CODE >32:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+176D text4 CODE >33:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+176E text4 CODE >34:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+176F text4 CODE >35:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1770 text4 CODE >37:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1770 text4 CODE >38:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1771 text4 CODE >39:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1772 text4 CODE >40:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1773 text4 CODE >41:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1774 text4 CODE >43:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1774 text4 CODE >44:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1775 text4 CODE >45:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1776 text4 CODE >46:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1777 text4 CODE >47:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1778 text4 CODE >49:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1778 text4 CODE >50:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1779 text4 CODE >51:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+177A text4 CODE >52:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+177B text4 CODE >53:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+177C text4 CODE >55:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+177C text4 CODE >56:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+177D text4 CODE >57:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+177E text4 CODE >58:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+177F text4 CODE >59:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1780 text4 CODE >61:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1780 text4 CODE >62:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1781 text4 CODE >63:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1782 text4 CODE >64:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1783 text4 CODE >65:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1784 text4 CODE >67:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1784 text4 CODE >68:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1785 text4 CODE >69:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1786 text4 CODE >70:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1787 text4 CODE >71:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1788 text4 CODE >73:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1788 text4 CODE >74:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1789 text4 CODE >75:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+178A text4 CODE >76:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+178B text4 CODE >77:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+178C text4 CODE >79:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+178C text4 CODE >80:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+178D text4 CODE >81:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+178E text4 CODE >82:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+178F text4 CODE >83:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1790 text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+1795 text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+179A text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+179D text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+17A0 text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+17A3 text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+17A6 text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+17A9 text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+17AC text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+17AF text4 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+17B2 text4 CODE >86:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\ADC.c
+B36 text3 CODE >5:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B36 text3 CODE >13:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B39 text3 CODE >14:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B3D text3 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B42 text3 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B44 text3 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B46 text3 CODE >15:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B48 text3 CODE >16:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B4A text3 CODE >17:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B4A text3 CODE >18:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B4E text3 CODE >19:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B53 text3 CODE >19:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B55 text3 CODE >19:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B57 text3 CODE >19:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B59 text3 CODE >20:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B5D text3 CODE >22:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B65 text3 CODE >23:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B69 text3 CODE >23:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B6D text3 CODE >24:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B6F text3 CODE >25:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B70 text3 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B72 text3 CODE >26:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B79 text3 CODE >27:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B7D text3 CODE >25:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B81 text3 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B83 text3 CODE >30:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B8A text3 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B8C text3 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B90 text3 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B94 text3 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B98 text3 CODE >31:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B9C text3 CODE >32:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+B9F text3 CODE >32:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+BA3 text3 CODE >32:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+BA7 text3 CODE >32:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+BAA text3 CODE >33:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+BAB text3 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+BAC text3 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+BB2 text3 CODE >35:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+BB4 text3 CODE >36:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+BBA text3 CODE >38:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+BBF text3 CODE >39:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+BC4 text3 CODE >39:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+BC6 text3 CODE >39:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+BC8 text3 CODE >39:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+BCA text3 CODE >40:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+BD2 text3 CODE >41:C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\aldiv.c
+8DF text2 CODE >14:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+8DF text2 CODE >16:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+91A text2 CODE >18:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+91D text2 CODE >19:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+91E text2 CODE >20:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+921 text2 CODE >22:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+927 text2 CODE >23:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+928 text2 CODE >25:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+92B text2 CODE >26:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+92E text2 CODE >27:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+931 text2 CODE >28:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+934 text2 CODE >29:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+937 text2 CODE >30:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\USART.c
+17B3 text1 CODE >127:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17B3 text1 CODE >129:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17B7 text1 CODE >130:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17B8 text1 CODE >132:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17BB text1 CODE >133:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17BC text1 CODE >134:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17BE text1 CODE >136:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17C1 text1 CODE >137:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17C2 text1 CODE >138:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17C3 text1 CODE >140:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17C9 text1 CODE >143:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17D2 text1 CODE >145:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17D5 text1 CODE >146:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17D6 text1 CODE >148:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17D9 text1 CODE >149:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17DA text1 CODE >151:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17DD text1 CODE >153:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17E0 text1 CODE >154:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17E4 text1 CODE >155:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17E7 text1 CODE >157:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17EA text1 CODE >158:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17EB text1 CODE >159:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17EC text1 CODE >160:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17ED text1 CODE >161:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17EE text1 CODE >162:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17EF text1 CODE >164:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17F4 text1 CODE >165:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+17FF text1 CODE >167:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+E78 maintext CODE >53:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+E78 maintext CODE >55:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+E7D maintext CODE >57:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+E83 maintext CODE >60:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+E89 maintext CODE >61:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+E94 maintext CODE >62:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+E97 maintext CODE >65:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+EA4 maintext CODE >66:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+EAF maintext CODE >67:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+EBA maintext CODE >69:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+EBE maintext CODE >70:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+EC2 maintext CODE >71:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+EC6 maintext CODE >73:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+ED0 maintext CODE >75:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+ED6 maintext CODE >76:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+EDC maintext CODE >77:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+EE3 maintext CODE >78:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+EE7 maintext CODE >80:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+EEA maintext CODE >82:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+EEC maintext CODE >82:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+EF0 maintext CODE >83:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+EFF maintext CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F05 maintext CODE >85:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F0B maintext CODE >86:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F11 maintext CODE >87:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F19 maintext CODE >88:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F1F maintext CODE >89:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F27 maintext CODE >90:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F2F maintext CODE >91:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F35 maintext CODE >92:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F3B maintext CODE >93:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F4A maintext CODE >94:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F4A maintext CODE >96:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F4F maintext CODE >97:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F57 maintext CODE >98:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F5D maintext CODE >99:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F65 maintext CODE >100:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F6D maintext CODE >101:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F73 maintext CODE >102:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F7B maintext CODE >103:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F83 maintext CODE >104:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F89 maintext CODE >106:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+F96 maintext CODE >107:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+FA3 maintext CODE >108:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+FB0 maintext CODE >110:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+FB4 maintext CODE >111:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+FB8 maintext CODE >112:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+FBC maintext CODE >114:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+FC6 maintext CODE >115:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+FCC maintext CODE >116:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+FD8 maintext CODE >117:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+FE0 maintext CODE >118:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+FE6 maintext CODE >119:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+FEE maintext CODE >120:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
+FF6 maintext CODE >121:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab2.X\MAIN.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1148,20 +1145,20 @@ ___latbits 2 0 ABS 0 - dist/default/production\Lab2.X.production.o
 ___awdiv@counter A8 0 BANK1 1 cstackBANK1 dist/default/production\Lab2.X.production.o
 LCD_CHAR8@a 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 __Hspace_0 1800 0 ABS 0 - -
-__Hspace_1 CE 0 ABS 0 - -
+__Hspace_1 D0 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 USART_INIT@BAUD 26 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
-_LCD_CLEAR8 10C0 0 CODE 0 text26 dist/default/production\Lab2.X.production.o
+_LCD_CLEAR8 10BA 0 CODE 0 text26 dist/default/production\Lab2.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-__end_of_OSCILLATOR 3000 0 CODE 0 text4 dist/default/production\Lab2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\HP\AppData\Local\Temp\xcAsg3k.o
-_cont CC 0 BANK1 1 bssBANK1 dist/default/production\Lab2.X.production.o
-_main 1D42 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
+__end_of_OSCILLATOR 2F66 0 CODE 0 text4 dist/default/production\Lab2.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\HP\AppData\Local\Temp\xcAs4mo.o
+_cont CD 0 BANK1 1 bssBANK1 dist/default/production\Lab2.X.production.o
+_main 1CF0 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab2.X.production.o
-start 0 0 CODE 0 init C:\Users\HP\AppData\Local\Temp\xcAsg3k.o
+start 0 0 CODE 0 init C:\Users\HP\AppData\Local\Temp\xcAs4mo.o
 ___flmul@aexp 32 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
 ___flmul@bexp 33 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
 ___flmul@prod 34 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
@@ -1169,19 +1166,19 @@ ___flmul@sign 2D 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production
 ___flmul@temp 38 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
 UNIDAD@c C6 0 BANK1 1 cstackBANK1 dist/default/production\Lab2.X.production.o
 ?___wmul 65 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
-__end_of_USART_CHAR 2D64 0 CODE 0 text8 dist/default/production\Lab2.X.production.o
-__end_of_USART_INIT 12C2 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
-__end_of_USART_READ 2D4C 0 CODE 0 text9 dist/default/production\Lab2.X.production.o
+__end_of_USART_CHAR 2D18 0 CODE 0 text8 dist/default/production\Lab2.X.production.o
+__end_of_USART_INIT 1270 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
+__end_of_USART_READ 2D44 0 CODE 0 text9 dist/default/production\Lab2.X.production.o
 _LCD_COM8 8 0 CODE 0 text23 dist/default/production\Lab2.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-__end_of_UNIDAD 1D42 0 CODE 0 text10 dist/default/production\Lab2.X.production.o
+__end_of_UNIDAD 1CF0 0 CODE 0 text10 dist/default/production\Lab2.X.production.o
 __end_of_LCD_COM8 3C 0 CODE 0 text23 dist/default/production\Lab2.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAsg3k.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAsg3k.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAsg3k.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAsg3k.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAsg3k.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAsg3k.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAs4mo.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAs4mo.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAs4mo.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAs4mo.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAs4mo.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAs4mo.o
 ___aldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Lab2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab2.X.production.o
@@ -1189,40 +1186,40 @@ __Hfunctab 0 0 ENTRY 0 functab -
 ___aldiv@sign 21 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
 ___awdiv@sign A9 0 BANK1 1 cstackBANK1 dist/default/production\Lab2.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-_UNIDAD$1087 BC 0 BANK1 1 cstackBANK1 dist/default/production\Lab2.X.production.o
-_UNIDAD$1088 C4 0 BANK1 1 cstackBANK1 dist/default/production\Lab2.X.production.o
-_UNIDAD$1089 C0 0 BANK1 1 cstackBANK1 dist/default/production\Lab2.X.production.o
-__end_of_LCD_CLEAR8 10DA 0 CODE 0 text26 dist/default/production\Lab2.X.production.o
+_UNIDAD$1085 BC 0 BANK1 1 cstackBANK1 dist/default/production\Lab2.X.production.o
+_UNIDAD$1086 C4 0 BANK1 1 cstackBANK1 dist/default/production\Lab2.X.production.o
+_UNIDAD$1087 C0 0 BANK1 1 cstackBANK1 dist/default/production\Lab2.X.production.o
+__end_of_LCD_CLEAR8 10D4 0 CODE 0 text26 dist/default/production\Lab2.X.production.o
 ___wmul@multiplicand 67 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
 _ADRESH 1E 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Lab2.X.production.o
-__end_of__Umul8_16 2F1A 0 CODE 0 text20 dist/default/production\Lab2.X.production.o
+__end_of__Umul8_16 2ECE 0 CODE 0 text20 dist/default/production\Lab2.X.production.o
 ___awdiv@dividend 6D 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
-_DECENA 196C 0 CODE 0 text11 dist/default/production\Lab2.X.production.o
-__end_of___wmul 2F68 0 CODE 0 text12 dist/default/production\Lab2.X.production.o
+_DECENA 191A 0 CODE 0 text11 dist/default/production\Lab2.X.production.o
+__end_of___wmul 1122 0 CODE 0 text12 dist/default/production\Lab2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 ___fldiv@aexp 53 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
 ___fldiv@bexp 52 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
 ___fldiv@sign 4B 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
-_ADC_INIT 1586 0 CODE 0 text6 dist/default/production\Lab2.X.production.o
-_ADC_READ 2D64 0 CODE 0 text28 dist/default/production\Lab2.X.production.o
-_DECENA$1086 B3 0 BANK1 1 cstackBANK1 dist/default/production\Lab2.X.production.o
+_ADC_INIT 1534 0 CODE 0 text6 dist/default/production\Lab2.X.production.o
+_ADC_READ 2CEC 0 CODE 0 text28 dist/default/production\Lab2.X.production.o
+_DECENA$1084 B3 0 BANK1 1 cstackBANK1 dist/default/production\Lab2.X.production.o
 ___awdiv@divisor 6B 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
-__end_of___aldiv 17F8 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
-__end_of___awdiv 1586 0 CODE 0 text15 dist/default/production\Lab2.X.production.o
-__Umul8_16 2ECC 0 CODE 0 text20 dist/default/production\Lab2.X.production.o
+__end_of___aldiv 17A6 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
+__end_of___awdiv 1534 0 CODE 0 text15 dist/default/production\Lab2.X.production.o
+__Umul8_16 2E80 0 CODE 0 text20 dist/default/production\Lab2.X.production.o
 __end_of___fladd 926 0 CODE 0 text14 dist/default/production\Lab2.X.production.o
 __end_of___fldiv 3F6 0 CODE 0 text21 dist/default/production\Lab2.X.production.o
 __end_of___flmul FE8 0 CODE 0 text19 dist/default/production\Lab2.X.production.o
-__end_of___flsub 2E82 0 CODE 0 text13 dist/default/production\Lab2.X.production.o
-__end_of___fltol 1470 0 CODE 0 text18 dist/default/production\Lab2.X.production.o
+__end_of___flsub 2E36 0 CODE 0 text13 dist/default/production\Lab2.X.production.o
+__end_of___fltol 141E 0 CODE 0 text18 dist/default/production\Lab2.X.production.o
 ADC_INIT@c 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 __Umul8_16@multiplicand 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
-__end_of_ADC_INIT 16BE 0 CODE 0 text6 dist/default/production\Lab2.X.production.o
-__end_of_ADC_READ 2D90 0 CODE 0 text28 dist/default/production\Lab2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\HP\AppData\Local\Temp\xcAsg3k.o
-___stacklo 0 0 ABS 0 - C:\Users\HP\AppData\Local\Temp\xcAsg3k.o
-__end_of_LCD_XY8 2DFC 0 CODE 0 text22 dist/default/production\Lab2.X.production.o
+__end_of_ADC_INIT 166C 0 CODE 0 text6 dist/default/production\Lab2.X.production.o
+__end_of_ADC_READ 2D00 0 CODE 0 text28 dist/default/production\Lab2.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\HP\AppData\Local\Temp\xcAs4mo.o
+___stacklo 0 0 ABS 0 - C:\Users\HP\AppData\Local\Temp\xcAs4mo.o
+__end_of_LCD_XY8 2DB0 0 CODE 0 text22 dist/default/production\Lab2.X.production.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\Lab2.X.production.o
 ___fladd@a 74 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 ___fladd@b 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
@@ -1240,11 +1237,11 @@ LCD_STRING8@i 74 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.producti
 _SPBRGH 9A 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
 __pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/production\Lab2.X.production.o
-_UNIDAD 1B1E 0 CODE 0 text10 dist/default/production\Lab2.X.production.o
-__end_of_LCD_CHAR8 2DC4 0 CODE 0 text25 dist/default/production\Lab2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\HP\AppData\Local\Temp\xcAsg3k.o
-__end_of_LCD_INIT8 1210 0 CODE 0 text5 dist/default/production\Lab2.X.production.o
-__end_of_LCD_PORT8 10C0 0 CODE 0 text27 dist/default/production\Lab2.X.production.o
+_UNIDAD 1ACC 0 CODE 0 text10 dist/default/production\Lab2.X.production.o
+__end_of_LCD_CHAR8 2D78 0 CODE 0 text25 dist/default/production\Lab2.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\HP\AppData\Local\Temp\xcAs4mo.o
+__end_of_LCD_INIT8 11BE 0 CODE 0 text5 dist/default/production\Lab2.X.production.o
+__end_of_LCD_PORT8 2CEC 0 CODE 0 text27 dist/default/production\Lab2.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -1266,10 +1263,10 @@ __Lbank3 0 0 ABS 0 bank3 -
 __Lcinit FE8 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 5 idloc -
 __Lstack 0 0 STACK 2 stack -
-_LCD_CHAR8 2D90 0 CODE 0 text25 dist/default/production\Lab2.X.production.o
+_LCD_CHAR8 2D44 0 CODE 0 text25 dist/default/production\Lab2.X.production.o
 ___flmul@grs 2E 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
-_LCD_INIT8 1174 0 CODE 0 text5 dist/default/production\Lab2.X.production.o
-_LCD_PORT8 10B4 0 CODE 0 text27 dist/default/production\Lab2.X.production.o
+_LCD_INIT8 1122 0 CODE 0 text5 dist/default/production\Lab2.X.production.o
+_LCD_PORT8 2CE0 0 CODE 0 text27 dist/default/production\Lab2.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hinit 0 0 CODE 0 init -
@@ -1286,69 +1283,69 @@ __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
-___wmul 2F1A 0 CODE 0 text12 dist/default/production\Lab2.X.production.o
+___wmul 10D4 0 CODE 0 text12 dist/default/production\Lab2.X.production.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_POT CD 0 BANK1 1 bssBANK1 dist/default/production\Lab2.X.production.o
+_POT CE 0 BANK1 1 bssBANK1 dist/default/production\Lab2.X.production.o
 _RC0 38 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _RC1 39 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __S0 1800 0 ABS 0 - -
-__S1 CE 0 ABS 0 - -
+__S1 D0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 ?_ADC_READ 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
-_USART_WRITE 2DFC 0 CODE 0 text7 dist/default/production\Lab2.X.production.o
-_decena CA 0 BANK1 1 bssBANK1 dist/default/production\Lab2.X.production.o
-_LCD_STRING8 2E82 0 CODE 0 text24 dist/default/production\Lab2.X.production.o
-___xxtofl 17F8 0 CODE 0 text17 dist/default/production\Lab2.X.production.o
-_old_pot C8 0 BANK1 1 bssBANK1 dist/default/production\Lab2.X.production.o
+_USART_WRITE 2DB0 0 CODE 0 text7 dist/default/production\Lab2.X.production.o
+_decena CB 0 BANK1 1 bssBANK1 dist/default/production\Lab2.X.production.o
+_LCD_STRING8 2E36 0 CODE 0 text24 dist/default/production\Lab2.X.production.o
+___xxtofl 17A6 0 CODE 0 text17 dist/default/production\Lab2.X.production.o
+_old_pot CF 0 BANK1 1 bssBANK1 dist/default/production\Lab2.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
 __stringtab 1000 0 STRING 0 strings dist/default/production\Lab2.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\HP\AppData\Local\Temp\xcAsg3k.o
-__end_of___xxtofl 196C 0 CODE 0 text17 dist/default/production\Lab2.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\HP\AppData\Local\Temp\xcAs4mo.o
+__end_of___xxtofl 191A 0 CODE 0 text17 dist/default/production\Lab2.X.production.o
 OSCILLATOR@f 72 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
-__end_of_CENTENA 1378 0 CODE 0 text16 dist/default/production\Lab2.X.production.o
+__end_of_CENTENA 1326 0 CODE 0 text16 dist/default/production\Lab2.X.production.o
 _RCSTAbits 18 0 ABS 0 - dist/default/production\Lab2.X.production.o
 ___fladd@signs 78 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
-__ptext10 1B1E 0 CODE 0 text10 dist/default/production\Lab2.X.production.o
-__ptext11 196C 0 CODE 0 text11 dist/default/production\Lab2.X.production.o
-__ptext12 2F1A 0 CODE 0 text12 dist/default/production\Lab2.X.production.o
-__ptext13 2E3A 0 CODE 0 text13 dist/default/production\Lab2.X.production.o
+__ptext10 1ACC 0 CODE 0 text10 dist/default/production\Lab2.X.production.o
+__ptext11 191A 0 CODE 0 text11 dist/default/production\Lab2.X.production.o
+__ptext12 10D4 0 CODE 0 text12 dist/default/production\Lab2.X.production.o
+__ptext13 2DEE 0 CODE 0 text13 dist/default/production\Lab2.X.production.o
 __ptext14 3F6 0 CODE 0 text14 dist/default/production\Lab2.X.production.o
-__ptext15 1470 0 CODE 0 text15 dist/default/production\Lab2.X.production.o
-__ptext16 12C2 0 CODE 0 text16 dist/default/production\Lab2.X.production.o
-__ptext17 17F8 0 CODE 0 text17 dist/default/production\Lab2.X.production.o
-__ptext18 1378 0 CODE 0 text18 dist/default/production\Lab2.X.production.o
+__ptext15 141E 0 CODE 0 text15 dist/default/production\Lab2.X.production.o
+__ptext16 1270 0 CODE 0 text16 dist/default/production\Lab2.X.production.o
+__ptext17 17A6 0 CODE 0 text17 dist/default/production\Lab2.X.production.o
+__ptext18 1326 0 CODE 0 text18 dist/default/production\Lab2.X.production.o
 __ptext19 926 0 CODE 0 text19 dist/default/production\Lab2.X.production.o
-__ptext20 2ECC 0 CODE 0 text20 dist/default/production\Lab2.X.production.o
+__ptext20 2E80 0 CODE 0 text20 dist/default/production\Lab2.X.production.o
 __ptext21 3C 0 CODE 0 text21 dist/default/production\Lab2.X.production.o
-__ptext22 2DC4 0 CODE 0 text22 dist/default/production\Lab2.X.production.o
+__ptext22 2D78 0 CODE 0 text22 dist/default/production\Lab2.X.production.o
 __ptext23 8 0 CODE 0 text23 dist/default/production\Lab2.X.production.o
-__ptext24 2E82 0 CODE 0 text24 dist/default/production\Lab2.X.production.o
-__ptext25 2D90 0 CODE 0 text25 dist/default/production\Lab2.X.production.o
-__ptext26 10C0 0 CODE 0 text26 dist/default/production\Lab2.X.production.o
-__ptext27 10B4 0 CODE 0 text27 dist/default/production\Lab2.X.production.o
-__ptext28 2D64 0 CODE 0 text28 dist/default/production\Lab2.X.production.o
-___aldiv 16BE 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
-___awdiv 1470 0 CODE 0 text15 dist/default/production\Lab2.X.production.o
+__ptext24 2E36 0 CODE 0 text24 dist/default/production\Lab2.X.production.o
+__ptext25 2D44 0 CODE 0 text25 dist/default/production\Lab2.X.production.o
+__ptext26 10BA 0 CODE 0 text26 dist/default/production\Lab2.X.production.o
+__ptext27 2CE0 0 CODE 0 text27 dist/default/production\Lab2.X.production.o
+__ptext28 2CEC 0 CODE 0 text28 dist/default/production\Lab2.X.production.o
+___aldiv 166C 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
+___awdiv 141E 0 CODE 0 text15 dist/default/production\Lab2.X.production.o
 DECENA@c B7 0 BANK1 1 cstackBANK1 dist/default/production\Lab2.X.production.o
 ___fladd 3F6 0 CODE 0 text14 dist/default/production\Lab2.X.production.o
 ___fldiv 3C 0 CODE 0 text21 dist/default/production\Lab2.X.production.o
 ___flmul 926 0 CODE 0 text19 dist/default/production\Lab2.X.production.o
-___flsub 2E3A 0 CODE 0 text13 dist/default/production\Lab2.X.production.o
-___fltol 1378 0 CODE 0 text18 dist/default/production\Lab2.X.production.o
-__pmaintext 1D42 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
+___flsub 2DEE 0 CODE 0 text13 dist/default/production\Lab2.X.production.o
+___fltol 1326 0 CODE 0 text18 dist/default/production\Lab2.X.production.o
+__pmaintext 1CF0 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
 USART_WRITE@c 72 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 __Umul8_16@multiplier 78 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-_LCD_XY8 2DC4 0 CODE 0 text22 dist/default/production\Lab2.X.production.o
+_LCD_XY8 2D78 0 CODE 0 text22 dist/default/production\Lab2.X.production.o
 ___wmul@multiplier 65 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
 ___fldiv@grs 4E 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
 ___fldiv@rem 47 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
 ___fldiv@new_exp 4C 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
-_unidad CB 0 BANK1 1 bssBANK1 dist/default/production\Lab2.X.production.o
+_unidad CC 0 BANK1 1 bssBANK1 dist/default/production\Lab2.X.production.o
 _ADCON0bits 1F 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _ADCON1bits 9F 0 ABS 0 - dist/default/production\Lab2.X.production.o
 ___fladd@grs 7B 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
@@ -1363,7 +1360,7 @@ __Lspace_4 0 0 ABS 0 - -
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __Umul8_16@product 74 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
-_USART_INIT$1090 28 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
+_USART_INIT$1088 28 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
 _PIR1bits C 0 ABS 0 - dist/default/production\Lab2.X.production.o
 __Lend_init 0 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
@@ -1381,15 +1378,15 @@ ___awdiv@quotient AA 0 BANK1 1 cstackBANK1 dist/default/production\Lab2.X.produc
 ?___fltol 54 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
 __Hreset_vec 0 0 CODE 0 reset_vec -
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
-__ptext1 10DA 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
-__ptext2 1210 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
-__ptext3 16BE 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
-__ptext4 2F68 0 CODE 0 text4 dist/default/production\Lab2.X.production.o
-__ptext5 1174 0 CODE 0 text5 dist/default/production\Lab2.X.production.o
-__ptext6 1586 0 CODE 0 text6 dist/default/production\Lab2.X.production.o
-__ptext7 2DFC 0 CODE 0 text7 dist/default/production\Lab2.X.production.o
-__ptext8 2D4C 0 CODE 0 text8 dist/default/production\Lab2.X.production.o
-__ptext9 2D38 0 CODE 0 text9 dist/default/production\Lab2.X.production.o
+__ptext1 2F66 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
+__ptext2 11BE 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
+__ptext3 166C 0 CODE 0 text3 dist/default/production\Lab2.X.production.o
+__ptext4 2ECE 0 CODE 0 text4 dist/default/production\Lab2.X.production.o
+__ptext5 1122 0 CODE 0 text5 dist/default/production\Lab2.X.production.o
+__ptext6 1534 0 CODE 0 text6 dist/default/production\Lab2.X.production.o
+__ptext7 2DB0 0 CODE 0 text7 dist/default/production\Lab2.X.production.o
+__ptext8 2D00 0 CODE 0 text8 dist/default/production\Lab2.X.production.o
+__ptext9 2D18 0 CODE 0 text9 dist/default/production\Lab2.X.production.o
 ?__Umul8_16 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 ___aldiv@dividend 74 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
@@ -1405,13 +1402,13 @@ __end_of__initialization FF8 0 CODE 0 cinit dist/default/production\Lab2.X.produ
 __Lfunctab 0 0 ENTRY 0 functab -
 LCD_COM8@a 73 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
-_centena C9 0 BANK1 1 bssBANK1 dist/default/production\Lab2.X.production.o
+_centena CA 0 BANK1 1 bssBANK1 dist/default/production\Lab2.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 _TXSTAbits 98 0 ABS 0 - dist/default/production\Lab2.X.production.o
 USART_CHAR@d 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
 __Hend_init 6 0 CODE 0 end_init -
 ___aldiv@counter 20 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
-__end_of_USART_WRITE 2E3A 0 CODE 0 text7 dist/default/production\Lab2.X.production.o
+__end_of_USART_WRITE 2DEE 0 CODE 0 text7 dist/default/production\Lab2.X.production.o
 __end_of_main 2000 0 CODE 0 maintext dist/default/production\Lab2.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\Lab2.X.production.o
@@ -1423,21 +1420,21 @@ _TRISA 85 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\Lab2.X.production.o
 _TXREG 19 0 ABS 0 - dist/default/production\Lab2.X.production.o
-_OSCILLATOR 2F68 0 CODE 0 text4 dist/default/production\Lab2.X.production.o
-__end_of_LCD_STRING8 2ECC 0 CODE 0 text24 dist/default/production\Lab2.X.production.o
-__end_of_setup 1174 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
+_OSCILLATOR 2ECE 0 CODE 0 text4 dist/default/production\Lab2.X.production.o
+__end_of_LCD_STRING8 2E80 0 CODE 0 text24 dist/default/production\Lab2.X.production.o
+__end_of_setup 3000 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_setup 10DA 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
+_setup 2F66 0 CODE 0 text1 dist/default/production\Lab2.X.production.o
 USART_INIT@n 2C 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
-_CENTENA 12C2 0 CODE 0 text16 dist/default/production\Lab2.X.production.o
-_USART_CHAR 2D4C 0 CODE 0 text8 dist/default/production\Lab2.X.production.o
-_USART_INIT 1210 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
-_USART_READ 2D38 0 CODE 0 text9 dist/default/production\Lab2.X.production.o
+_CENTENA 1270 0 CODE 0 text16 dist/default/production\Lab2.X.production.o
+_USART_CHAR 2D00 0 CODE 0 text8 dist/default/production\Lab2.X.production.o
+_USART_INIT 11BE 0 CODE 0 text2 dist/default/production\Lab2.X.production.o
+_USART_READ 2D18 0 CODE 0 text9 dist/default/production\Lab2.X.production.o
 __initialization FE8 0 CODE 0 cinit dist/default/production\Lab2.X.production.o
 ___xxtofl@sign 78 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
-__pbssBANK1 C8 0 BANK1 1 bssBANK1 dist/default/production\Lab2.X.production.o
-__end_of_DECENA 1B1E 0 CODE 0 text11 dist/default/production\Lab2.X.production.o
+__pbssBANK1 CA 0 BANK1 1 bssBANK1 dist/default/production\Lab2.X.production.o
+__end_of_DECENA 1ACC 0 CODE 0 text11 dist/default/production\Lab2.X.production.o
 __pstrings 1000 0 STRING 0 strings dist/default/production\Lab2.X.production.o
 ___wmul@product 69 0 BANK0 1 cstackBANK0 dist/default/production\Lab2.X.production.o
 LCD_PORT8@a 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production.o
@@ -1467,38 +1464,38 @@ LCD_PORT8@a 70 0 COMMON 1 cstackCOMMON dist/default/production\Lab2.X.production
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7F4 FE8 C 2
-text1 0 86D 10DA 4D 2
-text2 0 908 1210 59 2
-text3 0 B5F 16BE 9D 2
-text4 0 17B4 2F68 4C 2
-text5 0 8BA 1174 4E 2
-text6 0 AC3 1586 9C 2
-text7 0 16FE 2DFC 1F 2
-text8 0 16A6 2D4C C 2
-text9 0 169C 2D38 A 2
-text10 0 D8F 1B1E 112 2
-text11 0 CB6 196C D9 2
-text12 0 178D 2F1A 27 2
-text13 0 171D 2E3A 24 2
+text1 0 17B3 2F66 4D 2
+text2 0 8DF 11BE 59 2
+text3 0 B36 166C 9D 2
+text4 0 1767 2ECE 4C 2
+text5 0 891 1122 4E 2
+text6 0 A9A 1534 9C 2
+text7 0 16D8 2DB0 1F 2
+text8 0 1680 2D00 C 2
+text9 0 168C 2D18 16 2
+text10 0 D66 1ACC 112 2
+text11 0 C8D 191A D9 2
+text12 0 86A 10D4 27 2
+text13 0 16F7 2DEE 24 2
 text14 0 1FB 3F6 298 2
-text15 0 A38 1470 8B 2
-text16 0 961 12C2 5B 2
-text17 0 BFC 17F8 BA 2
-text18 0 9BC 1378 7C 2
+text15 0 A0F 141E 8B 2
+text16 0 938 1270 5B 2
+text17 0 BD3 17A6 BA 2
+text18 0 993 1326 7C 2
 text19 0 493 926 361 2
-text20 0 1766 2ECC 27 2
+text20 0 1740 2E80 27 2
 text21 0 1E 3C 1DD 2
-text22 0 16E2 2DC4 1C 2
+text22 0 16BC 2D78 1C 2
 text23 0 4 8 1A 2
-text24 0 1741 2E82 25 2
-text25 0 16C8 2D90 1A 2
-text26 0 860 10C0 D 2
-text27 0 85A 10B4 6 2
-text28 0 16B2 2D64 16 2
-maintext 0 EA1 1D42 15F 2
+text24 0 171B 2E36 25 2
+text25 0 16A2 2D44 1A 2
+text26 0 85D 10BA D 2
+text27 0 1670 2CE0 6 2
+text28 0 1676 2CEC A 2
+maintext 0 E78 1CF0 188 2
 cstackCOMMON 1 70 70 E 1
 cstackBANK0 1 20 20 50 1
-cstackBANK1 1 A0 A0 2E 1
+cstackBANK1 1 A0 A0 30 1
 reset_vec 0 0 0 3 2
 strings 0 800 1000 58 2
 # %NOTES Section
