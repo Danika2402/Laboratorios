@@ -260,7 +260,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 138 ]
 }
 "28
-[; ;SPIM.c: 28: static void spiReceiveWait()
+[; ;SPIM.c: 28: static void spiReceiveWait(void)
 [v _spiReceiveWait `(v ~T0 @X0 1 sf ]
 "29
 [; ;SPIM.c: 29: {
@@ -299,7 +299,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 145 ]
 }
 "38
-[; ;SPIM.c: 38: unsigned spiDataReady()
+[; ;SPIM.c: 38: unsigned spiDataReady(void)
 [v _spiDataReady `(ui ~T0 @X0 1 ef ]
 "39
 [; ;SPIM.c: 39: {
@@ -327,7 +327,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 146 ]
 }
 "46
-[; ;SPIM.c: 46: char spiRead()
+[; ;SPIM.c: 46: char spiRead(void)
 [v _spiRead `(uc ~T0 @X0 1 ef ]
 "47
 [; ;SPIM.c: 47: {

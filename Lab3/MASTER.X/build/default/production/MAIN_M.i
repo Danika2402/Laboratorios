@@ -2700,8 +2700,8 @@ typedef enum
 
 void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
-unsigned spiDataReady();
-char spiRead();
+unsigned spiDataReady(void);
+char spiRead(void);
 # 30 "MAIN_M.c" 2
 
 
@@ -2713,15 +2713,21 @@ void main(void) {
     setup();
     while(1){
         PORTCbits.RC2 = 0;
+        PORTCbits.RC1 = 1;
+       _delay((unsigned long)((1)*(8000000/4000.0)));
+
+       spiWrite(0xFF);
+       PORTB = spiRead();
+
+       _delay((unsigned long)((1)*(8000000/4000.0)));
+       PORTCbits.RC2 = 1;
+       PORTCbits.RC1 = 0;
        _delay((unsigned long)((1)*(8000000/4000.0)));
 
        spiWrite(0xFF);
        PORTD = spiRead();
 
        _delay((unsigned long)((1)*(8000000/4000.0)));
-       PORTCbits.RC2 = 1;
-
-
 
     }
     return;
@@ -2729,13 +2735,18 @@ void main(void) {
 
 void setup(void){
 
-    ANSEL = 0;
-    ANSELH = 0;
-    TRISC2 = 0;
-    TRISB = 0;
-    TRISD = 0;
-    PORTB = 0;
-    PORTD = 0;
+    ANSEL = 0x00;
+    ANSELH = 0x00;
+
+    TRISCbits.TRISC2 = 0;
+    TRISCbits.TRISC1 = 0;
+    TRISB = 0x00;
+    TRISD = 0x00;
+
+    PORTD = 0x00;
+    PORTB = 0x00;
     PORTCbits.RC2 = 1;
+    PORTCbits.RC1 = 1;
+
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }

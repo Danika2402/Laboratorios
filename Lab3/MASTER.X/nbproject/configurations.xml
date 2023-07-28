@@ -147,10 +147,6 @@
         <property key="program-the-device-with-default-config-words" value="true"/>
         <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
-      <item path="LCD.c" ex="true" overriding="false">
-      </item>
-      <item path="LCD.h" ex="true" overriding="false">
-      </item>
       <Simulator>
         <property key="codecoverage.enabled" value="Disable"/>
         <property key="codecoverage.enableoutputtofile" value="false"/>

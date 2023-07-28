@@ -37,32 +37,41 @@ void main(void) {
     setup();
     while(1){
         PORTCbits.RC2 = 0;       //Slave Select
+        PORTCbits.RC1 = 1;
+       __delay_ms(1);
+       
+       spiWrite(FLAG_SPI);
+       PORTB = spiRead();
+       
+       __delay_ms(1);
+       PORTCbits.RC2 = 1;       //Slave Deselect
+       PORTCbits.RC1 = 0;
        __delay_ms(1);
        
        spiWrite(FLAG_SPI);
        PORTD = spiRead();
        
        __delay_ms(1);
-       PORTCbits.RC2 = 1;       //Slave Deselect 
-       
-       //__delay_ms(250);
-       //PORTB++;
+
     }
     return;
 }
 
 void setup(void){
     
-    ANSEL = 0;
-    ANSELH = 0;
+    ANSEL = 0x00;
+    ANSELH = 0x00;
     
     TRISCbits.TRISC2 = 0;
-    TRISB = 0;
-    TRISD = 0;
+    TRISCbits.TRISC1 = 0;
+    TRISB = 0x00;
+    TRISD = 0x00;
     
-    PORTB = 0;
-    PORTD = 0;
+    PORTD = 0x00;
+    PORTB = 0x00;
     PORTCbits.RC2 = 1;
+    PORTCbits.RC1 = 1;
     
+    LCD_INIT();
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }

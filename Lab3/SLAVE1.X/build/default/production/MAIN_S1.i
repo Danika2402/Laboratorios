@@ -2709,14 +2709,14 @@ uint8_t CENTENA(unsigned char c);
 
 
 
-
+uint8_t POT;
 void setup(void);
 
 void __attribute__((picinterrupt(("")))) isr(void){
-    if(SSPIF == 1){
+    if(PIR1bits.SSPIF == 1){
 
-        spiWrite(PORTD);
-        SSPIF = 0;
+        spiWrite(POT);
+        PIR1bits.SSPIF = 0;
     }
 }
 
@@ -2727,7 +2727,7 @@ void main(void) {
 
 
 
-       PORTD = ADC_READ();
+       POT = ADC_READ();
 
 
     }
@@ -2739,21 +2739,16 @@ void setup(void){
     OSCILLATOR(1);
 
     ANSEL = 0b00100000;
-    ANSELH = 0;
-
-    TRISB = 0;
-    TRISD = 0;
-
-    PORTB = 0;
-    PORTD = 0;
-
-
+    ANSELH = 0x00;
+# 73 "MAIN_S1.c"
     ADC_INIT(5);
 
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
     PIR1bits.SSPIF = 0;
     PIE1bits.SSPIE = 1;
+
     TRISAbits.TRISA5 = 1;
+
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
  }

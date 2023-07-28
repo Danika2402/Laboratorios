@@ -31,13 +31,13 @@
 
 #define _XTAL_FREQ  8000000
 
-//uint8_t POT;
+uint8_t POT;
 void setup(void);
 
 void __interrupt() isr(void){
     if(PIR1bits.SSPIF == 1){
         //PORTD = spiRead();
-        spiWrite(PORTD);
+        spiWrite(POT);
         PIR1bits.SSPIF = 0;
     }
 }
@@ -49,7 +49,7 @@ void main(void) {
         /*ADCON0bits.GO_nDONE = 1;
         __delay_us(10);
        while( ADCON0bits.GO_nDONE == 1);*/
-       PORTD = ADC_READ(); 
+       POT = ADC_READ(); 
         
         
     }
@@ -61,13 +61,13 @@ void setup(void){
     OSCILLATOR(1);
     
     ANSEL =  0b00100000;
-    ANSELH = 0;
+    ANSELH = 0x00;
     
-    TRISB = 0;  //salidas
-    TRISD = 0;  //salidas
+    //TRISB = 0;  //salidas
+    //TRISD = 0;  //salidas
     
-    PORTB = 0;
-    PORTD = 0;
+    //PORTB = 0;
+    //PORTD = 0;
     
     //Config. ADC
     ADC_INIT(5);            //canal 5

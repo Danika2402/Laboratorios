@@ -5,7 +5,6 @@
  * Created on 26 de julio de 2023, 03:45 PM
  */
 
-
 #include <stdint.h>
 #include <xc.h>
 #include "ADC.h"
@@ -210,7 +209,7 @@ void ADC_INIT(uint8_t c){               //Seleccion de canales
 }
 unsigned char ADC_READ(void){                     //funcion que lee el potenciometro
     ADCON0bits.GO_nDONE = 1;
-    __delay_ms(2);
+    __delay_ms(50);
     while( ADCON0bits.GO_nDONE == 1);
     return ADRESH;
             
