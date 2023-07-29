@@ -2660,6 +2660,12 @@ void LCD_XY(char x, char y);
 void LCD_INIT(void);
 void LCD_CHAR(char a);
 void LCD_STRING(char *a);
+
+
+
+uint8_t DECENA(unsigned char c);
+uint8_t UNIDAD(unsigned char c);
+uint8_t CENTENA(unsigned char c);
 # 29 "MAIN_M.c" 2
 
 # 1 "./SPIM.h" 1
@@ -2707,6 +2713,10 @@ char spiRead(void);
 
 
 
+
+uint8_t unidad, decena,centena;
+uint8_t unidad1, decena1,centena1;
+uint8_t POT1,POT2,cont;
 void setup(void);
 
 void main(void) {
@@ -2714,20 +2724,85 @@ void main(void) {
     while(1){
         PORTCbits.RC2 = 0;
         PORTCbits.RC1 = 1;
-       _delay((unsigned long)((1)*(8000000/4000.0)));
+       _delay((unsigned long)((10)*(8000000/4000.0)));
 
        spiWrite(0xFF);
-       PORTB = spiRead();
+       POT1 = spiRead();
 
-       _delay((unsigned long)((1)*(8000000/4000.0)));
+       _delay((unsigned long)((10)*(8000000/4000.0)));
+
+       _delay((unsigned long)((1000)*(8000000/4000.0)));
+
+       spiWrite(0xAA);
+       cont = spiRead();
+
+       _delay((unsigned long)((10)*(8000000/4000.0)));
+
        PORTCbits.RC2 = 1;
        PORTCbits.RC1 = 0;
        _delay((unsigned long)((1)*(8000000/4000.0)));
 
        spiWrite(0xFF);
-       PORTD = spiRead();
+       POT2 = spiRead();
 
        _delay((unsigned long)((1)*(8000000/4000.0)));
+
+
+
+       centena = CENTENA(POT1);
+       decena = DECENA(POT1);
+       unidad = UNIDAD(POT1);
+
+       centena += 48;
+       decena += 48;
+       unidad += 48;
+
+       centena1 = CENTENA(cont);
+       decena1 = DECENA(cont);
+       unidad1 = UNIDAD(cont);
+
+       centena1 += 48;
+       decena1 += 48;
+       unidad1 += 48;
+
+       LCD_CLEAR();
+       LCD_XY(1,0);
+       LCD_STRING("S1:   S2:   S3:");
+       LCD_XY(2,0);
+       LCD_CHAR(centena);
+       LCD_STRING(".");
+       LCD_CHAR(decena);
+       LCD_CHAR(unidad);
+
+
+       centena1 = CENTENA(cont);
+       decena1 = DECENA(cont);
+       unidad1 = UNIDAD(cont);
+
+       centena1 += 48;
+       decena1 += 48;
+       unidad1 += 48;
+
+       LCD_XY(2,6);
+       LCD_CHAR(centena1);
+
+       LCD_CHAR(decena1);
+       LCD_CHAR(unidad1);
+
+
+       centena = CENTENA(POT2);
+       decena = DECENA(POT2);
+       unidad = UNIDAD(POT2);
+
+       centena += 48;
+       decena += 48;
+       unidad += 48;
+
+       LCD_XY(2,11);
+       LCD_CHAR(centena);
+       LCD_STRING(".");
+       LCD_CHAR(decena);
+       LCD_CHAR(unidad);
 
     }
     return;
@@ -2748,5 +2823,6 @@ void setup(void){
     PORTCbits.RC2 = 1;
     PORTCbits.RC1 = 1;
 
+    LCD_INIT();
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }

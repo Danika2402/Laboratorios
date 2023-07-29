@@ -10,8 +10,22 @@
 #include "LCD.h"
 #define _XTAL_FREQ  8000000
 
+uint8_t CENTENA(unsigned char c){    //se separa el bit mas significativo   
+    c = (uint8_t)((c*1.9607)/100);
+    return c;
+}
+uint8_t DECENA(unsigned char c){         //se separa el bit medio significativo
+    c = (uint8_t)((c*1.9607) - CENTENA(c)*100)/10;
+    return c;
+}
+
+uint8_t UNIDAD(unsigned char c){         // se separa el bit menos significativo
+    c = (uint8_t)((c*1.9607) - CENTENA(c)*100 - DECENA(c)*10);
+    return c;
+}
+
 void LCD_PORT(char a){
-    LCD_PORT = a;
+    PORT = a;
 }
 void LCD_COM(char a){
     RS_PIN = 0;

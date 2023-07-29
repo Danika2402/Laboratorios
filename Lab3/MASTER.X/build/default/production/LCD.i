@@ -1,4 +1,4 @@
-# 1 "MAIN_S1.c"
+# 1 "LCD.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,21 +6,12 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "MAIN_S1.c" 2
-# 13 "MAIN_S1.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
+# 1 "LCD.c" 2
 
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
+
+
+
+
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdint.h" 1 3
@@ -156,7 +147,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 27 "MAIN_S1.c" 2
+# 8 "LCD.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
@@ -2643,134 +2634,92 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 28 "MAIN_S1.c" 2
+# 9 "LCD.c" 2
 
-# 1 "./SPIS1.h" 1
-# 14 "./SPIS1.h"
+# 1 "./LCD.h" 1
+# 14 "./LCD.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdint.h" 1 3
-# 14 "./SPIS1.h" 2
-
-
-
-typedef enum
-{
-    SPI_MASTER_OSC_DIV4 = 0b00100000,
-    SPI_MASTER_OSC_DIV16 = 0b00100001,
-    SPI_MASTER_OSC_DIV64 = 0b00100010,
-    SPI_MASTER_TMR2 = 0b00100011,
-    SPI_SLAVE_SS_EN = 0b00100100,
-    SPI_SLAVE_SS_DIS = 0b00100101
-}Spi_Type;
-
-typedef enum
-{
-    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
-    SPI_DATA_SAMPLE_END = 0b10000000
-}Spi_Data_Sample;
-
-typedef enum
-{
-    SPI_CLOCK_IDLE_HIGH = 0b00010000,
-    SPI_CLOCK_IDLE_LOW = 0b00000000
-}Spi_Clock_Idle;
-
-typedef enum
-{
-    SPI_IDLE_2_ACTIVE = 0b00000000,
-    SPI_ACTIVE_2_IDLE = 0b01000000
-}Spi_Transmit_Edge;
-
-
-void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
-void spiWrite(char);
-unsigned spiDataReady(void);
-char spiRead(void);
-# 29 "MAIN_S1.c" 2
-
-# 1 "./ADC.h" 1
-# 12 "./ADC.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdint.h" 1 3
-# 12 "./ADC.h" 2
-
-
-
-void OSCILLATOR(uint8_t f);
-
-void IOC_INT(uint8_t a);
-
-void ADC_INIT(uint8_t c);
-unsigned char ADC_READ(void);
-# 30 "MAIN_S1.c" 2
+# 14 "./LCD.h" 2
 
 
 
 
+void LCD_PORT(char a);
+void LCD_COM(char a);
+void LCD_CLEAR(void);
+void LCD_XY(char x, char y);
+void LCD_INIT(void);
+void LCD_CHAR(char a);
+void LCD_STRING(char *a);
 
-uint8_t POT, check;
-void setup(void);
 
-void __attribute__((picinterrupt(("")))) isr(void){
-    if(PIR1bits.SSPIF == 1){
-        check = spiRead();
-        if(check==0xFF){
-            spiWrite(POT);
-        }else if(check==0xAA){
-            spiWrite(PORTD);
-        }
-        PIR1bits.SSPIF = 0;
-    }else if (INTCONbits.RBIF==1){
-        if (RB0==0){
-            if (RB0==0)
-                PORTD++;
-        } else if (RB1==0){
-            if (RB1==0)
-                PORTD--;
-        }
-        INTCONbits.RBIF=0;
-    }
+
+uint8_t DECENA(unsigned char c);
+uint8_t UNIDAD(unsigned char c);
+uint8_t CENTENA(unsigned char c);
+# 10 "LCD.c" 2
+
+
+
+uint8_t CENTENA(unsigned char c){
+    c = (uint8_t)((c*1.9607)/100);
+    return c;
+}
+uint8_t DECENA(unsigned char c){
+    c = (uint8_t)((c*1.9607) - CENTENA(c)*100)/10;
+    return c;
 }
 
-void main(void) {
-    setup();
-    while(1){
-
-
-
-
-       POT = ADC_READ();
-
-
-    }
-    return;
+uint8_t UNIDAD(unsigned char c){
+    c = (uint8_t)((c*1.9607) - CENTENA(c)*100 - DECENA(c)*10);
+    return c;
 }
 
-void setup(void){
+void LCD_PORT(char a){
+    PORTB = a;
+}
+void LCD_COM(char a){
+    RD6 = 0;
+    LCD_PORT(a);
+    RD7 = 1;
+    _delay((unsigned long)((5)*(8000000/4000.0)));
+    RD7 = 0;
+}
+void LCD_CLEAR(void){
+    LCD_PORT(0);
+    LCD_PORT(1);
+}
+void LCD_XY(char x, char y){
+    if(x == 1)
+        LCD_COM(0x80 + y);
+ else if(x == 2)
+        LCD_COM(0xC0 + y);
+}
+void LCD_INIT(void){
+    LCD_PORT(0x00);
+ RD6 = 0;
+ _delay((unsigned long)((25)*(8000000/4000.0)));
 
-    OSCILLATOR(1);
+    LCD_COM(0x30);
+  _delay((unsigned long)((5)*(8000000/4000.0)));
+    LCD_COM(0x30);
+      _delay((unsigned long)((15)*(8000000/4000.0)));
+    LCD_COM(0x30);
 
-    ANSEL = 0b00100000;
-    ANSELH = 0x00;
-
-    TRISB = 0b00000011;
-    TRISD = 0;
-
-    PORTB = 0;
-    PORTD = 0;
-
-
-    IOC_INT(0b00000011);
-
-
-    ADC_INIT(5);
-
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    PIR1bits.SSPIF = 0;
-    PIE1bits.SSPIE = 1;
-    INTCONbits.RBIE = 1;
-    INTCONbits.RBIF = 0;
-
-    TRISAbits.TRISA5 = 1;
-
-    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
- }
+    LCD_COM(0x38);
+    LCD_COM(0x0C);
+    LCD_COM(0x01);
+    LCD_COM(0x06);
+}
+void LCD_CHAR(char a){
+    RD6 = 1;
+    LCD_PORT(a);
+    RD7 = 1;
+   _delay((unsigned long)((4)*(8000000/4000.0)));
+    RD7 = 0;
+}
+void LCD_STRING(char *a){
+    int i;
+ for(i=0;a[i]!='\0';i++)
+  LCD_CHAR(a[i]);
+}

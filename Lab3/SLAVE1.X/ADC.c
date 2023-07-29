@@ -10,7 +10,7 @@
 #include "ADC.h"
 #define _XTAL_FREQ  8000000
 
-uint8_t CENTENA(unsigned char c){    //se separa el bit mas significativo   
+/*uint8_t CENTENA(unsigned char c){    //se separa el bit mas significativo   
     c = (uint8_t)((c*1.9607)/100);
     return c;
 }
@@ -22,6 +22,15 @@ uint8_t DECENA(unsigned char c){         //se separa el bit medio significativo
 uint8_t UNIDAD(unsigned char c){         // se separa el bit menos significativo
     c = (uint8_t)((c*1.9607) - CENTENA(c)*100 - DECENA(c)*10);
     return c;
+}*/
+
+void IOC_INT(uint8_t a){        //configuracion de PULL UPS
+                                //de los botones
+    //Config. PULL UP
+    OPTION_REGbits.nRBPU = 0;
+    WPUBbits.WPUB = a;
+    IOCBbits.IOCB = a;         
+    
 }
 
 void OSCILLATOR(uint8_t f){         //Escogo que frecuencia quiero para el oscilador
@@ -215,7 +224,7 @@ unsigned char ADC_READ(void){                     //funcion que lee el potenciom
             
 }
 
-void ADC_CHANGE_CHANNEL(uint8_t c, uint8_t b){      //cambio de canales, si utilizamos
+/*void ADC_CHANGE_CHANNEL(uint8_t c, uint8_t b){      //cambio de canales, si utilizamos
     ADCON0bits.GO = 1;                      //varios
     while(ADCON0bits.GO == 1){
         if(ADCON0bits.GO == 0){
@@ -232,4 +241,4 @@ void ADC_CHANGE_CHANNEL(uint8_t c, uint8_t b){      //cambio de canales, si util
 
 int ADC_GET_CHANNEL(){          //nos dice en que canal estamos
     return ADCON0bits.CHS;
-}
+}*/

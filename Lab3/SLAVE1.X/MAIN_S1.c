@@ -28,16 +28,33 @@
 #include <xc.h>
 #include "SPIS1.h"
 #include "ADC.h"
-
+#define FLAG_SPI 0xFF
+#define CONT 0xAA
 #define _XTAL_FREQ  8000000
 
-uint8_t POT;
+uint8_t POT, check;
 void setup(void);
 
 void __interrupt() isr(void){
-    if(PIR1bits.SSPIF == 1){
-        //PORTD = spiRead();
-        spiWrite(POT);
+    
+    if (INTCONbits.RBIF==1){               //Interrupciones de botones en PORTB con PULL UP
+        if (RB0==0){
+            if (RB0==0)       //RB0 incrementa PORTA
+                PORTD++;
+        } else if (RB1==0){     //RB1 decrementa PORTA
+            if (RB1==0)
+                PORTD--;  
+        }
+        INTCONbits.RBIF=0;
+    }
+    else if(PIR1bits.SSPIF == 1){
+        check = spiRead();
+        
+        if(check==FLAG_SPI){
+            spiWrite(POT);
+        }else if(check==CONT){
+            spiWrite(PORTD);
+        }
         PIR1bits.SSPIF = 0;
     }
 }
@@ -63,11 +80,14 @@ void setup(void){
     ANSEL =  0b00100000;
     ANSELH = 0x00;
     
-    //TRISB = 0;  //salidas
-    //TRISD = 0;  //salidas
+    TRISB = 0b00000011;     //RB1 y RB0 entradas
+    TRISD = 0;  //salidas
     
-    //PORTB = 0;
-    //PORTD = 0;
+    PORTB = 0;
+    PORTD = 0;
+    
+    //Config. PULL UP
+    IOC_INT(0b00000011);     //pines 1 y 2 se realizaran la interrupcion
     
     //Config. ADC
     ADC_INIT(5);            //canal 5
@@ -76,6 +96,8 @@ void setup(void){
     INTCONbits.PEIE = 1;        // Habilitamos interrupciones PEIE
     PIR1bits.SSPIF = 0;         // Borramos bandera interrupción MSSP
     PIE1bits.SSPIE = 1;         // Habilitamos interrupción MSSP
+    INTCONbits.RBIE = 1;    //interrupcion pull up 
+    INTCONbits.RBIF = 0;
     
     TRISAbits.TRISA5 = 1;       // Slave Select
     
