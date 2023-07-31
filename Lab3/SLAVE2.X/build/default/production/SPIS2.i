@@ -2674,7 +2674,7 @@ typedef enum
 
 void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
-unsigned spiDataReady(void);
+
 char spiRead(void);
 # 10 "SPIS2.c" 2
 
@@ -2697,26 +2697,12 @@ void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockI
     SSPCON = sType | sClockIdle;
 }
 
-static void spiReceiveWait()
-{
-    while ( !SSPSTATbits.BF );
-}
+
+
+
+
 
 void spiWrite(char dat)
 {
     SSPBUF = dat;
-}
-
-unsigned spiDataReady(void)
-{
-    if(SSPSTATbits.BF)
-        return 1;
-    else
-        return 0;
-}
-
-char spiRead(void)
-{
-    spiReceiveWait();
-    return(SSPBUF);
 }

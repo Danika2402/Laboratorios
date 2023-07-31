@@ -27,26 +27,26 @@ void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockI
     SSPCON = sType | sClockIdle;
 }
 
-static void spiReceiveWait()
+/*static void spiReceiveWait()
 {
     while ( !SSPSTATbits.BF ); // Wait for Data Receive complete
-}
+}*/
 
 void spiWrite(char dat)  //Write data to SPI bus
 {
     SSPBUF = dat;
 }
 
-unsigned spiDataReady(void) //Check whether the data is ready to read
+/*unsigned spiDataReady(void) //Check whether the data is ready to read
 {
     if(SSPSTATbits.BF)
         return 1;
     else
         return 0;
-}
+}*/
 
-char spiRead(void) //REad the received data
+/*char spiRead(void) //REad the received data
 {
     spiReceiveWait();        // wait until the all bits receive
     return(SSPBUF); // read the received data from the buffer
-}
+}*/

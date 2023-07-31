@@ -298,34 +298,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SPIS1.c: 37: }
 [e :UE 145 ]
 }
-"39
-[; ;SPIS1.c: 39: unsigned spiDataReady(void)
-[v _spiDataReady `(ui ~T0 @X0 1 ef ]
-"40
-[; ;SPIS1.c: 40: {
-{
-[e :U _spiDataReady ]
-[f ]
-"41
-[; ;SPIS1.c: 41:     if(SSPSTATbits.BF)
-[e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 147  ]
-"42
-[; ;SPIS1.c: 42:         return 1;
-[e ) -> -> 1 `i `ui ]
-[e $UE 146  ]
-[e $U 148  ]
-"43
-[; ;SPIS1.c: 43:     else
-[e :U 147 ]
-"44
-[; ;SPIS1.c: 44:         return 0;
-[e ) -> -> 0 `i `ui ]
-[e $UE 146  ]
-[e :U 148 ]
-"45
-[; ;SPIS1.c: 45: }
-[e :UE 146 ]
-}
 "47
 [; ;SPIS1.c: 47: char spiRead(void)
 [v _spiRead `(uc ~T0 @X0 1 ef ]
@@ -340,8 +312,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "50
 [; ;SPIS1.c: 50:     return(SSPBUF);
 [e ) -> _SSPBUF `uc ]
-[e $UE 149  ]
+[e $UE 146  ]
 "51
 [; ;SPIS1.c: 51: }
-[e :UE 149 ]
+[e :UE 146 ]
 }

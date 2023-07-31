@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "MAIN_S1.c" 2
-# 13 "MAIN_S1.c"
+# 21 "MAIN_S1.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -156,7 +156,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 27 "MAIN_S1.c" 2
+# 35 "MAIN_S1.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
@@ -2643,7 +2643,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 28 "MAIN_S1.c" 2
+# 36 "MAIN_S1.c" 2
 
 # 1 "./SPIS1.h" 1
 # 14 "./SPIS1.h"
@@ -2683,9 +2683,9 @@ typedef enum
 
 void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
-unsigned spiDataReady(void);
+
 char spiRead(void);
-# 29 "MAIN_S1.c" 2
+# 37 "MAIN_S1.c" 2
 
 # 1 "./ADC.h" 1
 # 12 "./ADC.h"
@@ -2700,46 +2700,40 @@ void IOC_INT(uint8_t a);
 
 void ADC_INIT(uint8_t c);
 unsigned char ADC_READ(void);
-# 30 "MAIN_S1.c" 2
+# 38 "MAIN_S1.c" 2
 
 
 
 
-
-uint8_t POT, check;
+uint8_t POT, check,cont;
 void setup(void);
 
 void __attribute__((picinterrupt(("")))) isr(void){
-    if(PIR1bits.SSPIF == 1){
-        check = spiRead();
-        if(check==0xFF){
-            spiWrite(POT);
-        }else if(check==0xAA){
-            spiWrite(PORTD);
-        }
-        PIR1bits.SSPIF = 0;
-    }else if (INTCONbits.RBIF==1){
+    if (INTCONbits.RBIF==1){
         if (RB0==0){
             if (RB0==0)
-                PORTD++;
+                cont++;
         } else if (RB1==0){
             if (RB1==0)
-                PORTD--;
+                cont--;
         }
         INTCONbits.RBIF=0;
+    }
+    else if(PIR1bits.SSPIF == 1){
+        check = spiRead();
+        if(check==0xAA){
+            spiWrite(POT);
+        }else{
+            spiWrite(cont);
+        }
+        PIR1bits.SSPIF = 0;
     }
 }
 
 void main(void) {
     setup();
     while(1){
-
-
-
-
        POT = ADC_READ();
-
-
     }
     return;
 }
@@ -2752,10 +2746,7 @@ void setup(void){
     ANSELH = 0x00;
 
     TRISB = 0b00000011;
-    TRISD = 0;
-
     PORTB = 0;
-    PORTD = 0;
 
 
     IOC_INT(0b00000011);

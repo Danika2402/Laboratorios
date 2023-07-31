@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"145 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\MASTER.X\MAIN_M.c
+"144 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\MASTER.X\MAIN_M.c
 [e E1311 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -87,9 +87,9 @@ SPI_ACTIVE_2_IDLE 64
 [v _LCD_CHAR LCD_CHAR `(v  1 e 1 0 ]
 "70
 [v _LCD_STRING LCD_STRING `(v  1 e 1 0 ]
-"40 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\MASTER.X\MAIN_M.c
+"46 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\MASTER.X\MAIN_M.c
 [v _main main `(v  1 e 1 0 ]
-"129
+"128
 [v _setup setup `(v  1 e 1 0 ]
 "11 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\MASTER.X\SPIM.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -137,7 +137,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "2178
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S233 . 1 `uc 1 BF 1 0 :1:0 
+[s S230 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -147,39 +147,39 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2232
-[s S242 . 1 `uc 1 . 1 0 :2:0 
+[s S239 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S247 . 1 `uc 1 . 1 0 :2:0 
+[s S244 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S253 . 1 `uc 1 . 1 0 :2:0 
+[s S250 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S258 . 1 `uc 1 . 1 0 :2:0 
+[s S255 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S263 . 1 `uc 1 . 1 0 :2:0 
+[s S260 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S268 . 1 `uc 1 . 1 0 :2:0 
+[s S265 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S273 . 1 `S233 1 . 1 0 `S242 1 . 1 0 `S247 1 . 1 0 `S253 1 . 1 0 `S258 1 . 1 0 `S263 1 . 1 0 `S268 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES273  1 e 1 @148 ]
+[u S270 . 1 `S230 1 . 1 0 `S239 1 . 1 0 `S244 1 . 1 0 `S250 1 . 1 0 `S255 1 . 1 0 `S260 1 . 1 0 `S265 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES270  1 e 1 @148 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
@@ -192,22 +192,18 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4468
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
-"35 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\MASTER.X\MAIN_M.c
+"42 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\MASTER.X\MAIN_M.c
 [v _unidad unidad `uc  1 e 1 0 ]
 [v _decena decena `uc  1 e 1 0 ]
 [v _centena centena `uc  1 e 1 0 ]
-"36
-[v _unidad1 unidad1 `uc  1 e 1 0 ]
-[v _decena1 decena1 `uc  1 e 1 0 ]
-[v _centena1 centena1 `uc  1 e 1 0 ]
-"37
+"43
 [v _POT1 POT1 `uc  1 e 1 0 ]
 [v _POT2 POT2 `uc  1 e 1 0 ]
 [v _cont cont `uc  1 e 1 0 ]
-"40
+"46
 [v _main main `(v  1 e 1 0 ]
 {
-"127
+"126
 } 0
 "33 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\MASTER.X\SPIM.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
@@ -228,10 +224,10 @@ SPI_ACTIVE_2_IDLE 64
 {
 "31
 } 0
-"129 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\MASTER.X\MAIN_M.c
+"128 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\MASTER.X\MAIN_M.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"146
+"145
 } 0
 "11 C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\MASTER.X\SPIM.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -348,17 +344,17 @@ SPI_ACTIVE_2_IDLE 64
 "8 C:\Program Files\Microchip\xc8\v2.35\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S636 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S632 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S641 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S644 . 4 `l 1 i 4 0 `d 1 f 4 0 `S636 1 fAsBytes 4 0 `S641 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S644  1 a 4 20 ]
+[s S637 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S640 . 4 `l 1 i 4 0 `d 1 f 4 0 `S632 1 fAsBytes 4 0 `S637 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S640  1 a 4 20 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 14 ]
-[s S713 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S709 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S716 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S713 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S716  1 a 2 24 ]
+[u S712 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S709 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S712  1 a 2 24 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 19 ]
 "11

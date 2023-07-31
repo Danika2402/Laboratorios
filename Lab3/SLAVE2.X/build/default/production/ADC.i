@@ -2647,30 +2647,8 @@ void OSCILLATOR(uint8_t f);
 
 void ADC_INIT(uint8_t c);
 unsigned char ADC_READ(void);
-void ADC_CHANGE_CHANNEL(uint8_t c,uint8_t b);
-int ADC_GET_CHANNEL();
-
-uint8_t DECENA(unsigned char c);
-uint8_t UNIDAD(unsigned char c);
-uint8_t CENTENA(unsigned char c);
 # 10 "ADC.c" 2
-
-
-
-uint8_t CENTENA(unsigned char c){
-    c = (uint8_t)((c*1.9607)/100);
-    return c;
-}
-uint8_t DECENA(unsigned char c){
-    c = (uint8_t)((c*1.9607) - CENTENA(c)*100)/10;
-    return c;
-}
-
-uint8_t UNIDAD(unsigned char c){
-    c = (uint8_t)((c*1.9607) - CENTENA(c)*100 - DECENA(c)*10);
-    return c;
-}
-
+# 27 "ADC.c"
 void OSCILLATOR(uint8_t f){
     OSCCONbits.SCS = 1;
 
@@ -2860,23 +2838,4 @@ unsigned char ADC_READ(void){
     while( ADCON0bits.GO_nDONE == 1);
     return ADRESH;
 
-}
-
-void ADC_CHANGE_CHANNEL(uint8_t c, uint8_t b){
-    ADCON0bits.GO = 1;
-    while(ADCON0bits.GO == 1){
-        if(ADCON0bits.GO == 0){
-            if(ADCON0bits.CHS == c){
-                ADCON0bits.CHS = b;
-            }else if(ADCON0bits.CHS == b){
-                ADCON0bits.CHS = c;
-            }
-            ADCON0bits.GO = 1;
-        }
-    }
-    return;
-}
-
-int ADC_GET_CHANNEL(){
-    return ADCON0bits.CHS;
 }

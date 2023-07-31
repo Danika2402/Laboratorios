@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c00000000000000010000000083ffff0083ffffffffffffffffffff1a0100000000000089070000d1030000</PLACEMENT>
+  <PLACEMENT>2c00000002000000030000000083ffff0083ffffffffffffffffffff1a0100000300000089070000d4030000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
+  <WINDOW type="default" module="DXP"/>
  </FRAME>
  <MODULE name="VSMDEBUG">
   <PWI>
-   <POPUP w="800" x="433" flags="00000002" y="585" h="358" pid="0" iid="-1">
+   <POPUP w="800" x="306" flags="00000002" y="603" h="358" pid="0" iid="-1">
     <PROPERTIES>
      <ITEM name="Message Column Width">540</ITEM>
      <ITEM name="ShowGrid">No</ITEM>
@@ -174,6 +175,12 @@
     <PROPERTIES>
      <ITEM name="HSplitter1Pos">125</ITEM>
      <ITEM name="VSplitter1Pos">298</ITEM>
+    </PROPERTIES>
+   </POPUP>
+   <POPUP w="742" x="300" flags="00000022" y="411" h="607" pid="0" iid="10">
+    <PROPERTIES>
+     <ITEM name="HSplitter1Pos">6</ITEM>
+     <ITEM name="VSplitter1Pos">6</ITEM>
     </PROPERTIES>
    </POPUP>
   </PWI>

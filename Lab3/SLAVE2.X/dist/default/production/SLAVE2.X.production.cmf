@@ -26,7 +26,7 @@ cstackCOMMON COMMON 1 70 70 8 1 1
 intentry CODE 0 4 4 8 2 1
 bssCOMMON COMMON 1 78 78 1 1 1
 config CONFIG 4 2007 2007 2 2 1
-$C:\Users\HP\AppData\Local\Temp\xcAsfk4.o
+$C:\Users\HP\AppData\Local\Temp\xcAspig.o
 idloc IDLOC 5 2000 2000 4 2 1
 reset_vec CODE 0 0 0 3 2 1
 end_init CODE 0 C C 3 2 1
@@ -75,21 +75,21 @@ STRING 190-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\SLAVE2.X.production.o
-F cinit CODE >778:C:\Users\HP\AppData\Local\Temp\xcAsfk4.s
-F cinit CODE >781:C:\Users\HP\AppData\Local\Temp\xcAsfk4.s
-F cinit CODE >792:C:\Users\HP\AppData\Local\Temp\xcAsfk4.s
-10 cinit CODE >798:C:\Users\HP\AppData\Local\Temp\xcAsfk4.s
-10 cinit CODE >800:C:\Users\HP\AppData\Local\Temp\xcAsfk4.s
-11 cinit CODE >801:C:\Users\HP\AppData\Local\Temp\xcAsfk4.s
-4 intentry CODE >37:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+F cinit CODE >776:C:\Users\HP\AppData\Local\Temp\xcAspig.s
+F cinit CODE >779:C:\Users\HP\AppData\Local\Temp\xcAspig.s
+F cinit CODE >790:C:\Users\HP\AppData\Local\Temp\xcAspig.s
+10 cinit CODE >796:C:\Users\HP\AppData\Local\Temp\xcAspig.s
+10 cinit CODE >798:C:\Users\HP\AppData\Local\Temp\xcAspig.s
+11 cinit CODE >799:C:\Users\HP\AppData\Local\Temp\xcAspig.s
+4 intentry CODE >43:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
 18A text7 CODE >35:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\SPIS2.c
 18B text7 CODE >37:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\SPIS2.c
 18F text7 CODE >38:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\SPIS2.c
-14F text6 CODE >37:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-14F text6 CODE >38:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-155 text6 CODE >40:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-15B text6 CODE >41:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-15E text6 CODE >43:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+14F text6 CODE >43:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+14F text6 CODE >44:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+155 text6 CODE >45:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+15B text6 CODE >46:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+15E text6 CODE >48:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
 165 text5 CODE >210:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\ADC.c
 165 text5 CODE >211:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\ADC.c
 168 text5 CODE >212:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\ADC.c
@@ -283,21 +283,21 @@ FF text3 CODE >84:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digita
 149 text2 CODE >25:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\SPIS2.c
 149 text2 CODE >27:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\SPIS2.c
 14E text2 CODE >28:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\SPIS2.c
-115 text1 CODE >53:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-115 text1 CODE >56:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-11B text1 CODE >58:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-11F text1 CODE >59:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-120 text1 CODE >68:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-126 text1 CODE >70:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-127 text1 CODE >71:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-128 text1 CODE >72:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-12B text1 CODE >73:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-12E text1 CODE >75:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-12F text1 CODE >77:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-138 text1 CODE >79:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-179 maintext CODE >45:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-179 maintext CODE >46:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
-17E maintext CODE >48:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+115 text1 CODE >58:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+115 text1 CODE >60:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+11B text1 CODE >62:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+11F text1 CODE >63:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+120 text1 CODE >66:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+126 text1 CODE >68:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+127 text1 CODE >69:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+128 text1 CODE >70:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+12B text1 CODE >71:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+12E text1 CODE >73:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+12F text1 CODE >75:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+138 text1 CODE >77:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+179 maintext CODE >50:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+179 maintext CODE >51:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
+17E maintext CODE >53:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE2.X\MAIN_S2.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -320,18 +320,18 @@ spiInit@sTransmitEdge 75 0 COMMON 1 cstackCOMMON dist/default/production\SLAVE2.
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 __end_of_OSCILLATOR 22A 0 CODE 0 text3 dist/default/production\SLAVE2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\HP\AppData\Local\Temp\xcAsfk4.o
+___sp 0 0 STACK 2 stack C:\Users\HP\AppData\Local\Temp\xcAspig.o
 _main 2F2 0 CODE 0 maintext dist/default/production\SLAVE2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-start 18 0 CODE 0 init C:\Users\HP\AppData\Local\Temp\xcAsfk4.o
+start 18 0 CODE 0 init C:\Users\HP\AppData\Local\Temp\xcAspig.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAsfk4.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAsfk4.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAsfk4.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAsfk4.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAsfk4.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAsfk4.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAspig.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAspig.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAspig.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAspig.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAspig.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAspig.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
@@ -345,8 +345,8 @@ _ADC_READ 2CA 0 CODE 0 text5 dist/default/production\SLAVE2.X.production.o
 ADC_INIT@c 75 0 COMMON 1 cstackCOMMON dist/default/production\SLAVE2.X.production.o
 __end_of_ADC_INIT 192 0 CODE 0 text4 dist/default/production\SLAVE2.X.production.o
 __end_of_ADC_READ 2F2 0 CODE 0 text5 dist/default/production\SLAVE2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\HP\AppData\Local\Temp\xcAsfk4.o
-___stacklo 0 0 ABS 0 - C:\Users\HP\AppData\Local\Temp\xcAsfk4.o
+___stackhi 0 0 ABS 0 - C:\Users\HP\AppData\Local\Temp\xcAspig.o
+___stacklo 0 0 ABS 0 - C:\Users\HP\AppData\Local\Temp\xcAspig.o
 spiInit@sDataSample 73 0 COMMON 1 cstackCOMMON dist/default/production\SLAVE2.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\SLAVE2.X.production.o
 _TRISAbits 85 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
@@ -354,7 +354,7 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _TRISC5 43D 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\HP\AppData\Local\Temp\xcAsfk4.o
+___int_sp 0 0 STACK 2 stack C:\Users\HP\AppData\Local\Temp\xcAspig.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -399,7 +399,7 @@ _isr 29E 0 CODE 0 text6 dist/default/production\SLAVE2.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __end_of_isr 2CA 0 CODE 0 text6 dist/default/production\SLAVE2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\HP\AppData\Local\Temp\xcAsfk4.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\HP\AppData\Local\Temp\xcAspig.o
 OSCILLATOR@f 75 0 COMMON 1 cstackCOMMON dist/default/production\SLAVE2.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __pmaintext 2F2 0 CODE 0 maintext dist/default/production\SLAVE2.X.production.o
@@ -447,7 +447,6 @@ __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\SLAVE2.X.production.o
 _setup 22A 0 CODE 0 text1 dist/default/production\SLAVE2.X.production.o
-_SSPSTATbits 94 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\SLAVE2.X.production.o
 spiInit@sClockIdle 74 0 COMMON 1 cstackCOMMON dist/default/production\SLAVE2.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\SLAVE2.X.production.o

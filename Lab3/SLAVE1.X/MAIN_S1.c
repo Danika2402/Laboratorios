@@ -4,12 +4,20 @@
  *
  * Created on 26 de julio de 2023, 01:04 PM
  */ 
-//*****************************************************************************
+//******************************************************************************
 /* Electronica Digital 2 - 2023
- * Laboratorio 3 - SPI
+ * Laboratorio 3 - SPI SLAVE 1
+ * Uso de 1 potenciometro y 2 bottones
  * 
+ * ADC = lectura de potenciometro
+ * PULL UP = incrementar/decrementar puerto
+ * SPI = conexion entre pics
+ * 
+ * FUNCION: con la configuracion SPI 3 pics se comunican entre si, 2 pics 
+ * llamados SLAVES le envian el valor de un potenciometro cada uno y un contador
+ * al MAESTRO, que lo muestra en un LCD
 */
-//*****************************************************************************
+//******************************************************************************
 #pragma config  FOSC    = INTRC_NOCLKOUT
 #pragma config  WDTE    = OFF
 #pragma config  PWRTE   = OFF
@@ -28,32 +36,29 @@
 #include <xc.h>
 #include "SPIS1.h"
 #include "ADC.h"
-#define FLAG_SPI 0xFF
 #define CONT 0xAA
 #define _XTAL_FREQ  8000000
 
-uint8_t POT, check;
+uint8_t POT, check,cont;
 void setup(void);
 
 void __interrupt() isr(void){
-    
     if (INTCONbits.RBIF==1){               //Interrupciones de botones en PORTB con PULL UP
         if (RB0==0){
             if (RB0==0)       //RB0 incrementa PORTA
-                PORTD++;
+                cont++;
         } else if (RB1==0){     //RB1 decrementa PORTA
             if (RB1==0)
-                PORTD--;  
+                cont--;  
         }
         INTCONbits.RBIF=0;
     }
     else if(PIR1bits.SSPIF == 1){
         check = spiRead();
-        
-        if(check==FLAG_SPI){
+        if(check==CONT){
             spiWrite(POT);
-        }else if(check==CONT){
-            spiWrite(PORTD);
+        }else{
+            spiWrite(cont);
         }
         PIR1bits.SSPIF = 0;
     }
@@ -62,13 +67,7 @@ void __interrupt() isr(void){
 void main(void) {
     setup();
     while(1){
-
-        /*ADCON0bits.GO_nDONE = 1;
-        __delay_us(10);
-       while( ADCON0bits.GO_nDONE == 1);*/
        POT = ADC_READ(); 
-        
-        
     }
     return;
 }
@@ -81,10 +80,7 @@ void setup(void){
     ANSELH = 0x00;
     
     TRISB = 0b00000011;     //RB1 y RB0 entradas
-    TRISD = 0;  //salidas
-    
     PORTB = 0;
-    PORTD = 0;
     
     //Config. PULL UP
     IOC_INT(0b00000011);     //pines 1 y 2 se realizaran la interrupcion

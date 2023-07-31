@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "MAIN_M.c" 2
-# 13 "MAIN_M.c"
+# 20 "MAIN_M.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -156,7 +156,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 27 "MAIN_M.c" 2
+# 34 "MAIN_M.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
@@ -2643,7 +2643,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 28 "MAIN_M.c" 2
+# 35 "MAIN_M.c" 2
 
 # 1 "./LCD.h" 1
 # 14 "./LCD.h"
@@ -2666,7 +2666,7 @@ void LCD_STRING(char *a);
 uint8_t DECENA(unsigned char c);
 uint8_t UNIDAD(unsigned char c);
 uint8_t CENTENA(unsigned char c);
-# 29 "MAIN_M.c" 2
+# 36 "MAIN_M.c" 2
 
 # 1 "./SPIM.h" 1
 # 14 "./SPIM.h"
@@ -2706,16 +2706,15 @@ typedef enum
 
 void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 void spiWrite(char);
-unsigned spiDataReady(void);
+
 char spiRead(void);
-# 30 "MAIN_M.c" 2
+# 37 "MAIN_M.c" 2
 
 
 
 
 
 uint8_t unidad, decena,centena;
-uint8_t unidad1, decena1,centena1;
 uint8_t POT1,POT2,cont;
 void setup(void);
 
@@ -2724,19 +2723,12 @@ void main(void) {
     while(1){
         PORTCbits.RC2 = 0;
         PORTCbits.RC1 = 1;
-       _delay((unsigned long)((10)*(8000000/4000.0)));
-
-       spiWrite(0xFF);
-       POT1 = spiRead();
-
-       _delay((unsigned long)((10)*(8000000/4000.0)));
-
-       _delay((unsigned long)((1000)*(8000000/4000.0)));
+       _delay((unsigned long)((1)*(8000000/4000.0)));
 
        spiWrite(0xAA);
        cont = spiRead();
 
-       _delay((unsigned long)((10)*(8000000/4000.0)));
+       _delay((unsigned long)((1)*(8000000/4000.0)));
 
        PORTCbits.RC2 = 1;
        PORTCbits.RC1 = 0;
@@ -2747,7 +2739,17 @@ void main(void) {
 
        _delay((unsigned long)((1)*(8000000/4000.0)));
 
+       PORTCbits.RC2 = 0;
+       PORTCbits.RC1 = 1;
+       _delay((unsigned long)((1)*(8000000/4000.0)));
 
+       spiWrite(0xFF);
+       POT1 = spiRead();
+
+       _delay((unsigned long)((1)*(8000000/4000.0)));
+
+       PORTCbits.RC2 = 1;
+       PORTCbits.RC1 = 1;
 
        centena = CENTENA(POT1);
        decena = DECENA(POT1);
@@ -2756,14 +2758,6 @@ void main(void) {
        centena += 48;
        decena += 48;
        unidad += 48;
-
-       centena1 = CENTENA(cont);
-       decena1 = DECENA(cont);
-       unidad1 = UNIDAD(cont);
-
-       centena1 += 48;
-       decena1 += 48;
-       unidad1 += 48;
 
        LCD_CLEAR();
        LCD_XY(1,0);
@@ -2774,20 +2768,18 @@ void main(void) {
        LCD_CHAR(decena);
        LCD_CHAR(unidad);
 
+       centena = CENTENA(cont);
+       decena = DECENA(cont);
+       unidad = UNIDAD(cont);
 
-       centena1 = CENTENA(cont);
-       decena1 = DECENA(cont);
-       unidad1 = UNIDAD(cont);
-
-       centena1 += 48;
-       decena1 += 48;
-       unidad1 += 48;
+       centena += 48;
+       decena += 48;
+       unidad += 48;
 
        LCD_XY(2,6);
-       LCD_CHAR(centena1);
-
-       LCD_CHAR(decena1);
-       LCD_CHAR(unidad1);
+       LCD_CHAR(centena);
+       LCD_CHAR(decena);
+       LCD_CHAR(unidad);
 
 
        centena = CENTENA(POT2);

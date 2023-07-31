@@ -36,13 +36,13 @@ void spiWrite(char dat)  //Write data to SPI bus
     SSPBUF = dat;
 }
 
-unsigned spiDataReady(void) //Check whether the data is ready to read
+/*unsigned spiDataReady(void) //Check whether the data is ready to read
 {
     if(SSPSTATbits.BF)
         return 1;
     else
         return 0;
-}
+}*/
 
 char spiRead(void) //REad the received data
 {

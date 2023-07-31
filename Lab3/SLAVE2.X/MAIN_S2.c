@@ -4,12 +4,19 @@
  *
  * Created on 27 de julio de 2023, 01:07 PM
  */
-//*****************************************************************************
+//******************************************************************************
 /* Electronica Digital 2 - 2023
- * Laboratorio 3 - SPI
+ * Laboratorio 3 - SPI SLAVE 2
+ * Uso de 1 potenciometro
  * 
+ * ADC = lectura de potenciometro
+ * SPI = conexion entre pics
+ * 
+ * FUNCION: con la configuracion SPI 3 pics se comunican entre si, 2 pics 
+ * llamados SLAVES le envian el valor de un potenciometro cada uno y un contador
+ * al MAESTRO, que lo muestra en un LCD
 */
-//*****************************************************************************
+//******************************************************************************
 #pragma config  FOSC    = INTRC_NOCLKOUT
 #pragma config  WDTE    = OFF
 #pragma config  PWRTE   = OFF
@@ -28,7 +35,6 @@
 #include <xc.h>
 #include "SPIS2.h"
 #include "ADC.h"
-
 #define _XTAL_FREQ  8000000
 
 uint8_t POT;
@@ -36,7 +42,6 @@ void setup(void);
 
 void __interrupt() isr(void){
     if(PIR1bits.SSPIF == 1){
-        //PORTD = spiRead();
         spiWrite(POT);
         PIR1bits.SSPIF = 0;
     }
@@ -51,18 +56,11 @@ void main(void) {
 }
 
 void setup(void){
-    
     //oscilador a 8M Hz
     OSCILLATOR(1);
     
     ANSEL =  0b00100000;
     ANSELH = 0x00;
-    
-    //TRISB = 0;  //salidas
-    //RISD = 0x00;  //salidas
-    
-    //PORTB = 0;
-    //PORTD = 0x00;
     
     //Config. ADC
     ADC_INIT(5);            //canal 5

@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"38 MAIN_M.c
-[; ;MAIN_M.c: 38: void setup(void);
+"44 MAIN_M.c
+[; ;MAIN_M.c: 44: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
 "297 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc/pic16f887.h
 [s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -65,8 +65,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22 ./LCD.h
 [; ;./LCD.h: 22: void LCD_INIT(void);
 [v _LCD_INIT `(v ~T0 @X0 0 ef ]
-"145 MAIN_M.c
-[; ;MAIN_M.c: 145:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"144 MAIN_M.c
+[; ;MAIN_M.c: 144:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1311 32 33 34 35 36 37 .. ]
 [n E1311 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1319 0 128 .. ]
@@ -78,29 +78,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "46 ./SPIM.h
 [; ;./SPIM.h: 46: void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 [v _spiInit `(v ~T0 @X0 0 ef4`E1311`E1319`E1323`E1327 ]
-"13 MAIN_M.c
+"20 MAIN_M.c
 [p x FOSC        =  INTRC_NOCLKOUT ]
-"14
-[p x WDTE        =  OFF ]
-"15
-[p x PWRTE      =  OFF ]
-"16
-[p x MCLRE      =  OFF ]
-"17
-[p x CP            =  OFF ]
-"18
-[p x CPD          =  OFF ]
-"19
-[p x BOREN      =  OFF ]
-"20
-[p x IESO        =  OFF ]
 "21
-[p x FCMEN      =  OFF ]
+[p x WDTE        =  OFF ]
 "22
-[p x LVP          =  OFF ]
+[p x PWRTE      =  OFF ]
+"23
+[p x MCLRE      =  OFF ]
 "24
-[p x BOR4V      =  BOR40V ]
+[p x CP            =  OFF ]
 "25
+[p x CPD          =  OFF ]
+"26
+[p x BOREN      =  OFF ]
+"27
+[p x IESO        =  OFF ]
+"28
+[p x FCMEN      =  OFF ]
+"29
+[p x LVP          =  OFF ]
+"31
+[p x BOR4V      =  BOR40V ]
+"32
 [p x WRT          =  OFF ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc/pic16f887.h
 [; <" INDF equ 00h ;# ">
@@ -258,263 +258,252 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON1 equ 018Ch ;# ">
 "3547
 [; <" EECON2 equ 018Dh ;# ">
-"35 MAIN_M.c
-[; ;MAIN_M.c: 35: uint8_t unidad, decena,centena;
+"42 MAIN_M.c
+[; ;MAIN_M.c: 42: uint8_t unidad, decena,centena;
 [v _unidad `uc ~T0 @X0 1 e ]
 [v _decena `uc ~T0 @X0 1 e ]
 [v _centena `uc ~T0 @X0 1 e ]
-"36
-[; ;MAIN_M.c: 36: uint8_t unidad1, decena1,centena1;
-[v _unidad1 `uc ~T0 @X0 1 e ]
-[v _decena1 `uc ~T0 @X0 1 e ]
-[v _centena1 `uc ~T0 @X0 1 e ]
-"37
-[; ;MAIN_M.c: 37: uint8_t POT1,POT2,cont;
+"43
+[; ;MAIN_M.c: 43: uint8_t POT1,POT2,cont;
 [v _POT1 `uc ~T0 @X0 1 e ]
 [v _POT2 `uc ~T0 @X0 1 e ]
 [v _cont `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"40
-[; ;MAIN_M.c: 40: void main(void) {
+"46
+[; ;MAIN_M.c: 46: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"41
-[; ;MAIN_M.c: 41:     setup();
+"47
+[; ;MAIN_M.c: 47:     setup();
 [e ( _setup ..  ]
-"42
-[; ;MAIN_M.c: 42:     while(1){
+"48
+[; ;MAIN_M.c: 48:     while(1){
 [e :U 140 ]
 {
-"43
-[; ;MAIN_M.c: 43:         PORTCbits.RC2 = 0;
+"49
+[; ;MAIN_M.c: 49:         PORTCbits.RC2 = 0;
 [e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
-"44
-[; ;MAIN_M.c: 44:         PORTCbits.RC1 = 1;
-[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-"45
-[; ;MAIN_M.c: 45:        _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"47
-[; ;MAIN_M.c: 47:        spiWrite(0xFF);
-[e ( _spiWrite (1 -> -> 255 `i `uc ]
-"48
-[; ;MAIN_M.c: 48:        POT1 = spiRead();
-[e = _POT1 -> ( _spiRead ..  `uc ]
 "50
-[; ;MAIN_M.c: 50:        _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"52
-[; ;MAIN_M.c: 52:        _delay((unsigned long)((1000)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"54
-[; ;MAIN_M.c: 54:        spiWrite(0xAA);
+[; ;MAIN_M.c: 50:         PORTCbits.RC1 = 1;
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+"51
+[; ;MAIN_M.c: 51:        _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"53
+[; ;MAIN_M.c: 53:        spiWrite(0xAA);
 [e ( _spiWrite (1 -> -> 170 `i `uc ]
-"55
-[; ;MAIN_M.c: 55:        cont = spiRead();
+"54
+[; ;MAIN_M.c: 54:        cont = spiRead();
 [e = _cont -> ( _spiRead ..  `uc ]
-"57
-[; ;MAIN_M.c: 57:        _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"59
-[; ;MAIN_M.c: 59:        PORTCbits.RC2 = 1;
+"56
+[; ;MAIN_M.c: 56:        _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"58
+[; ;MAIN_M.c: 58:        PORTCbits.RC2 = 1;
 [e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
-"60
-[; ;MAIN_M.c: 60:        PORTCbits.RC1 = 0;
+"59
+[; ;MAIN_M.c: 59:        PORTCbits.RC1 = 0;
 [e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
-"61
-[; ;MAIN_M.c: 61:        _delay((unsigned long)((1)*(8000000/4000.0)));
+"60
+[; ;MAIN_M.c: 60:        _delay((unsigned long)((1)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"63
-[; ;MAIN_M.c: 63:        spiWrite(0xFF);
+"62
+[; ;MAIN_M.c: 62:        spiWrite(0xFF);
 [e ( _spiWrite (1 -> -> 255 `i `uc ]
-"64
-[; ;MAIN_M.c: 64:        POT2 = spiRead();
+"63
+[; ;MAIN_M.c: 63:        POT2 = spiRead();
 [e = _POT2 -> ( _spiRead ..  `uc ]
-"66
-[; ;MAIN_M.c: 66:        _delay((unsigned long)((1)*(8000000/4000.0)));
+"65
+[; ;MAIN_M.c: 65:        _delay((unsigned long)((1)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"70
-[; ;MAIN_M.c: 70:        centena = CENTENA(POT1);
-[e = _centena ( _CENTENA (1 _POT1 ]
+"67
+[; ;MAIN_M.c: 67:        PORTCbits.RC2 = 0;
+[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
+"68
+[; ;MAIN_M.c: 68:        PORTCbits.RC1 = 1;
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+"69
+[; ;MAIN_M.c: 69:        _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "71
-[; ;MAIN_M.c: 71:        decena = DECENA(POT1);
-[e = _decena ( _DECENA (1 _POT1 ]
+[; ;MAIN_M.c: 71:        spiWrite(0xFF);
+[e ( _spiWrite (1 -> -> 255 `i `uc ]
 "72
-[; ;MAIN_M.c: 72:        unidad = UNIDAD(POT1);
-[e = _unidad ( _UNIDAD (1 _POT1 ]
+[; ;MAIN_M.c: 72:        POT1 = spiRead();
+[e = _POT1 -> ( _spiRead ..  `uc ]
 "74
-[; ;MAIN_M.c: 74:        centena += 48;
-[e =+ _centena -> -> 48 `i `uc ]
-"75
-[; ;MAIN_M.c: 75:        decena += 48;
-[e =+ _decena -> -> 48 `i `uc ]
+[; ;MAIN_M.c: 74:        _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "76
-[; ;MAIN_M.c: 76:        unidad += 48;
-[e =+ _unidad -> -> 48 `i `uc ]
-"78
-[; ;MAIN_M.c: 78:        centena1 = CENTENA(cont);
-[e = _centena1 ( _CENTENA (1 _cont ]
+[; ;MAIN_M.c: 76:        PORTCbits.RC2 = 1;
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"77
+[; ;MAIN_M.c: 77:        PORTCbits.RC1 = 1;
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
 "79
-[; ;MAIN_M.c: 79:        decena1 = DECENA(cont);
-[e = _decena1 ( _DECENA (1 _cont ]
+[; ;MAIN_M.c: 79:        centena = CENTENA(POT1);
+[e = _centena ( _CENTENA (1 _POT1 ]
 "80
-[; ;MAIN_M.c: 80:        unidad1 = UNIDAD(cont);
-[e = _unidad1 ( _UNIDAD (1 _cont ]
-"82
-[; ;MAIN_M.c: 82:        centena1 += 48;
-[e =+ _centena1 -> -> 48 `i `uc ]
+[; ;MAIN_M.c: 80:        decena = DECENA(POT1);
+[e = _decena ( _DECENA (1 _POT1 ]
+"81
+[; ;MAIN_M.c: 81:        unidad = UNIDAD(POT1);
+[e = _unidad ( _UNIDAD (1 _POT1 ]
 "83
-[; ;MAIN_M.c: 83:        decena1 += 48;
-[e =+ _decena1 -> -> 48 `i `uc ]
+[; ;MAIN_M.c: 83:        centena += 48;
+[e =+ _centena -> -> 48 `i `uc ]
 "84
-[; ;MAIN_M.c: 84:        unidad1 += 48;
-[e =+ _unidad1 -> -> 48 `i `uc ]
-"86
-[; ;MAIN_M.c: 86:        LCD_CLEAR();
-[e ( _LCD_CLEAR ..  ]
+[; ;MAIN_M.c: 84:        decena += 48;
+[e =+ _decena -> -> 48 `i `uc ]
+"85
+[; ;MAIN_M.c: 85:        unidad += 48;
+[e =+ _unidad -> -> 48 `i `uc ]
 "87
-[; ;MAIN_M.c: 87:        LCD_XY(1,0);
-[e ( _LCD_XY (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+[; ;MAIN_M.c: 87:        LCD_CLEAR();
+[e ( _LCD_CLEAR ..  ]
 "88
-[; ;MAIN_M.c: 88:        LCD_STRING("S1:   S2:   S3:");
-[e ( _LCD_STRING (1 :s 1C ]
+[; ;MAIN_M.c: 88:        LCD_XY(1,0);
+[e ( _LCD_XY (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
 "89
-[; ;MAIN_M.c: 89:        LCD_XY(2,0);
-[e ( _LCD_XY (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+[; ;MAIN_M.c: 89:        LCD_STRING("S1:   S2:   S3:");
+[e ( _LCD_STRING (1 :s 1C ]
 "90
-[; ;MAIN_M.c: 90:        LCD_CHAR(centena);
-[e ( _LCD_CHAR (1 -> _centena `uc ]
+[; ;MAIN_M.c: 90:        LCD_XY(2,0);
+[e ( _LCD_XY (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
 "91
-[; ;MAIN_M.c: 91:        LCD_STRING(".");
-[e ( _LCD_STRING (1 :s 2C ]
+[; ;MAIN_M.c: 91:        LCD_CHAR(centena);
+[e ( _LCD_CHAR (1 -> _centena `uc ]
 "92
-[; ;MAIN_M.c: 92:        LCD_CHAR(decena);
-[e ( _LCD_CHAR (1 -> _decena `uc ]
+[; ;MAIN_M.c: 92:        LCD_STRING(".");
+[e ( _LCD_STRING (1 :s 2C ]
 "93
-[; ;MAIN_M.c: 93:        LCD_CHAR(unidad);
+[; ;MAIN_M.c: 93:        LCD_CHAR(decena);
+[e ( _LCD_CHAR (1 -> _decena `uc ]
+"94
+[; ;MAIN_M.c: 94:        LCD_CHAR(unidad);
 [e ( _LCD_CHAR (1 -> _unidad `uc ]
 "96
-[; ;MAIN_M.c: 96:        centena1 = CENTENA(cont);
-[e = _centena1 ( _CENTENA (1 _cont ]
+[; ;MAIN_M.c: 96:        centena = CENTENA(cont);
+[e = _centena ( _CENTENA (1 _cont ]
 "97
-[; ;MAIN_M.c: 97:        decena1 = DECENA(cont);
-[e = _decena1 ( _DECENA (1 _cont ]
+[; ;MAIN_M.c: 97:        decena = DECENA(cont);
+[e = _decena ( _DECENA (1 _cont ]
 "98
-[; ;MAIN_M.c: 98:        unidad1 = UNIDAD(cont);
-[e = _unidad1 ( _UNIDAD (1 _cont ]
+[; ;MAIN_M.c: 98:        unidad = UNIDAD(cont);
+[e = _unidad ( _UNIDAD (1 _cont ]
 "100
-[; ;MAIN_M.c: 100:        centena1 += 48;
-[e =+ _centena1 -> -> 48 `i `uc ]
+[; ;MAIN_M.c: 100:        centena += 48;
+[e =+ _centena -> -> 48 `i `uc ]
 "101
-[; ;MAIN_M.c: 101:        decena1 += 48;
-[e =+ _decena1 -> -> 48 `i `uc ]
+[; ;MAIN_M.c: 101:        decena += 48;
+[e =+ _decena -> -> 48 `i `uc ]
 "102
-[; ;MAIN_M.c: 102:        unidad1 += 48;
-[e =+ _unidad1 -> -> 48 `i `uc ]
+[; ;MAIN_M.c: 102:        unidad += 48;
+[e =+ _unidad -> -> 48 `i `uc ]
 "104
 [; ;MAIN_M.c: 104:        LCD_XY(2,6);
 [e ( _LCD_XY (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
 "105
-[; ;MAIN_M.c: 105:        LCD_CHAR(centena1);
-[e ( _LCD_CHAR (1 -> _centena1 `uc ]
-"107
-[; ;MAIN_M.c: 107:        LCD_CHAR(decena1);
-[e ( _LCD_CHAR (1 -> _decena1 `uc ]
-"108
-[; ;MAIN_M.c: 108:        LCD_CHAR(unidad1);
-[e ( _LCD_CHAR (1 -> _unidad1 `uc ]
-"111
-[; ;MAIN_M.c: 111:        centena = CENTENA(POT2);
-[e = _centena ( _CENTENA (1 _POT2 ]
-"112
-[; ;MAIN_M.c: 112:        decena = DECENA(POT2);
-[e = _decena ( _DECENA (1 _POT2 ]
-"113
-[; ;MAIN_M.c: 113:        unidad = UNIDAD(POT2);
-[e = _unidad ( _UNIDAD (1 _POT2 ]
-"115
-[; ;MAIN_M.c: 115:        centena += 48;
-[e =+ _centena -> -> 48 `i `uc ]
-"116
-[; ;MAIN_M.c: 116:        decena += 48;
-[e =+ _decena -> -> 48 `i `uc ]
-"117
-[; ;MAIN_M.c: 117:        unidad += 48;
-[e =+ _unidad -> -> 48 `i `uc ]
-"119
-[; ;MAIN_M.c: 119:        LCD_XY(2,11);
-[e ( _LCD_XY (2 , -> -> 2 `i `uc -> -> 11 `i `uc ]
-"120
-[; ;MAIN_M.c: 120:        LCD_CHAR(centena);
+[; ;MAIN_M.c: 105:        LCD_CHAR(centena);
 [e ( _LCD_CHAR (1 -> _centena `uc ]
-"121
-[; ;MAIN_M.c: 121:        LCD_STRING(".");
-[e ( _LCD_STRING (1 :s 3C ]
-"122
-[; ;MAIN_M.c: 122:        LCD_CHAR(decena);
+"106
+[; ;MAIN_M.c: 106:        LCD_CHAR(decena);
 [e ( _LCD_CHAR (1 -> _decena `uc ]
-"123
-[; ;MAIN_M.c: 123:        LCD_CHAR(unidad);
+"107
+[; ;MAIN_M.c: 107:        LCD_CHAR(unidad);
 [e ( _LCD_CHAR (1 -> _unidad `uc ]
-"125
-[; ;MAIN_M.c: 125:     }
+"110
+[; ;MAIN_M.c: 110:        centena = CENTENA(POT2);
+[e = _centena ( _CENTENA (1 _POT2 ]
+"111
+[; ;MAIN_M.c: 111:        decena = DECENA(POT2);
+[e = _decena ( _DECENA (1 _POT2 ]
+"112
+[; ;MAIN_M.c: 112:        unidad = UNIDAD(POT2);
+[e = _unidad ( _UNIDAD (1 _POT2 ]
+"114
+[; ;MAIN_M.c: 114:        centena += 48;
+[e =+ _centena -> -> 48 `i `uc ]
+"115
+[; ;MAIN_M.c: 115:        decena += 48;
+[e =+ _decena -> -> 48 `i `uc ]
+"116
+[; ;MAIN_M.c: 116:        unidad += 48;
+[e =+ _unidad -> -> 48 `i `uc ]
+"118
+[; ;MAIN_M.c: 118:        LCD_XY(2,11);
+[e ( _LCD_XY (2 , -> -> 2 `i `uc -> -> 11 `i `uc ]
+"119
+[; ;MAIN_M.c: 119:        LCD_CHAR(centena);
+[e ( _LCD_CHAR (1 -> _centena `uc ]
+"120
+[; ;MAIN_M.c: 120:        LCD_STRING(".");
+[e ( _LCD_STRING (1 :s 3C ]
+"121
+[; ;MAIN_M.c: 121:        LCD_CHAR(decena);
+[e ( _LCD_CHAR (1 -> _decena `uc ]
+"122
+[; ;MAIN_M.c: 122:        LCD_CHAR(unidad);
+[e ( _LCD_CHAR (1 -> _unidad `uc ]
+"124
+[; ;MAIN_M.c: 124:     }
 }
 [e :U 139 ]
 [e $U 140  ]
 [e :U 141 ]
-"126
-[; ;MAIN_M.c: 126:     return;
+"125
+[; ;MAIN_M.c: 125:     return;
 [e $UE 138  ]
-"127
-[; ;MAIN_M.c: 127: }
+"126
+[; ;MAIN_M.c: 126: }
 [e :UE 138 ]
 }
-"129
-[; ;MAIN_M.c: 129: void setup(void){
+"128
+[; ;MAIN_M.c: 128: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"131
-[; ;MAIN_M.c: 131:     ANSEL = 0x00;
+"130
+[; ;MAIN_M.c: 130:     ANSEL = 0x00;
 [e = _ANSEL -> -> 0 `i `uc ]
-"132
-[; ;MAIN_M.c: 132:     ANSELH = 0x00;
+"131
+[; ;MAIN_M.c: 131:     ANSELH = 0x00;
 [e = _ANSELH -> -> 0 `i `uc ]
-"134
-[; ;MAIN_M.c: 134:     TRISCbits.TRISC2 = 0;
+"133
+[; ;MAIN_M.c: 133:     TRISCbits.TRISC2 = 0;
 [e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
-"135
-[; ;MAIN_M.c: 135:     TRISCbits.TRISC1 = 0;
+"134
+[; ;MAIN_M.c: 134:     TRISCbits.TRISC1 = 0;
 [e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
-"136
-[; ;MAIN_M.c: 136:     TRISB = 0x00;
+"135
+[; ;MAIN_M.c: 135:     TRISB = 0x00;
 [e = _TRISB -> -> 0 `i `uc ]
-"137
-[; ;MAIN_M.c: 137:     TRISD = 0x00;
+"136
+[; ;MAIN_M.c: 136:     TRISD = 0x00;
 [e = _TRISD -> -> 0 `i `uc ]
-"139
-[; ;MAIN_M.c: 139:     PORTD = 0x00;
+"138
+[; ;MAIN_M.c: 138:     PORTD = 0x00;
 [e = _PORTD -> -> 0 `i `uc ]
-"140
-[; ;MAIN_M.c: 140:     PORTB = 0x00;
+"139
+[; ;MAIN_M.c: 139:     PORTB = 0x00;
 [e = _PORTB -> -> 0 `i `uc ]
-"141
-[; ;MAIN_M.c: 141:     PORTCbits.RC2 = 1;
+"140
+[; ;MAIN_M.c: 140:     PORTCbits.RC2 = 1;
 [e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
-"142
-[; ;MAIN_M.c: 142:     PORTCbits.RC1 = 1;
+"141
+[; ;MAIN_M.c: 141:     PORTCbits.RC1 = 1;
 [e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-"144
-[; ;MAIN_M.c: 144:     LCD_INIT();
+"143
+[; ;MAIN_M.c: 143:     LCD_INIT();
 [e ( _LCD_INIT ..  ]
-"145
-[; ;MAIN_M.c: 145:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"144
+[; ;MAIN_M.c: 144:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [e ( _spiInit (4 , , , . `E1311 0 . `E1319 0 . `E1323 1 . `E1327 0 ]
-"146
-[; ;MAIN_M.c: 146: }
+"145
+[; ;MAIN_M.c: 145: }
 [e :UE 142 ]
 }
 [a 1C 83 49 58 32 32 32 83 50 58 32 32 32 83 51 58 0 ]
