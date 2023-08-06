@@ -14,17 +14,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
 "4108
 [v _RB0 `Vb ~T0 @X0 0 e@48 ]
-"167
-[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
-[v F36 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
-[v __delay `JF36 ~T0 @X0 0 e ]
-[p i __delay ]
+"54 MAIN_M.c
+[; ;MAIN_M.c: 54: __bit ANTI_REBOTE(void);
+[v _ANTI_REBOTE `(b ~T0 @X0 0 ef ]
 "4111 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc/pic16f887.h
 [v _RB1 `Vb ~T0 @X0 0 e@49 ]
 [p mainexit ]
-"39 MAIN_M.c
-[; ;MAIN_M.c: 39: void setup(void);
+"53 MAIN_M.c
+[; ;MAIN_M.c: 53: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
 "18 ./I2CM.h
 [; ;./I2CM.h: 18: void I2C_Master_Start(void);
@@ -38,20 +35,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20
 [; ;./I2CM.h: 20: void I2C_Master_Stop(void);
 [v _I2C_Master_Stop `(v ~T0 @X0 0 ef ]
-"54 MAIN_M.c
-[; ;MAIN_M.c: 54: uint8_t BCD_DECIMAL(uint8_t num);
-[v _BCD_DECIMAL `(uc ~T0 @X0 0 ef1`uc ]
-"53
-[; ;MAIN_M.c: 53: uint8_t DECIMAL_BCD(uint8_t num);
-[v _DECIMAL_BCD `(uc ~T0 @X0 0 ef1`uc ]
-"49
-[; ;MAIN_M.c: 49: void CONFIGURAR(char x, char y);
-[v _CONFIGURAR `(v ~T0 @X0 0 ef2`uc`uc ]
-"51
-[; ;MAIN_M.c: 51: void RTC_WRITE(unsigned I2C,unsigned d,char parametro);
+[v F36 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
+[v __delay `JF36 ~T0 @X0 0 e ]
+[p i __delay ]
+"56 MAIN_M.c
+[; ;MAIN_M.c: 56: uint8_t PAM(uint8_t parametro,uint8_t rtc);
+[v _PAM `(uc ~T0 @X0 0 ef2`uc`uc ]
+"57
+[; ;MAIN_M.c: 57: uint8_t CONFIGURAR_v2(uint8_t x, uint8_t y, uint8_t parametro,uint8_t rtc);
+[v _CONFIGURAR_v2 `(uc ~T0 @X0 0 ef4`uc`uc`uc`uc ]
+"59
+[; ;MAIN_M.c: 59: void RTC_WRITE(unsigned I2C,unsigned d,char parametro);
 [v _RTC_WRITE `(v ~T0 @X0 0 ef3`ui`ui`uc ]
-"50
-[; ;MAIN_M.c: 50: unsigned short RTC_READ(unsigned I2C,unsigned d);
+"58
+[; ;MAIN_M.c: 58: unsigned short RTC_READ(unsigned I2C,unsigned d);
 [v _RTC_READ `(us ~T0 @X0 0 ef2`ui`ui ]
 "31 ./LCD.h
 [; ;./LCD.h: 31: uint8_t CENTENA(unsigned char c);
@@ -74,9 +72,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;./LCD.h: 24: void LCD_CHAR(char a);
 [v _LCD_CHAR `(v ~T0 @X0 0 ef1`uc ]
-"48 MAIN_M.c
-[; ;MAIN_M.c: 48: void RTC_PRINT(uint8_t Val);
-[v _RTC_PRINT `(v ~T0 @X0 0 ef1`uc ]
+"55 MAIN_M.c
+[; ;MAIN_M.c: 55: void RTC_PRINT(void);
+[v _RTC_PRINT `(v ~T0 @X0 0 ef ]
 "17 ./LCD.h
 [; ;./LCD.h: 17: void OSCILLATOR(uint8_t f);
 [v _OSCILLATOR `(v ~T0 @X0 0 ef1`uc ]
@@ -96,8 +94,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
 "229
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"1417
-[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
 "16 ./LCD.h
 [; ;./LCD.h: 16: void IOC_INT(uint8_t a);
 [v _IOC_INT `(v ~T0 @X0 0 ef1`uc ]
@@ -107,32 +103,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16 ./I2CM.h
 [; ;./I2CM.h: 16: void I2C_Master_Init(const unsigned long c);
 [v _I2C_Master_Init `(v ~T0 @X0 0 ef1`Cul ]
-"56 MAIN_M.c
-[; ;MAIN_M.c: 56: void Parpadeo(void);
-[v _Parpadeo `(v ~T0 @X0 0 ef ]
-"16 MAIN_M.c
+"62 MAIN_M.c
+[; ;MAIN_M.c: 62: uint8_t BCD_DECIMAL(uint8_t num);
+[v _BCD_DECIMAL `(uc ~T0 @X0 0 ef1`uc ]
+"18 MAIN_M.c
 [p x FOSC        =  INTRC_NOCLKOUT ]
-"17
-[p x WDTE        =  OFF ]
-"18
-[p x PWRTE      =  OFF ]
 "19
-[p x MCLRE      =  OFF ]
+[p x WDTE        =  OFF ]
 "20
-[p x CP            =  OFF ]
+[p x PWRTE      =  OFF ]
 "21
-[p x CPD          =  OFF ]
+[p x MCLRE      =  OFF ]
 "22
-[p x BOREN      =  OFF ]
+[p x CP            =  OFF ]
 "23
-[p x IESO        =  OFF ]
+[p x CPD          =  OFF ]
 "24
-[p x FCMEN      =  OFF ]
+[p x BOREN      =  OFF ]
 "25
-[p x LVP          =  OFF ]
+[p x IESO        =  OFF ]
+"26
+[p x FCMEN      =  OFF ]
 "27
+[p x LVP          =  OFF ]
+"29
 [p x BOR4V      =  BOR40V ]
-"28
+"30
 [p x WRT          =  OFF ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc/pic16f887.h
 [; <" INDF equ 00h ;# ">
@@ -290,309 +286,283 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON1 equ 018Ch ;# ">
 "3547
 [; <" EECON2 equ 018Dh ;# ">
-"40 MAIN_M.c
-[; ;MAIN_M.c: 40: uint8_t POT;
+"42 MAIN_M.c
+[; ;MAIN_M.c: 42: uint8_t POT;
 [v _POT `uc ~T0 @X0 1 e ]
-"41
-[; ;MAIN_M.c: 41: uint8_t unidad, decena,centena;
+"43
+[; ;MAIN_M.c: 43: uint8_t unidad, decena,centena;
 [v _unidad `uc ~T0 @X0 1 e ]
 [v _decena `uc ~T0 @X0 1 e ]
 [v _centena `uc ~T0 @X0 1 e ]
-"43
-[; ;MAIN_M.c: 43: uint8_t seg,min,hora;
+"45
+[; ;MAIN_M.c: 45: uint8_t seg,min,hora;
 [v _seg `uc ~T0 @X0 1 e ]
 [v _min `uc ~T0 @X0 1 e ]
 [v _hora `uc ~T0 @X0 1 e ]
-"44
-[; ;MAIN_M.c: 44: uint8_t dia,mes,year;
+"46
+[; ;MAIN_M.c: 46: uint8_t dia,mes,year;
 [v _dia `uc ~T0 @X0 1 e ]
 [v _mes `uc ~T0 @X0 1 e ]
 [v _year `uc ~T0 @X0 1 e ]
-"46
-[; ;MAIN_M.c: 46: uint8_t select,parametro,p;
+"48
+[; ;MAIN_M.c: 48: uint8_t select,parametro,p;
 [v _select `uc ~T0 @X0 1 e ]
 [v _parametro `uc ~T0 @X0 1 e ]
 [v _p `uc ~T0 @X0 1 e ]
+"50
+[; ;MAIN_M.c: 50: static char Time[]= "00/00/00";
+[v _Time `uc ~T0 @X0 -> 9 `i s ]
+[i _Time
+:U ..
+-> 48 `c
+-> 48 `c
+-> 47 `c
+-> 48 `c
+-> 48 `c
+-> 47 `c
+-> 48 `c
+-> 48 `c
+-> 0 `c
+..
+]
+"51
+[; ;MAIN_M.c: 51: static char Date[]="00/00/2000";
+[v _Date `uc ~T0 @X0 -> 11 `i s ]
+[i _Date
+:U ..
+-> 48 `c
+-> 48 `c
+-> 47 `c
+-> 48 `c
+-> 48 `c
+-> 47 `c
+-> 50 `c
+-> 48 `c
+-> 48 `c
+-> 48 `c
+-> 0 `c
+..
+]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"58
-[; ;MAIN_M.c: 58: void __attribute__((picinterrupt(("")))) isr(void){
+"66
+[; ;MAIN_M.c: 66: void __attribute__((picinterrupt(("")))) isr(void){
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"59
-[; ;MAIN_M.c: 59:     if (INTCONbits.RBIF==1){
+"67
+[; ;MAIN_M.c: 67:     if (INTCONbits.RBIF==1){
 [e $ ! == -> . . _INTCONbits 0 0 `i -> 1 `i 139  ]
 {
-"60
-[; ;MAIN_M.c: 60:         if (RB0==0){
+"68
+[; ;MAIN_M.c: 68:         if (RB0==0){
 [e $ ! == -> _RB0 `i -> 0 `i 140  ]
 {
-"61
-[; ;MAIN_M.c: 61:             select++;
-[e ++ _select -> -> 1 `i `uc ]
-"62
-[; ;MAIN_M.c: 62:             PORTA++;
-[e ++ _PORTA -> -> 1 `i `Vuc ]
-"63
-[; ;MAIN_M.c: 63:             _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"64
-[; ;MAIN_M.c: 64:         } else if (RB1==0){
-}
-[e $U 141  ]
-[e :U 140 ]
-[e $ ! == -> _RB1 `i -> 0 `i 142  ]
-{
-"65
-[; ;MAIN_M.c: 65:             if(select != 0)
-[e $ ! != -> _select `i -> 0 `i 143  ]
-"66
-[; ;MAIN_M.c: 66:                 parametro++;
-[e ++ _parametro -> -> 1 `i `uc ]
-[e :U 143 ]
-"67
-[; ;MAIN_M.c: 67:         }
-}
-[e :U 142 ]
-[e :U 141 ]
-"68
-[; ;MAIN_M.c: 68:         if(select >5)
-[e $ ! > -> _select `i -> 5 `i 144  ]
 "69
-[; ;MAIN_M.c: 69:             select = 0;
-[e = _select -> -> 0 `i `uc ]
-[e :U 144 ]
-"71
-[; ;MAIN_M.c: 71:         if(select == 1 && parametro >23){
-[e $ ! && == -> _select `i -> 1 `i > -> _parametro `i -> 23 `i 145  ]
-{
+[; ;MAIN_M.c: 69:             if(ANTI_REBOTE())
+[e $ ! ( _ANTI_REBOTE ..  141  ]
+"70
+[; ;MAIN_M.c: 70:                 select++;
+[e ++ _select -> -> 1 `i `uc ]
+[e :U 141 ]
 "72
-[; ;MAIN_M.c: 72:             parametro = 0;
-[e = _parametro -> -> 0 `i `uc ]
+[; ;MAIN_M.c: 72:         } else if (RB1==0){
+}
+[e $U 142  ]
+[e :U 140 ]
+[e $ ! == -> _RB1 `i -> 0 `i 143  ]
+{
 "73
-[; ;MAIN_M.c: 73:         }else if(select == 2 && parametro >59){
-}
-[e $U 146  ]
-[e :U 145 ]
-[e $ ! && == -> _select `i -> 2 `i > -> _parametro `i -> 59 `i 147  ]
-{
+[; ;MAIN_M.c: 73:             if(select != 0)
+[e $ ! != -> _select `i -> 0 `i 144  ]
 "74
-[; ;MAIN_M.c: 74:             parametro = 0;
-[e = _parametro -> -> 0 `i `uc ]
+[; ;MAIN_M.c: 74:                 if(ANTI_REBOTE())
+[e $ ! ( _ANTI_REBOTE ..  145  ]
 "75
-[; ;MAIN_M.c: 75:         }else if(select == 3 && parametro >12){
-}
-[e $U 148  ]
-[e :U 147 ]
-[e $ ! && == -> _select `i -> 3 `i > -> _parametro `i -> 12 `i 149  ]
-{
+[; ;MAIN_M.c: 75:                     parametro++;
+[e ++ _parametro -> -> 1 `i `uc ]
+[e :U 145 ]
+[e :U 144 ]
 "76
-[; ;MAIN_M.c: 76:             parametro = 1;
-[e = _parametro -> -> 1 `i `uc ]
+[; ;MAIN_M.c: 76:         }
+}
+[e :U 143 ]
+[e :U 142 ]
 "77
-[; ;MAIN_M.c: 77:         }else if(select == 4 && parametro >99){
-}
-[e $U 150  ]
-[e :U 149 ]
-[e $ ! && == -> _select `i -> 4 `i > -> _parametro `i -> 99 `i 151  ]
-{
+[; ;MAIN_M.c: 77:         if(select >5)
+[e $ ! > -> _select `i -> 5 `i 146  ]
 "78
-[; ;MAIN_M.c: 78:             parametro = 0;
-[e = _parametro -> -> 0 `i `uc ]
-"79
-[; ;MAIN_M.c: 79:         }
-}
-[e :U 151 ]
-[e :U 150 ]
-[e :U 148 ]
+[; ;MAIN_M.c: 78:             select = 0;
+[e = _select -> -> 0 `i `uc ]
 [e :U 146 ]
 "80
-[; ;MAIN_M.c: 80:         INTCONbits.RBIF=0;
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+[; ;MAIN_M.c: 80:         if(select == 1 && parametro >23)
+[e $ ! && == -> _select `i -> 1 `i > -> _parametro `i -> 23 `i 147  ]
 "81
-[; ;MAIN_M.c: 81:     }
+[; ;MAIN_M.c: 81:             parametro = 0;
+[e = _parametro -> -> 0 `i `uc ]
+[e :U 147 ]
+"82
+[; ;MAIN_M.c: 82:         if(select == 2 && parametro >59)
+[e $ ! && == -> _select `i -> 2 `i > -> _parametro `i -> 59 `i 148  ]
+"83
+[; ;MAIN_M.c: 83:             parametro = 0;
+[e = _parametro -> -> 0 `i `uc ]
+[e :U 148 ]
+"84
+[; ;MAIN_M.c: 84:         if(select == 3 && parametro >12)
+[e $ ! && == -> _select `i -> 3 `i > -> _parametro `i -> 12 `i 149  ]
+"85
+[; ;MAIN_M.c: 85:             parametro = 1;
+[e = _parametro -> -> 1 `i `uc ]
+[e :U 149 ]
+"86
+[; ;MAIN_M.c: 86:         if(select == 3 && parametro ==0)
+[e $ ! && == -> _select `i -> 3 `i == -> _parametro `i -> 0 `i 150  ]
+"87
+[; ;MAIN_M.c: 87:             parametro = 1;
+[e = _parametro -> -> 1 `i `uc ]
+[e :U 150 ]
+"88
+[; ;MAIN_M.c: 88:         if(select == 4 && parametro >99)
+[e $ ! && == -> _select `i -> 4 `i > -> _parametro `i -> 99 `i 151  ]
+"89
+[; ;MAIN_M.c: 89:             parametro = 0;
+[e = _parametro -> -> 0 `i `uc ]
+[e :U 151 ]
+"91
+[; ;MAIN_M.c: 91:         INTCONbits.RBIF=0;
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+"92
+[; ;MAIN_M.c: 92:     }
 }
 [e :U 139 ]
-"82
-[; ;MAIN_M.c: 82: }
+"93
+[; ;MAIN_M.c: 93: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"84
-[; ;MAIN_M.c: 84: void main(void) {
+"95
+[; ;MAIN_M.c: 95: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"85
-[; ;MAIN_M.c: 85:     setup();
+"96
+[; ;MAIN_M.c: 96:     setup();
 [e ( _setup ..  ]
-"86
-[; ;MAIN_M.c: 86:     while(1){
+"98
+[; ;MAIN_M.c: 98:     while(1){
 [e :U 154 ]
 {
-"88
-[; ;MAIN_M.c: 88:         I2C_Master_Start();
+"100
+[; ;MAIN_M.c: 100:         I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"89
-[; ;MAIN_M.c: 89:         I2C_Master_Write(0x81);
+"101
+[; ;MAIN_M.c: 101:         I2C_Master_Write(0x81);
 [e ( _I2C_Master_Write (1 -> -> 129 `i `ui ]
-"90
-[; ;MAIN_M.c: 90:         POT = I2C_Master_Read(0);
+"102
+[; ;MAIN_M.c: 102:         POT = I2C_Master_Read(0);
 [e = _POT -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"91
-[; ;MAIN_M.c: 91:         I2C_Master_Stop();
+"103
+[; ;MAIN_M.c: 103:         I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"92
-[; ;MAIN_M.c: 92:         _delay((unsigned long)((10)*(8000000/4000.0)));
+"104
+[; ;MAIN_M.c: 104:         _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"94
-[; ;MAIN_M.c: 94:         if(select !=0){
+"114
+[; ;MAIN_M.c: 114:         if(select !=0){
 [e $ ! != -> _select `i -> 0 `i 156  ]
 {
-"96
-[; ;MAIN_M.c: 96:             if(select == 1){
+"115
+[; ;MAIN_M.c: 115:             if(select == 1){
 [e $ ! == -> _select `i -> 1 `i 157  ]
 {
-"97
-[; ;MAIN_M.c: 97:                 if(!RB0){
-[e $ ! ! _RB0 158  ]
-{
-"98
-[; ;MAIN_M.c: 98:                     parametro = BCD_DECIMAL(hora);
-[e = _parametro ( _BCD_DECIMAL (1 _hora ]
-"99
-[; ;MAIN_M.c: 99:                     _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"100
-[; ;MAIN_M.c: 100:                 }
-}
-[e :U 158 ]
-"101
-[; ;MAIN_M.c: 101:                 hora = DECIMAL_BCD(parametro);
-[e = _hora ( _DECIMAL_BCD (1 _parametro ]
-"102
-[; ;MAIN_M.c: 102:                 CONFIGURAR(1,8);
-[e ( _CONFIGURAR (2 , -> -> 1 `i `uc -> -> 8 `i `uc ]
-"103
-[; ;MAIN_M.c: 103:             }
+"116
+[; ;MAIN_M.c: 116:                 parametro = PAM(parametro,hora);
+[e = _parametro ( _PAM (2 , _parametro _hora ]
+"117
+[; ;MAIN_M.c: 117:                 hora = CONFIGURAR_v2(1,8,parametro,hora);
+[e = _hora ( _CONFIGURAR_v2 (4 , , , -> -> 1 `i `uc -> -> 8 `i `uc _parametro _hora ]
+"118
+[; ;MAIN_M.c: 118:             }
 }
 [e :U 157 ]
-"104
-[; ;MAIN_M.c: 104:             if(select == 2){
-[e $ ! == -> _select `i -> 2 `i 159  ]
+"119
+[; ;MAIN_M.c: 119:             if(select == 2){
+[e $ ! == -> _select `i -> 2 `i 158  ]
 {
-"105
-[; ;MAIN_M.c: 105:                 if(!RB0){
-[e $ ! ! _RB0 160  ]
-{
-"106
-[; ;MAIN_M.c: 106:                     parametro = BCD_DECIMAL(min);
-[e = _parametro ( _BCD_DECIMAL (1 _min ]
-"107
-[; ;MAIN_M.c: 107:                     _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"108
-[; ;MAIN_M.c: 108:                 }
+"120
+[; ;MAIN_M.c: 120:                 parametro = PAM(parametro,min);
+[e = _parametro ( _PAM (2 , _parametro _min ]
+"121
+[; ;MAIN_M.c: 121:                 min = CONFIGURAR_v2(1,11,parametro,min);
+[e = _min ( _CONFIGURAR_v2 (4 , , , -> -> 1 `i `uc -> -> 11 `i `uc _parametro _min ]
+"122
+[; ;MAIN_M.c: 122:             }
 }
-[e :U 160 ]
-"109
-[; ;MAIN_M.c: 109:                 min = DECIMAL_BCD(parametro);
-[e = _min ( _DECIMAL_BCD (1 _parametro ]
-"110
-[; ;MAIN_M.c: 110:                 CONFIGURAR(1,11);
-[e ( _CONFIGURAR (2 , -> -> 1 `i `uc -> -> 11 `i `uc ]
-"111
-[; ;MAIN_M.c: 111:             }
+[e :U 158 ]
+"123
+[; ;MAIN_M.c: 123:             if(select == 3){
+[e $ ! == -> _select `i -> 3 `i 159  ]
+{
+"124
+[; ;MAIN_M.c: 124:                 parametro = PAM(parametro,mes);
+[e = _parametro ( _PAM (2 , _parametro _mes ]
+"125
+[; ;MAIN_M.c: 125:                 mes = CONFIGURAR_v2(2,9,parametro,mes);
+[e = _mes ( _CONFIGURAR_v2 (4 , , , -> -> 2 `i `uc -> -> 9 `i `uc _parametro _mes ]
+"126
+[; ;MAIN_M.c: 126:             }
 }
 [e :U 159 ]
-"112
-[; ;MAIN_M.c: 112:             if(select == 3){
-[e $ ! == -> _select `i -> 3 `i 161  ]
+"127
+[; ;MAIN_M.c: 127:             if(select == 4){
+[e $ ! == -> _select `i -> 4 `i 160  ]
 {
-"113
-[; ;MAIN_M.c: 113:                 if(!RB0){
-[e $ ! ! _RB0 162  ]
-{
-"114
-[; ;MAIN_M.c: 114:                     parametro = BCD_DECIMAL(mes);
-[e = _parametro ( _BCD_DECIMAL (1 _mes ]
-"115
-[; ;MAIN_M.c: 115:                     _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"116
-[; ;MAIN_M.c: 116:                 }
+"128
+[; ;MAIN_M.c: 128:                 parametro = PAM(parametro,year);
+[e = _parametro ( _PAM (2 , _parametro _year ]
+"129
+[; ;MAIN_M.c: 129:                 year = CONFIGURAR_v2(2,14,parametro,year);
+[e = _year ( _CONFIGURAR_v2 (4 , , , -> -> 2 `i `uc -> -> 14 `i `uc _parametro _year ]
+"130
+[; ;MAIN_M.c: 130:             }
 }
-[e :U 162 ]
-"117
-[; ;MAIN_M.c: 117:                 mes = DECIMAL_BCD(parametro);
-[e = _mes ( _DECIMAL_BCD (1 _parametro ]
-"118
-[; ;MAIN_M.c: 118:                 CONFIGURAR(2,9);
-[e ( _CONFIGURAR (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
-"119
-[; ;MAIN_M.c: 119:             }
+[e :U 160 ]
+"131
+[; ;MAIN_M.c: 131:             if(select == 5){
+[e $ ! == -> _select `i -> 5 `i 161  ]
+{
+"132
+[; ;MAIN_M.c: 132:                 RTC_WRITE(0xD0,0x02,hora);
+[e ( _RTC_WRITE (3 , , -> -> 208 `i `ui -> -> 2 `i `ui -> _hora `uc ]
+"133
+[; ;MAIN_M.c: 133:                 RTC_WRITE(0xD0,0x01,min);
+[e ( _RTC_WRITE (3 , , -> -> 208 `i `ui -> -> 1 `i `ui -> _min `uc ]
+"134
+[; ;MAIN_M.c: 134:                 RTC_WRITE(0xD0,0x05,mes);
+[e ( _RTC_WRITE (3 , , -> -> 208 `i `ui -> -> 5 `i `ui -> _mes `uc ]
+"135
+[; ;MAIN_M.c: 135:                 RTC_WRITE(0xD0,0x06,year);
+[e ( _RTC_WRITE (3 , , -> -> 208 `i `ui -> -> 6 `i `ui -> _year `uc ]
+"136
+[; ;MAIN_M.c: 136:                 RTC_WRITE(0xD0,0x00,0x00);
+[e ( _RTC_WRITE (3 , , -> -> 208 `i `ui -> -> 0 `i `ui -> -> 0 `i `uc ]
+"137
+[; ;MAIN_M.c: 137:                 parametro = 0;
+[e = _parametro -> -> 0 `i `uc ]
+"138
+[; ;MAIN_M.c: 138:                 select = 0;
+[e = _select -> -> 0 `i `uc ]
+"139
+[; ;MAIN_M.c: 139:             }
 }
 [e :U 161 ]
-"120
-[; ;MAIN_M.c: 120:             if(select == 4){
-[e $ ! == -> _select `i -> 4 `i 163  ]
-{
-"121
-[; ;MAIN_M.c: 121:                 if(!RB0){
-[e $ ! ! _RB0 164  ]
-{
-"122
-[; ;MAIN_M.c: 122:                     parametro = BCD_DECIMAL(year);
-[e = _parametro ( _BCD_DECIMAL (1 _year ]
-"123
-[; ;MAIN_M.c: 123:                     _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"124
-[; ;MAIN_M.c: 124:                 }
+"140
+[; ;MAIN_M.c: 140:         }else {
 }
-[e :U 164 ]
-"125
-[; ;MAIN_M.c: 125:                 year = DECIMAL_BCD(parametro);
-[e = _year ( _DECIMAL_BCD (1 _parametro ]
-"126
-[; ;MAIN_M.c: 126:                 CONFIGURAR(2,14);
-[e ( _CONFIGURAR (2 , -> -> 2 `i `uc -> -> 14 `i `uc ]
-"127
-[; ;MAIN_M.c: 127:             }
-}
-[e :U 163 ]
-"129
-[; ;MAIN_M.c: 129:             if(select == 5){
-[e $ ! == -> _select `i -> 5 `i 165  ]
-{
-"130
-[; ;MAIN_M.c: 130:                 RTC_WRITE(0xD0,0x02,hora);
-[e ( _RTC_WRITE (3 , , -> -> 208 `i `ui -> -> 2 `i `ui -> _hora `uc ]
-"131
-[; ;MAIN_M.c: 131:                 RTC_WRITE(0xD0,0x01,min);
-[e ( _RTC_WRITE (3 , , -> -> 208 `i `ui -> -> 1 `i `ui -> _min `uc ]
-"132
-[; ;MAIN_M.c: 132:                 RTC_WRITE(0xD0,0x05,mes);
-[e ( _RTC_WRITE (3 , , -> -> 208 `i `ui -> -> 5 `i `ui -> _mes `uc ]
-"133
-[; ;MAIN_M.c: 133:                 RTC_WRITE(0xD0,0x06,year);
-[e ( _RTC_WRITE (3 , , -> -> 208 `i `ui -> -> 6 `i `ui -> _year `uc ]
-"134
-[; ;MAIN_M.c: 134:                 RTC_WRITE(0xD0,0x00,0x00);
-[e ( _RTC_WRITE (3 , , -> -> 208 `i `ui -> -> 0 `i `ui -> -> 0 `i `uc ]
-"135
-[; ;MAIN_M.c: 135:                 select = 0;
-[e = _select -> -> 0 `i `uc ]
-"136
-[; ;MAIN_M.c: 136:             }
-}
-[e :U 165 ]
-"139
-[; ;MAIN_M.c: 139:         }else {
-}
-[e $U 166  ]
+[e $U 162  ]
 [e :U 156 ]
 {
 "141
@@ -616,7 +586,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "147
 [; ;MAIN_M.c: 147:         }
 }
-[e :U 166 ]
+[e :U 162 ]
 "149
 [; ;MAIN_M.c: 149:         centena = CENTENA(POT);
 [e = _centena ( _CENTENA (1 _POT ]
@@ -659,302 +629,307 @@ Version 4.0 HI-TECH Software Intermediate Code
 "165
 [; ;MAIN_M.c: 165:         LCD_CHAR(unidad);
 [e ( _LCD_CHAR (1 -> _unidad `uc ]
-"168
-[; ;MAIN_M.c: 168:         LCD_XY(1,8);
-[e ( _LCD_XY (2 , -> -> 1 `i `uc -> -> 8 `i `uc ]
+"167
+[; ;MAIN_M.c: 167:         RTC_PRINT();
+[e ( _RTC_PRINT ..  ]
 "169
-[; ;MAIN_M.c: 169:         RTC_PRINT(hora);
-[e ( _RTC_PRINT (1 _hora ]
-"170
-[; ;MAIN_M.c: 170:         LCD_STRING(":");
-[e ( _LCD_STRING (1 :s 3C ]
-"173
-[; ;MAIN_M.c: 173:         RTC_PRINT(min);
-[e ( _RTC_PRINT (1 _min ]
-"174
-[; ;MAIN_M.c: 174:         LCD_STRING(":");
-[e ( _LCD_STRING (1 :s 4C ]
-"177
-[; ;MAIN_M.c: 177:         RTC_PRINT(seg);
-[e ( _RTC_PRINT (1 _seg ]
-"180
-[; ;MAIN_M.c: 180:         LCD_XY(2,6);
-[e ( _LCD_XY (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
-"181
-[; ;MAIN_M.c: 181:         RTC_PRINT(dia);
-[e ( _RTC_PRINT (1 _dia ]
-"182
-[; ;MAIN_M.c: 182:         LCD_STRING("/");
-[e ( _LCD_STRING (1 :s 5C ]
-"185
-[; ;MAIN_M.c: 185:         RTC_PRINT(mes);
-[e ( _RTC_PRINT (1 _mes ]
-"186
-[; ;MAIN_M.c: 186:         LCD_STRING("/");
-[e ( _LCD_STRING (1 :s 6C ]
-"189
-[; ;MAIN_M.c: 189:         LCD_STRING("20");
-[e ( _LCD_STRING (1 :s 7C ]
-"190
-[; ;MAIN_M.c: 190:         RTC_PRINT(year);
-[e ( _RTC_PRINT (1 _year ]
-"191
-[; ;MAIN_M.c: 191:     }
+[; ;MAIN_M.c: 169:     }
 }
 [e :U 153 ]
 [e $U 154  ]
 [e :U 155 ]
-"192
-[; ;MAIN_M.c: 192:     return;
+"170
+[; ;MAIN_M.c: 170:     return;
 [e $UE 152  ]
-"193
-[; ;MAIN_M.c: 193: }
+"171
+[; ;MAIN_M.c: 171: }
 [e :UE 152 ]
 }
-"195
-[; ;MAIN_M.c: 195: void setup(void){
+"173
+[; ;MAIN_M.c: 173: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"197
-[; ;MAIN_M.c: 197:     OSCILLATOR(1);
+"175
+[; ;MAIN_M.c: 175:     OSCILLATOR(1);
 [e ( _OSCILLATOR (1 -> -> 1 `i `uc ]
-"200
-[; ;MAIN_M.c: 200:     ANSEL = 0x00;
+"177
+[; ;MAIN_M.c: 177:     ANSEL = 0x00;
 [e = _ANSEL -> -> 0 `i `uc ]
-"201
-[; ;MAIN_M.c: 201:     ANSELH = 0x00;
+"178
+[; ;MAIN_M.c: 178:     ANSELH = 0x00;
 [e = _ANSELH -> -> 0 `i `uc ]
-"203
-[; ;MAIN_M.c: 203:     TRISD = 0x00;
+"180
+[; ;MAIN_M.c: 180:     TRISD = 0x00;
 [e = _TRISD -> -> 0 `i `uc ]
-"204
-[; ;MAIN_M.c: 204:     PORTD = 0x00;
+"181
+[; ;MAIN_M.c: 181:     PORTD = 0x00;
 [e = _PORTD -> -> 0 `i `uc ]
-"205
-[; ;MAIN_M.c: 205:     TRISE = 0x00;
+"182
+[; ;MAIN_M.c: 182:     TRISE = 0x00;
 [e = _TRISE -> -> 0 `i `uc ]
-"206
-[; ;MAIN_M.c: 206:     PORTE = 0x00;
+"183
+[; ;MAIN_M.c: 183:     PORTE = 0x00;
 [e = _PORTE -> -> 0 `i `uc ]
-"208
-[; ;MAIN_M.c: 208:     TRISB = 0b00000011;
+"185
+[; ;MAIN_M.c: 185:     TRISB = 0b00000011;
 [e = _TRISB -> -> 3 `i `uc ]
-"209
-[; ;MAIN_M.c: 209:     PORTB = 0x00;
+"186
+[; ;MAIN_M.c: 186:     PORTB = 0x00;
 [e = _PORTB -> -> 0 `i `uc ]
-"211
-[; ;MAIN_M.c: 211:     PORTA = 0x00;
-[e = _PORTA -> -> 0 `i `uc ]
-"212
-[; ;MAIN_M.c: 212:     TRISA = 0x00;
-[e = _TRISA -> -> 0 `i `uc ]
-"215
-[; ;MAIN_M.c: 215:     IOC_INT(0b00000011);
+"189
+[; ;MAIN_M.c: 189:     IOC_INT(0b00000011);
 [e ( _IOC_INT (1 -> -> 3 `i `uc ]
-"217
-[; ;MAIN_M.c: 217:     POT = 0;
+"191
+[; ;MAIN_M.c: 191:     POT = 0;
 [e = _POT -> -> 0 `i `uc ]
-"218
-[; ;MAIN_M.c: 218:     unidad = 0;
+"192
+[; ;MAIN_M.c: 192:     unidad = 0;
 [e = _unidad -> -> 0 `i `uc ]
-"219
-[; ;MAIN_M.c: 219:     decena = 0;
+"193
+[; ;MAIN_M.c: 193:     decena = 0;
 [e = _decena -> -> 0 `i `uc ]
-"220
-[; ;MAIN_M.c: 220:     centena = 0;
+"194
+[; ;MAIN_M.c: 194:     centena = 0;
 [e = _centena -> -> 0 `i `uc ]
-"222
-[; ;MAIN_M.c: 222:     seg = 0;
+"196
+[; ;MAIN_M.c: 196:     seg = 0;
 [e = _seg -> -> 0 `i `uc ]
-"223
-[; ;MAIN_M.c: 223:     min = 0;
+"197
+[; ;MAIN_M.c: 197:     min = 0;
 [e = _min -> -> 0 `i `uc ]
-"224
-[; ;MAIN_M.c: 224:     hora=0 ;
+"198
+[; ;MAIN_M.c: 198:     hora= 0;
 [e = _hora -> -> 0 `i `uc ]
-"225
-[; ;MAIN_M.c: 225:     dia = 0;
+"199
+[; ;MAIN_M.c: 199:     dia = 0;
 [e = _dia -> -> 0 `i `uc ]
-"226
-[; ;MAIN_M.c: 226:     mes = 0;
+"200
+[; ;MAIN_M.c: 200:     mes = 0;
 [e = _mes -> -> 0 `i `uc ]
-"227
-[; ;MAIN_M.c: 227:     year=0;
+"201
+[; ;MAIN_M.c: 201:     year= 0;
 [e = _year -> -> 0 `i `uc ]
-"229
-[; ;MAIN_M.c: 229:     LCD_INIT();
+"203
+[; ;MAIN_M.c: 203:     select = 0;
+[e = _select -> -> 0 `i `uc ]
+"204
+[; ;MAIN_M.c: 204:     parametro = 0;
+[e = _parametro -> -> 0 `i `uc ]
+"206
+[; ;MAIN_M.c: 206:     LCD_INIT();
 [e ( _LCD_INIT ..  ]
-"230
-[; ;MAIN_M.c: 230:     I2C_Master_Init(100000);
+"207
+[; ;MAIN_M.c: 207:     I2C_Master_Init(100000);
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"232
-[; ;MAIN_M.c: 232: }
-[e :UE 167 ]
+"208
+[; ;MAIN_M.c: 208: }
+[e :UE 163 ]
 }
-"234
-[; ;MAIN_M.c: 234: void RTC_PRINT (uint8_t Val){
-[v _RTC_PRINT `(v ~T0 @X0 1 ef1`uc ]
+"210
+[; ;MAIN_M.c: 210: void RTC_PRINT (void){
+[v _RTC_PRINT `(v ~T0 @X0 1 ef ]
 {
 [e :U _RTC_PRINT ]
-[v _Val `uc ~T0 @X0 1 r1 ]
 [f ]
-"235
-[; ;MAIN_M.c: 235:     char s10,s;
-[v _s10 `uc ~T0 @X0 1 a ]
-[v _s `uc ~T0 @X0 1 a ]
+"212
+[; ;MAIN_M.c: 212:     uint8_t seg1,min1,hora1;
+[v _seg1 `uc ~T0 @X0 1 a ]
+[v _min1 `uc ~T0 @X0 1 a ]
+[v _hora1 `uc ~T0 @X0 1 a ]
+"213
+[; ;MAIN_M.c: 213:     uint8_t dia1,mes1,year1;
+[v _dia1 `uc ~T0 @X0 1 a ]
+[v _mes1 `uc ~T0 @X0 1 a ]
+[v _year1 `uc ~T0 @X0 1 a ]
+"215
+[; ;MAIN_M.c: 215:     seg1 = BCD_DECIMAL(seg);
+[e = _seg1 ( _BCD_DECIMAL (1 _seg ]
+"216
+[; ;MAIN_M.c: 216:     min1 = BCD_DECIMAL(min);
+[e = _min1 ( _BCD_DECIMAL (1 _min ]
+"217
+[; ;MAIN_M.c: 217:     hora1 = BCD_DECIMAL(hora);
+[e = _hora1 ( _BCD_DECIMAL (1 _hora ]
+"218
+[; ;MAIN_M.c: 218:     dia1 = BCD_DECIMAL(dia);
+[e = _dia1 ( _BCD_DECIMAL (1 _dia ]
+"219
+[; ;MAIN_M.c: 219:     mes1 = BCD_DECIMAL(mes);
+[e = _mes1 ( _BCD_DECIMAL (1 _mes ]
+"220
+[; ;MAIN_M.c: 220:     year1 = BCD_DECIMAL(year);
+[e = _year1 ( _BCD_DECIMAL (1 _year ]
+"222
+[; ;MAIN_M.c: 222:     Time[0] = hora1/10 + '0';
+[e = *U + &U _Time * -> -> -> 0 `i `ui `ux -> -> # *U &U _Time `ui `ux -> + -> / -> _hora1 `i -> 10 `i `ui -> 48 `ui `uc ]
+"223
+[; ;MAIN_M.c: 223:     Time[1] = hora1 % 10 + '0';
+[e = *U + &U _Time * -> -> -> 1 `i `ui `ux -> -> # *U &U _Time `ui `ux -> + -> % -> _hora1 `i -> 10 `i `ui -> 48 `ui `uc ]
+"224
+[; ;MAIN_M.c: 224:     Time[3] = min1 / 10 + '0';
+[e = *U + &U _Time * -> -> -> 3 `i `ui `ux -> -> # *U &U _Time `ui `ux -> + -> / -> _min1 `i -> 10 `i `ui -> 48 `ui `uc ]
+"225
+[; ;MAIN_M.c: 225:     Time[4] = min1 % 10 + '0';
+[e = *U + &U _Time * -> -> -> 4 `i `ui `ux -> -> # *U &U _Time `ui `ux -> + -> % -> _min1 `i -> 10 `i `ui -> 48 `ui `uc ]
+"226
+[; ;MAIN_M.c: 226:     Time[6] = seg1/10 + '0';
+[e = *U + &U _Time * -> -> -> 6 `i `ui `ux -> -> # *U &U _Time `ui `ux -> + -> / -> _seg1 `i -> 10 `i `ui -> 48 `ui `uc ]
+"227
+[; ;MAIN_M.c: 227:     Time[7] = seg1 % 10 + '0';
+[e = *U + &U _Time * -> -> -> 7 `i `ui `ux -> -> # *U &U _Time `ui `ux -> + -> % -> _seg1 `i -> 10 `i `ui -> 48 `ui `uc ]
+"229
+[; ;MAIN_M.c: 229:     Date[0] = dia1/10 + '0';
+[e = *U + &U _Date * -> -> -> 0 `i `ui `ux -> -> # *U &U _Date `ui `ux -> + -> / -> _dia1 `i -> 10 `i `ui -> 48 `ui `uc ]
+"230
+[; ;MAIN_M.c: 230:     Date[1] = dia1 % 10 + '0';
+[e = *U + &U _Date * -> -> -> 1 `i `ui `ux -> -> # *U &U _Date `ui `ux -> + -> % -> _dia1 `i -> 10 `i `ui -> 48 `ui `uc ]
+"231
+[; ;MAIN_M.c: 231:     Date[3] = mes1/10 + '0';
+[e = *U + &U _Date * -> -> -> 3 `i `ui `ux -> -> # *U &U _Date `ui `ux -> + -> / -> _mes1 `i -> 10 `i `ui -> 48 `ui `uc ]
+"232
+[; ;MAIN_M.c: 232:     Date[4] = mes1 % 10 + '0';
+[e = *U + &U _Date * -> -> -> 4 `i `ui `ux -> -> # *U &U _Date `ui `ux -> + -> % -> _mes1 `i -> 10 `i `ui -> 48 `ui `uc ]
+"233
+[; ;MAIN_M.c: 233:     Date[8] = year1/10 + '0';
+[e = *U + &U _Date * -> -> -> 8 `i `ui `ux -> -> # *U &U _Date `ui `ux -> + -> / -> _year1 `i -> 10 `i `ui -> 48 `ui `uc ]
+"234
+[; ;MAIN_M.c: 234:     Date[9] = year1 % 10 + '0';
+[e = *U + &U _Date * -> -> -> 9 `i `ui `ux -> -> # *U &U _Date `ui `ux -> + -> % -> _year1 `i -> 10 `i `ui -> 48 `ui `uc ]
+"236
+[; ;MAIN_M.c: 236:     LCD_XY(1,8);
+[e ( _LCD_XY (2 , -> -> 1 `i `uc -> -> 8 `i `uc ]
 "237
-[; ;MAIN_M.c: 237:     s10 = (uint8_t)((Val >>4)) + '0';
-[e = _s10 -> + -> -> >> -> _Val `i -> 4 `i `uc `ui -> 48 `ui `uc ]
+[; ;MAIN_M.c: 237:     LCD_STRING(Time);
+[e ( _LCD_STRING (1 &U _Time ]
 "238
-[; ;MAIN_M.c: 238:     s = (uint8_t)((Val & 0x0f)) + '0';
-[e = _s -> + -> -> & -> _Val `i -> 15 `i `uc `ui -> 48 `ui `uc ]
+[; ;MAIN_M.c: 238:     LCD_XY(2,6);
+[e ( _LCD_XY (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
+"239
+[; ;MAIN_M.c: 239:     LCD_STRING(Date);
+[e ( _LCD_STRING (1 &U _Date ]
 "240
-[; ;MAIN_M.c: 240:     LCD_CHAR(s10);
-[e ( _LCD_CHAR (1 _s10 ]
-"241
-[; ;MAIN_M.c: 241:     LCD_CHAR(s);
-[e ( _LCD_CHAR (1 _s ]
-"243
-[; ;MAIN_M.c: 243: }
-[e :UE 168 ]
+[; ;MAIN_M.c: 240:     _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"242
+[; ;MAIN_M.c: 242: }
+[e :UE 164 ]
 }
-"245
-[; ;MAIN_M.c: 245: unsigned short RTC_READ(unsigned I2C,unsigned d){
+"244
+[; ;MAIN_M.c: 244: unsigned short RTC_READ(unsigned I2C,unsigned d){
 [v _RTC_READ `(us ~T0 @X0 1 ef2`ui`ui ]
 {
 [e :U _RTC_READ ]
 [v _I2C `ui ~T0 @X0 1 r1 ]
 [v _d `ui ~T0 @X0 1 r2 ]
 [f ]
-"246
-[; ;MAIN_M.c: 246:     unsigned short RTC;
+"245
+[; ;MAIN_M.c: 245:     unsigned short RTC;
 [v _RTC `us ~T0 @X0 1 a ]
+"247
+[; ;MAIN_M.c: 247:     I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
 "248
-[; ;MAIN_M.c: 248:     I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"249
-[; ;MAIN_M.c: 249:     I2C_Master_Write(I2C);
+[; ;MAIN_M.c: 248:     I2C_Master_Write(I2C);
 [e ( _I2C_Master_Write (1 _I2C ]
-"250
-[; ;MAIN_M.c: 250:     I2C_Master_Write(d);
+"249
+[; ;MAIN_M.c: 249:     I2C_Master_Write(d);
 [e ( _I2C_Master_Write (1 _d ]
+"250
+[; ;MAIN_M.c: 250:     I2C_Master_Stop();
+[e ( _I2C_Master_Stop ..  ]
 "251
-[; ;MAIN_M.c: 251:     I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"252
-[; ;MAIN_M.c: 252:     _delay((unsigned long)((10)*(8000000/4000.0)));
+[; ;MAIN_M.c: 251:     _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"254
-[; ;MAIN_M.c: 254:     I2C_Master_Start();
+"253
+[; ;MAIN_M.c: 253:     I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"255
-[; ;MAIN_M.c: 255:     I2C_Master_Write(I2C + 0x01);
+"254
+[; ;MAIN_M.c: 254:     I2C_Master_Write(I2C + 0x01);
 [e ( _I2C_Master_Write (1 + _I2C -> -> 1 `i `ui ]
-"256
-[; ;MAIN_M.c: 256:     RTC = I2C_Master_Read(0);
+"255
+[; ;MAIN_M.c: 255:     RTC = I2C_Master_Read(0);
 [e = _RTC ( _I2C_Master_Read (1 -> -> 0 `i `us ]
-"257
-[; ;MAIN_M.c: 257:     I2C_Master_Stop();
+"256
+[; ;MAIN_M.c: 256:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"258
-[; ;MAIN_M.c: 258:     _delay((unsigned long)((10)*(8000000/4000.0)));
+"257
+[; ;MAIN_M.c: 257:     _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"260
-[; ;MAIN_M.c: 260:     return RTC;
+"259
+[; ;MAIN_M.c: 259:     return RTC;
 [e ) _RTC ]
-[e $UE 169  ]
-"261
-[; ;MAIN_M.c: 261: }
-[e :UE 169 ]
+[e $UE 165  ]
+"260
+[; ;MAIN_M.c: 260: }
+[e :UE 165 ]
 }
-"263
-[; ;MAIN_M.c: 263: void CONFIGURAR(char x, char y){
-[v _CONFIGURAR `(v ~T0 @X0 1 ef2`uc`uc ]
-{
-[e :U _CONFIGURAR ]
-[v _x `uc ~T0 @X0 1 r1 ]
-[v _y `uc ~T0 @X0 1 r2 ]
-[f ]
-"264
-[; ;MAIN_M.c: 264:     LCD_XY(x,y);
-[e ( _LCD_XY (2 , _x _y ]
-"265
-[; ;MAIN_M.c: 265:     LCD_STRING("  ");
-[e ( _LCD_STRING (1 :s 8C ]
-"266
-[; ;MAIN_M.c: 266:     Parpadeo();
-[e ( _Parpadeo ..  ]
-"267
-[; ;MAIN_M.c: 267: }
-[e :UE 170 ]
-}
-"269
-[; ;MAIN_M.c: 269: void Parpadeo(void){
+"262
+[; ;MAIN_M.c: 262: void Parpadeo(void){
 [v _Parpadeo `(v ~T0 @X0 1 ef ]
 {
 [e :U _Parpadeo ]
 [f ]
-"270
-[; ;MAIN_M.c: 270:     uint8_t j = 0;
+"263
+[; ;MAIN_M.c: 263:     uint8_t j = 0;
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-"271
-[; ;MAIN_M.c: 271:     while(j>100 && RB0 && RB1){
-[e $U 172  ]
-[e :U 173 ]
+"264
+[; ;MAIN_M.c: 264:     while(j>100 && RB0 && RB1){
+[e $U 167  ]
+[e :U 168 ]
 {
-"272
-[; ;MAIN_M.c: 272:         j++;
+"265
+[; ;MAIN_M.c: 265:         j++;
 [e ++ _j -> -> 1 `i `uc ]
-"273
-[; ;MAIN_M.c: 273:         _delay((unsigned long)((50)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"274
-[; ;MAIN_M.c: 274:     }
+"266
+[; ;MAIN_M.c: 266:         _delay((unsigned long)((5)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"267
+[; ;MAIN_M.c: 267:     }
 }
-[e :U 172 ]
+[e :U 167 ]
+"264
+[; ;MAIN_M.c: 264:     while(j>100 && RB0 && RB1){
+[e $ && && > -> _j `i -> 100 `i _RB0 _RB1 168  ]
+[e :U 169 ]
+"268
+[; ;MAIN_M.c: 268: }
+[e :UE 166 ]
+}
 "271
-[; ;MAIN_M.c: 271:     while(j>100 && RB0 && RB1){
-[e $ && && > -> _j `i -> 100 `i _RB0 _RB1 173  ]
-[e :U 174 ]
-"275
-[; ;MAIN_M.c: 275: }
-[e :UE 171 ]
-}
-"278
-[; ;MAIN_M.c: 278: uint8_t DECIMAL_BCD(uint8_t num){
+[; ;MAIN_M.c: 271: uint8_t DECIMAL_BCD(uint8_t num){
 [v _DECIMAL_BCD `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _DECIMAL_BCD ]
 [v _num `uc ~T0 @X0 1 r1 ]
 [f ]
-"279
-[; ;MAIN_M.c: 279:     return (((num/10)<<4) + (num % 10));
+"272
+[; ;MAIN_M.c: 272:     return (((num/10)<<4) + (num % 10));
 [e ) -> + << / -> _num `i -> 10 `i -> 4 `i % -> _num `i -> 10 `i `uc ]
-[e $UE 175  ]
-"280
-[; ;MAIN_M.c: 280: }
-[e :UE 175 ]
+[e $UE 170  ]
+"273
+[; ;MAIN_M.c: 273: }
+[e :UE 170 ]
 }
-"282
-[; ;MAIN_M.c: 282: uint8_t BCD_DECIMAL(uint8_t num){
+"275
+[; ;MAIN_M.c: 275: uint8_t BCD_DECIMAL(uint8_t num){
 [v _BCD_DECIMAL `(uc ~T0 @X0 1 ef1`uc ]
 {
 [e :U _BCD_DECIMAL ]
 [v _num `uc ~T0 @X0 1 r1 ]
 [f ]
-"283
-[; ;MAIN_M.c: 283:     return ((num >> 4)*10 + (num & 0x0f));
+"276
+[; ;MAIN_M.c: 276:     return ((num >> 4)*10 + (num & 0x0f));
 [e ) -> + * >> -> _num `i -> 4 `i -> 10 `i & -> _num `i -> 15 `i `uc ]
-[e $UE 176  ]
-"284
-[; ;MAIN_M.c: 284: }
-[e :UE 176 ]
+[e $UE 171  ]
+"277
+[; ;MAIN_M.c: 277: }
+[e :UE 171 ]
 }
-"287
-[; ;MAIN_M.c: 287: void RTC_WRITE(unsigned I2C,unsigned d,char parametro){
+"280
+[; ;MAIN_M.c: 280: void RTC_WRITE(unsigned I2C,unsigned d,char parametro){
 [v _RTC_WRITE `(v ~T0 @X0 1 ef3`ui`ui`uc ]
 {
 [e :U _RTC_WRITE ]
@@ -962,33 +937,148 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _d `ui ~T0 @X0 1 r2 ]
 [v _parametro `uc ~T0 @X0 1 r3 ]
 [f ]
-"289
-[; ;MAIN_M.c: 289:     I2C_Master_Start();
+"282
+[; ;MAIN_M.c: 282:     I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"290
-[; ;MAIN_M.c: 290:     I2C_Master_Write(I2C);
+"283
+[; ;MAIN_M.c: 283:     I2C_Master_Write(I2C);
 [e ( _I2C_Master_Write (1 _I2C ]
-"291
-[; ;MAIN_M.c: 291:     I2C_Master_Write(d);
+"284
+[; ;MAIN_M.c: 284:     I2C_Master_Write(d);
 [e ( _I2C_Master_Write (1 _d ]
-"292
-[; ;MAIN_M.c: 292:     I2C_Master_Write(parametro);
+"285
+[; ;MAIN_M.c: 285:     I2C_Master_Write(parametro);
 [e ( _I2C_Master_Write (1 -> _parametro `ui ]
-"293
-[; ;MAIN_M.c: 293:     I2C_Master_Stop();
+"286
+[; ;MAIN_M.c: 286:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"294
-[; ;MAIN_M.c: 294:     _delay((unsigned long)((20)*(8000000/4000.0)));
+"287
+[; ;MAIN_M.c: 287:     _delay((unsigned long)((20)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"289
+[; ;MAIN_M.c: 289: }
+[e :UE 172 ]
+}
+"291
+[; ;MAIN_M.c: 291: uint8_t PAM(uint8_t parametro,uint8_t rtc){
+[v _PAM `(uc ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _PAM ]
+[v _parametro `uc ~T0 @X0 1 r1 ]
+[v _rtc `uc ~T0 @X0 1 r2 ]
+[f ]
+"292
+[; ;MAIN_M.c: 292:     if(!RB0){
+[e $ ! ! _RB0 174  ]
+{
+"293
+[; ;MAIN_M.c: 293:         if(ANTI_REBOTE())
+[e $ ! ( _ANTI_REBOTE ..  175  ]
+"294
+[; ;MAIN_M.c: 294:             parametro = BCD_DECIMAL(rtc);
+[e = _parametro ( _BCD_DECIMAL (1 _rtc ]
+[e :U 175 ]
 "296
-[; ;MAIN_M.c: 296: }
+[; ;MAIN_M.c: 296:     }
+}
+[e :U 174 ]
+"297
+[; ;MAIN_M.c: 297:     return parametro;
+[e ) _parametro ]
+[e $UE 173  ]
+"298
+[; ;MAIN_M.c: 298: }
+[e :UE 173 ]
+}
+"299
+[; ;MAIN_M.c: 299: uint8_t CONFIGURAR_v2(uint8_t x, uint8_t y, uint8_t parametro,uint8_t rtc){
+[v _CONFIGURAR_v2 `(uc ~T0 @X0 1 ef4`uc`uc`uc`uc ]
+{
+[e :U _CONFIGURAR_v2 ]
+[v _x `uc ~T0 @X0 1 r1 ]
+[v _y `uc ~T0 @X0 1 r2 ]
+[v _parametro `uc ~T0 @X0 1 r3 ]
+[v _rtc `uc ~T0 @X0 1 r4 ]
+[f ]
+"300
+[; ;MAIN_M.c: 300:     rtc = DECIMAL_BCD(parametro);
+[e = _rtc ( _DECIMAL_BCD (1 _parametro ]
+"302
+[; ;MAIN_M.c: 302:     LCD_XY(x,y);
+[e ( _LCD_XY (2 , -> _x `uc -> _y `uc ]
+"303
+[; ;MAIN_M.c: 303:     Parpadeo();
+[e ( _Parpadeo ..  ]
+"304
+[; ;MAIN_M.c: 304:     LCD_STRING("  ");
+[e ( _LCD_STRING (1 :s 3C ]
+"305
+[; ;MAIN_M.c: 305:     Parpadeo();
+[e ( _Parpadeo ..  ]
+"306
+[; ;MAIN_M.c: 306:     return rtc;
+[e ) _rtc ]
+[e $UE 176  ]
+"324
+[; ;MAIN_M.c: 324: }
+[e :UE 176 ]
+}
+"326
+[; ;MAIN_M.c: 326: __bit ANTI_REBOTE(void){
+[v _ANTI_REBOTE `(b ~T0 @X0 1 ef ]
+{
+[e :U _ANTI_REBOTE ]
+[f ]
+"327
+[; ;MAIN_M.c: 327:     uint8_t contador = 0;
+[v _contador `uc ~T0 @X0 1 a ]
+[e = _contador -> -> 0 `i `uc ]
+"328
+[; ;MAIN_M.c: 328:     for(uint8_t i=0;i<5;i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 5 `i 178  ]
+[e $U 179  ]
+[e :U 178 ]
+{
+"329
+[; ;MAIN_M.c: 329:         if(!RB0 || !RB1)
+[e $ ! || ! _RB0 ! _RB1 181  ]
+"330
+[; ;MAIN_M.c: 330:             contador++;
+[e ++ _contador -> -> 1 `i `uc ]
+[e :U 181 ]
+"331
+[; ;MAIN_M.c: 331:         _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"332
+[; ;MAIN_M.c: 332:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 178  ]
+[e :U 179 ]
+}
+"333
+[; ;MAIN_M.c: 333:     if(contador >2)
+[e $ ! > -> _contador `i -> 2 `i 182  ]
+"334
+[; ;MAIN_M.c: 334:         return 1;
+[e ) -> -> 1 `i `b ]
+[e $UE 177  ]
+[e $U 183  ]
+"335
+[; ;MAIN_M.c: 335:     else
+[e :U 182 ]
+"336
+[; ;MAIN_M.c: 336:         return 0;
+[e ) -> -> 0 `i `b ]
+[e $UE 177  ]
+[e :U 183 ]
+"337
+[; ;MAIN_M.c: 337: }
 [e :UE 177 ]
 }
 [a 1C 83 49 58 0 ]
-[a 3C 58 0 ]
-[a 4C 58 0 ]
-[a 7C 50 48 0 ]
-[a 5C 47 0 ]
-[a 6C 47 0 ]
 [a 2C 46 0 ]
-[a 8C 32 32 0 ]
+[a 3C 32 32 0 ]

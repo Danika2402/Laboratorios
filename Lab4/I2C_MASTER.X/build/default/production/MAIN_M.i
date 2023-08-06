@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "MAIN_M.c" 2
-# 16 "MAIN_M.c"
+# 18 "MAIN_M.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -156,7 +156,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 30 "MAIN_M.c" 2
+# 32 "MAIN_M.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
@@ -2643,7 +2643,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 31 "MAIN_M.c" 2
+# 33 "MAIN_M.c" 2
 
 # 1 "./LCD.h" 1
 # 12 "./LCD.h"
@@ -2669,7 +2669,7 @@ void LCD_STRING(char *a);
 uint8_t DECENA(unsigned char c);
 uint8_t UNIDAD(unsigned char c);
 uint8_t CENTENA(unsigned char c);
-# 32 "MAIN_M.c" 2
+# 34 "MAIN_M.c" 2
 
 # 1 "./I2CM.h" 1
 # 12 "./I2CM.h"
@@ -2687,14 +2687,14 @@ void I2C_Master_Stop(void);
 void I2C_Master_Write(unsigned d);
 unsigned short I2C_Master_Read(unsigned short a);
 void I2C_Slave_Init(uint8_t address);
-# 33 "MAIN_M.c" 2
+# 35 "MAIN_M.c" 2
 
 
 
 
 
 
-void setup(void);
+
 uint8_t POT;
 uint8_t unidad, decena,centena;
 
@@ -2703,8 +2703,14 @@ uint8_t dia,mes,year;
 
 uint8_t select,parametro,p;
 
-void RTC_PRINT(uint8_t Val);
-void CONFIGURAR(char x, char y);
+static char Time[]= "00/00/00";
+static char Date[]="00/00/2000";
+
+void setup(void);
+__bit ANTI_REBOTE(void);
+void RTC_PRINT(void);
+uint8_t PAM(uint8_t parametro,uint8_t rtc);
+uint8_t CONFIGURAR_v2(uint8_t x, uint8_t y, uint8_t parametro,uint8_t rtc);
 unsigned short RTC_READ(unsigned I2C,unsigned d);
 void RTC_WRITE(unsigned I2C,unsigned d,char parametro);
 
@@ -2716,31 +2722,35 @@ void Parpadeo(void);
 void __attribute__((picinterrupt(("")))) isr(void){
     if (INTCONbits.RBIF==1){
         if (RB0==0){
-            select++;
-            PORTA++;
-            _delay((unsigned long)((10)*(8000000/4000.0)));
+            if(ANTI_REBOTE())
+                select++;
+
         } else if (RB1==0){
             if(select != 0)
-                parametro++;
+                if(ANTI_REBOTE())
+                    parametro++;
         }
         if(select >5)
             select = 0;
 
-        if(select == 1 && parametro >23){
+        if(select == 1 && parametro >23)
             parametro = 0;
-        }else if(select == 2 && parametro >59){
+        if(select == 2 && parametro >59)
             parametro = 0;
-        }else if(select == 3 && parametro >12){
+        if(select == 3 && parametro >12)
             parametro = 1;
-        }else if(select == 4 && parametro >99){
+        if(select == 3 && parametro ==0)
+            parametro = 1;
+        if(select == 4 && parametro >99)
             parametro = 0;
-        }
+
         INTCONbits.RBIF=0;
     }
 }
 
 void main(void) {
     setup();
+
     while(1){
 
         I2C_Master_Start();
@@ -2748,54 +2758,34 @@ void main(void) {
         POT = I2C_Master_Read(0);
         I2C_Master_Stop();
         _delay((unsigned long)((10)*(8000000/4000.0)));
-
+# 114 "MAIN_M.c"
         if(select !=0){
-
             if(select == 1){
-                if(!RB0){
-                    parametro = BCD_DECIMAL(hora);
-                    _delay((unsigned long)((10)*(8000000/4000.0)));
-                }
-                hora = DECIMAL_BCD(parametro);
-                CONFIGURAR(1,8);
+                parametro = PAM(parametro,hora);
+                hora = CONFIGURAR_v2(1,8,parametro,hora);
             }
             if(select == 2){
-                if(!RB0){
-                    parametro = BCD_DECIMAL(min);
-                    _delay((unsigned long)((10)*(8000000/4000.0)));
-                }
-                min = DECIMAL_BCD(parametro);
-                CONFIGURAR(1,11);
+                parametro = PAM(parametro,min);
+                min = CONFIGURAR_v2(1,11,parametro,min);
             }
             if(select == 3){
-                if(!RB0){
-                    parametro = BCD_DECIMAL(mes);
-                    _delay((unsigned long)((10)*(8000000/4000.0)));
-                }
-                mes = DECIMAL_BCD(parametro);
-                CONFIGURAR(2,9);
+                parametro = PAM(parametro,mes);
+                mes = CONFIGURAR_v2(2,9,parametro,mes);
             }
             if(select == 4){
-                if(!RB0){
-                    parametro = BCD_DECIMAL(year);
-                    _delay((unsigned long)((10)*(8000000/4000.0)));
-                }
-                year = DECIMAL_BCD(parametro);
-                CONFIGURAR(2,14);
+                parametro = PAM(parametro,year);
+                year = CONFIGURAR_v2(2,14,parametro,year);
             }
-
             if(select == 5){
                 RTC_WRITE(0xD0,0x02,hora);
                 RTC_WRITE(0xD0,0x01,min);
                 RTC_WRITE(0xD0,0x05,mes);
                 RTC_WRITE(0xD0,0x06,year);
                 RTC_WRITE(0xD0,0x00,0x00);
+                parametro = 0;
                 select = 0;
             }
-
-
         }else {
-
         seg = RTC_READ(0xD0,0x00);
         min = RTC_READ(0xD0,0x01);
         hora = RTC_READ(0xD0,0x02);
@@ -2822,30 +2812,8 @@ void main(void) {
         LCD_CHAR(decena);
         LCD_CHAR(unidad);
 
+        RTC_PRINT();
 
-        LCD_XY(1,8);
-        RTC_PRINT(hora);
-        LCD_STRING(":");
-
-
-        RTC_PRINT(min);
-        LCD_STRING(":");
-
-
-        RTC_PRINT(seg);
-
-
-        LCD_XY(2,6);
-        RTC_PRINT(dia);
-        LCD_STRING("/");
-
-
-        RTC_PRINT(mes);
-        LCD_STRING("/");
-
-
-        LCD_STRING("20");
-        RTC_PRINT(year);
     }
     return;
 }
@@ -2853,7 +2821,6 @@ void main(void) {
 void setup(void){
 
     OSCILLATOR(1);
-
 
     ANSEL = 0x00;
     ANSELH = 0x00;
@@ -2866,9 +2833,6 @@ void setup(void){
     TRISB = 0b00000011;
     PORTB = 0x00;
 
-    PORTA = 0x00;
-    TRISA = 0x00;
-
 
     IOC_INT(0b00000011);
 
@@ -2879,24 +2843,49 @@ void setup(void){
 
     seg = 0;
     min = 0;
-    hora=0 ;
+    hora= 0;
     dia = 0;
     mes = 0;
-    year=0;
+    year= 0;
+
+    select = 0;
+    parametro = 0;
 
     LCD_INIT();
     I2C_Master_Init(100000);
-
 }
 
-void RTC_PRINT (uint8_t Val){
-    char s10,s;
+void RTC_PRINT (void){
 
-    s10 = (uint8_t)((Val >>4)) + '0';
-    s = (uint8_t)((Val & 0x0f)) + '0';
+    uint8_t seg1,min1,hora1;
+    uint8_t dia1,mes1,year1;
 
-    LCD_CHAR(s10);
-    LCD_CHAR(s);
+    seg1 = BCD_DECIMAL(seg);
+    min1 = BCD_DECIMAL(min);
+    hora1 = BCD_DECIMAL(hora);
+    dia1 = BCD_DECIMAL(dia);
+    mes1 = BCD_DECIMAL(mes);
+    year1 = BCD_DECIMAL(year);
+
+    Time[0] = hora1/10 + '0';
+    Time[1] = hora1 % 10 + '0';
+    Time[3] = min1 / 10 + '0';
+    Time[4] = min1 % 10 + '0';
+    Time[6] = seg1/10 + '0';
+    Time[7] = seg1 % 10 + '0';
+
+    Date[0] = dia1/10 + '0';
+    Date[1] = dia1 % 10 + '0';
+    Date[3] = mes1/10 + '0';
+    Date[4] = mes1 % 10 + '0';
+    Date[8] = year1/10 + '0';
+    Date[9] = year1 % 10 + '0';
+
+    LCD_XY(1,8);
+    LCD_STRING(Time);
+    LCD_XY(2,6);
+    LCD_STRING(Date);
+    _delay((unsigned long)((100)*(8000000/4000.0)));
 
 }
 
@@ -2918,17 +2907,11 @@ unsigned short RTC_READ(unsigned I2C,unsigned d){
     return RTC;
 }
 
-void CONFIGURAR(char x, char y){
-    LCD_XY(x,y);
-    LCD_STRING("  ");
-    Parpadeo();
-}
-
 void Parpadeo(void){
     uint8_t j = 0;
     while(j>100 && RB0 && RB1){
         j++;
-        _delay((unsigned long)((50)*(8000000/4000.0)));
+        _delay((unsigned long)((5)*(8000000/4000.0)));
     }
 }
 
@@ -2951,4 +2934,36 @@ void RTC_WRITE(unsigned I2C,unsigned d,char parametro){
     I2C_Master_Stop();
     _delay((unsigned long)((20)*(8000000/4000.0)));
 
+}
+
+uint8_t PAM(uint8_t parametro,uint8_t rtc){
+    if(!RB0){
+        if(ANTI_REBOTE())
+            parametro = BCD_DECIMAL(rtc);
+
+    }
+    return parametro;
+}
+uint8_t CONFIGURAR_v2(uint8_t x, uint8_t y, uint8_t parametro,uint8_t rtc){
+    rtc = DECIMAL_BCD(parametro);
+
+    LCD_XY(x,y);
+    Parpadeo();
+    LCD_STRING("  ");
+    Parpadeo();
+    return rtc;
+# 324 "MAIN_M.c"
+}
+
+__bit ANTI_REBOTE(void){
+    uint8_t contador = 0;
+    for(uint8_t i=0;i<5;i++){
+        if(!RB0 || !RB1)
+            contador++;
+        _delay((unsigned long)((10)*(8000000/4000.0)));
+    }
+    if(contador >2)
+        return 1;
+    else
+        return 0;
 }

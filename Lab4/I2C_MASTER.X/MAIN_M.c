@@ -7,6 +7,8 @@
 //*****************************************************************************
 /* Electronica Digital 2 - 2023
  * Laboratorio 4 - I2C MASTER
+ * Comunicacion I2C usando 2 PICs, un RTC DS1307 (Tiny RTC I2C module), 
+ * un LCD 2x16 y un Potenciometro(SLAVE 1)
  * 
  * 
  * 
@@ -36,7 +38,7 @@
 #define PUSH2 RB1
 #define _XTAL_FREQ  8000000
 
-void setup(void);
+//VARIALBES*********************************************************************
 uint8_t POT;
 uint8_t unidad, decena,centena;
 
@@ -45,8 +47,14 @@ uint8_t dia,mes,year;
 
 uint8_t select,parametro,p;
 
-void RTC_PRINT(uint8_t Val);
-void CONFIGURAR(char x, char y);
+static char Time[]= "00/00/00";
+static char Date[]="00/00/2000";
+//FUNCIONES*********************************************************************
+void setup(void);
+__bit ANTI_REBOTE(void);
+void RTC_PRINT(void);
+uint8_t PAM(uint8_t parametro,uint8_t rtc);
+uint8_t CONFIGURAR_v2(uint8_t x, uint8_t y, uint8_t parametro,uint8_t rtc);
 unsigned short RTC_READ(unsigned I2C,unsigned d);
 void RTC_WRITE(unsigned I2C,unsigned d,char parametro);
 
@@ -58,86 +66,78 @@ void Parpadeo(void);
 void __interrupt() isr(void){
     if (INTCONbits.RBIF==1){               //Interrupciones de botones en PORTB con PULL UP
         if (PUSH1==0){
-            select++;
-            PORTA++;
-            __delay_ms(10);
-        } else if (PUSH2==0){     //RB1 decrementa PORTA
-            if(select != 0)
-                parametro++;
+            if(ANTI_REBOTE())                   //RB0 incrementa select
+                select++;
+
+        } else if (PUSH2==0){               //RB1 incrementa parametro solo si 
+            if(select != 0)                 //select no es 0
+                if(ANTI_REBOTE()) 
+                    parametro++;
         }
-        if(select >5)
-            select = 0;
+        if(select >5)                       //limites de ambas variables para que
+            select = 0;                     //no salgan del rango querido
         
-        if(select == 1 && parametro >23){       //horas
+        if(select == 1 && parametro >23)       //horas
             parametro = 0;
-        }else if(select == 2 && parametro >59){ //minutos
+        if(select == 2 && parametro >59) //minutos
             parametro = 0;
-        }else if(select == 3 && parametro >12){ //meses
+        if(select == 3 && parametro >12) //meses
             parametro = 1;
-        }else if(select == 4 && parametro >99){ //años
+        if(select == 3 && parametro ==0) //años
+            parametro = 1;
+        if(select == 4 && parametro >99) //años
             parametro = 0;
-        }
+        
         INTCONbits.RBIF=0;
     }
 }
 
 void main(void) {
     setup();
+    
     while(1){
         
-        I2C_Master_Start();
+        I2C_Master_Start();             //Lectura pic SLAVE1, potenciometro
         I2C_Master_Write(0x81);
         POT = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(10);
        
+        //Funcion IF donde configuramos los valores del RTC
+        //dependiendo de que numero es select configuramos la hora, minuto
+        //mes o año del RTC, si select = 5 es el fin y envia los datos al RTC
+        //tambien causamod un efecto de parpadeo en el LCD
+        
+        //0J0: esto tiene un efecto accidental, si se preciona el boton por un 
+        //tiempo especifico, parametro = RTC, de lo contraro RTC = parametro=0
+        //o el valor anterior del mismo
         if(select !=0){
-            
-            if(select == 1){
-                if(!PUSH1){
-                    parametro = BCD_DECIMAL(hora);
-                    __delay_ms(10);
-                }
-                hora = DECIMAL_BCD(parametro);
-                CONFIGURAR(1,8);
+            if(select == 1){                        
+                parametro = PAM(parametro,hora);
+                hora = CONFIGURAR_v2(1,8,parametro,hora);
             }
             if(select == 2){
-                if(!PUSH1){
-                    parametro = BCD_DECIMAL(min);
-                    __delay_ms(10);
-                }
-                min = DECIMAL_BCD(parametro);
-                CONFIGURAR(1,11);
+                parametro = PAM(parametro,min);
+                min = CONFIGURAR_v2(1,11,parametro,min);
             }
             if(select == 3){
-                if(!PUSH1){
-                    parametro = BCD_DECIMAL(mes);
-                    __delay_ms(10);
-                }
-                mes = DECIMAL_BCD(parametro);
-                CONFIGURAR(2,9);
+                parametro = PAM(parametro,mes);
+                mes = CONFIGURAR_v2(2,9,parametro,mes);
             }
             if(select == 4){
-                if(!PUSH1){
-                    parametro = BCD_DECIMAL(year);
-                    __delay_ms(10);
-                }
-                year = DECIMAL_BCD(parametro);
-                CONFIGURAR(2,14);
+                parametro = PAM(parametro,year);
+                year = CONFIGURAR_v2(2,14,parametro,year);
             }
-            
             if(select == 5){
-                RTC_WRITE(0xD0,0x02,hora);
+                RTC_WRITE(0xD0,0x02,hora);      //funcion para leer el RTC
                 RTC_WRITE(0xD0,0x01,min);
                 RTC_WRITE(0xD0,0x05,mes);
                 RTC_WRITE(0xD0,0x06,year);
                 RTC_WRITE(0xD0,0x00,0x00);
+                parametro = 0;
                 select = 0;
             }
-            
-            
-        }else {
-        
+        }else {                     //si select = 0 entonces solo se lee RTC
         seg = RTC_READ(0xD0,0x00);
         min = RTC_READ(0xD0,0x01);
         hora = RTC_READ(0xD0,0x02);
@@ -164,30 +164,8 @@ void main(void) {
         LCD_CHAR(decena);
         LCD_CHAR(unidad);
         
-        //HORAS
-        LCD_XY(1,8);
-        RTC_PRINT(hora);
-        LCD_STRING(":");
-        
-        //MINUTOS
-        RTC_PRINT(min);
-        LCD_STRING(":");
-        
-        //SEGUNDOS
-        RTC_PRINT(seg);
-        
-        //DIA
-        LCD_XY(2,6);
-        RTC_PRINT(dia);
-        LCD_STRING("/");
-                
-        //MES
-        RTC_PRINT(mes);
-        LCD_STRING("/");
-        
-        //AÑO
-        LCD_STRING("20");
-        RTC_PRINT(year);
+        RTC_PRINT();                //Funcion que imprime todas las variables del
+                                    //RTC en el LCD
     }
     return;
 }
@@ -195,7 +173,6 @@ void main(void) {
 void setup(void){
     //oscilador a 8M Hz
     OSCILLATOR(1);
-    
     
     ANSEL = 0x00;
     ANSELH = 0x00;
@@ -208,45 +185,67 @@ void setup(void){
     TRISB = 0b00000011;     //RB1 y RB0 entradas
     PORTB = 0x00;
     
-    PORTA = 0x00;
-    TRISA = 0x00;
-    
     //Config. PULL UP
     IOC_INT(0b00000011);     //pines 1 y 2 se realizaran la interrupcion
     
-    POT = 0;
+    POT = 0;                //valor de variables iniciales
     unidad = 0;
     decena = 0;
     centena = 0;
     
     seg = 0;
     min = 0;
-    hora=0 ;
+    hora= 0;
     dia = 0;
     mes = 0;
-    year=0;
+    year= 0;
 
-    LCD_INIT();
+    select = 0;
+    parametro = 0;
+
+    LCD_INIT();                     //iniciar configuracion LCD
     I2C_Master_Init(100000);        // Inicializar Comuncación I2C
-    
 }
 
-void RTC_PRINT (uint8_t Val){
-    char s10,s;
+void RTC_PRINT (void){
+
+    uint8_t seg1,min1,hora1;        //Se usan estas variables para que no
+    uint8_t dia1,mes1,year1;        //reescribamos las principales y cause 
+                                    //problemas o algun conflicto despues
+    seg1 = BCD_DECIMAL(seg);
+    min1 = BCD_DECIMAL(min);
+    hora1 = BCD_DECIMAL(hora);      //convertimos de BCD a decimal     
+    dia1 = BCD_DECIMAL(dia);
+    mes1 = BCD_DECIMAL(mes);
+    year1 = BCD_DECIMAL(year); 
     
-    s10 = (uint8_t)((Val >>4)) + '0';
-    s = (uint8_t)((Val & 0x0f)) + '0';
+    Time[0] = hora1/10 + '0';       //Separamos los decimales y unidades
+    Time[1] = hora1 % 10 + '0';     //y lo guardamos en las tablas estaticas
+    Time[3] = min1 / 10 + '0';
+    Time[4] = min1 % 10 + '0';
+    Time[6] = seg1/10 + '0';
+    Time[7] = seg1 % 10 + '0';
     
-    LCD_CHAR(s10);
-    LCD_CHAR(s);
+    Date[0] = dia1/10 + '0';
+    Date[1] = dia1 % 10 + '0';
+    Date[3] = mes1/10 + '0';
+    Date[4] = mes1 % 10 + '0';
+    Date[8] = year1/10 + '0';
+    Date[9] = year1 % 10 + '0';
+    
+    LCD_XY(1,8);                    //Imprimimos para LCD
+    LCD_STRING(Time);
+    LCD_XY(2,6);
+    LCD_STRING(Date);
+    __delay_ms(100);
 
 }
 
 unsigned short RTC_READ(unsigned I2C,unsigned d){
     unsigned short RTC;
     
-    I2C_Master_Start();
-    I2C_Master_Write(I2C);
+    I2C_Master_Start();                 //Funcion para leer RTC y guardar 
+    I2C_Master_Write(I2C);              //los datos usando comunicacion I2C
     I2C_Master_Write(d);
     I2C_Master_Stop();
     __delay_ms(10);
@@ -260,34 +259,28 @@ unsigned short RTC_READ(unsigned I2C,unsigned d){
     return RTC;
 }
 
-void CONFIGURAR(char x, char y){
-    LCD_XY(x,y);
-    LCD_STRING("  ");
-    Parpadeo();
-}
-
 void Parpadeo(void){
     uint8_t j = 0;
-    while(j>100 && PUSH1 && PUSH2){
+    while(j>100 && PUSH1 && PUSH2){ //Tipo de delay para el parpadeo
         j++;
-        __delay_ms(50);
+        __delay_ms(5);
     }
 }
 
 
-uint8_t DECIMAL_BCD(uint8_t num){
+uint8_t DECIMAL_BCD(uint8_t num){       //convercion decimal a BCD
     return (((num/10)<<4) + (num % 10));
 }
 
-uint8_t BCD_DECIMAL(uint8_t num){
+uint8_t BCD_DECIMAL(uint8_t num){       //convercion BCD a decimal
     return ((num >> 4)*10 + (num & 0x0f));
 }
 
 
 void RTC_WRITE(unsigned I2C,unsigned d,char parametro){
     
-    I2C_Master_Start();
-    I2C_Master_Write(I2C);
+    I2C_Master_Start();             //Funcion usando comunicacion I2C para
+    I2C_Master_Write(I2C);          //reescribir el RTC
     I2C_Master_Write(d);
     I2C_Master_Write(parametro);
     I2C_Master_Stop();
@@ -295,3 +288,50 @@ void RTC_WRITE(unsigned I2C,unsigned d,char parametro){
     
 }
  
+uint8_t PAM(uint8_t parametro,uint8_t rtc){
+    if(!PUSH1){
+        if(ANTI_REBOTE())
+            parametro = BCD_DECIMAL(rtc);  //RTC envia sus datos en leguaje
+                                            //BCD, para que no alla conflicto
+    }                                   //causa efecto de precionar PUSH cierto tiempo
+    return parametro;                   //parametro = rtc, si no rtc = parametro = 0 u dato anterior
+}
+uint8_t CONFIGURAR_v2(uint8_t x, uint8_t y, uint8_t parametro,uint8_t rtc){
+    rtc = DECIMAL_BCD(parametro);      //se convierte a decimal
+    
+    LCD_XY(x,y);                //funcion para causar parpadeo en el LCD
+    Parpadeo();
+    LCD_STRING("  ");
+    Parpadeo();
+    return rtc;
+    
+    /*while(!PUSH2){
+        LCD_XY(x,y);
+        LCD_CHAR(parametro/10 + '0');
+        LCD_CHAR(parametro % 10 + '0');
+        __delay_ms(200);
+    }
+    LCD_XY(x,y);
+    Parpadeo();
+    LCD_STRING("  ");
+    Parpadeo();
+    LCD_XY(x,y);
+    LCD_CHAR(parametro/10 + '0');
+    LCD_CHAR(parametro % 10 + '0');
+    Parpadeo();    
+    __delay_ms(200);
+    return DECIMAL_BCD(parametro);*/
+}
+
+__bit ANTI_REBOTE(void){
+    uint8_t contador = 0;
+    for(uint8_t i=0;i<5;i++){       //Funcion para evitar antirebote
+        if(!PUSH1 || !PUSH2)                  //Mas que todo utilizado para el PUSH1
+            contador++;
+        __delay_ms(10);
+    }
+    if(contador >2)
+        return 1;
+    else
+        return 0;
+}
