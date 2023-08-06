@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.35 build 20211206165544 
-                                                                                               Sun Jul 30 20:12:58 2023
+                                                                                               Tue Aug 01 21:35:40 2023
 
 Microchip MPLAB XC8 C Compiler v2.35 (Free license) build 20211206165544 Og1 
      1                           	processor	16F887
@@ -2208,7 +2208,7 @@ DATA                 0      0       C      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.35 build 20211206165544 
-Symbol Table                                                                                   Sun Jul 30 20:12:58 2023
+Symbol Table                                                                                   Tue Aug 01 21:35:40 2023
 
             _SSPSTATbits 0094                       l84 01AC                       l68 0193  
                      l85 01B1                       u30 01C4                       u31 01C3  

@@ -30,7 +30,7 @@ cstackBANK0 BANK0 1 20 20 2 1 1
 intentry CODE 0 4 4 8 2 1
 bssCOMMON COMMON 1 77 77 3 1 1
 config CONFIG 4 2007 2007 2 2 1
-$C:\Users\HP\AppData\Local\Temp\xcAslos.o
+$C:\Users\HP\AppData\Local\Temp\xcAs10c8.o
 idloc IDLOC 5 2000 2000 4 2 1
 reset_vec CODE 0 0 0 3 2 1
 end_init CODE 0 C C 3 2 1
@@ -79,14 +79,14 @@ STRING 1F8-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\SLAVE1.X.production.o
-F cinit CODE >797:C:\Users\HP\AppData\Local\Temp\xcAslos.s
-F cinit CODE >800:C:\Users\HP\AppData\Local\Temp\xcAslos.s
-F cinit CODE >817:C:\Users\HP\AppData\Local\Temp\xcAslos.s
-10 cinit CODE >818:C:\Users\HP\AppData\Local\Temp\xcAslos.s
-11 cinit CODE >819:C:\Users\HP\AppData\Local\Temp\xcAslos.s
-12 cinit CODE >825:C:\Users\HP\AppData\Local\Temp\xcAslos.s
-12 cinit CODE >827:C:\Users\HP\AppData\Local\Temp\xcAslos.s
-13 cinit CODE >828:C:\Users\HP\AppData\Local\Temp\xcAslos.s
+F cinit CODE >797:C:\Users\HP\AppData\Local\Temp\xcAs10c8.s
+F cinit CODE >800:C:\Users\HP\AppData\Local\Temp\xcAs10c8.s
+F cinit CODE >817:C:\Users\HP\AppData\Local\Temp\xcAs10c8.s
+10 cinit CODE >818:C:\Users\HP\AppData\Local\Temp\xcAs10c8.s
+11 cinit CODE >819:C:\Users\HP\AppData\Local\Temp\xcAs10c8.s
+12 cinit CODE >825:C:\Users\HP\AppData\Local\Temp\xcAs10c8.s
+12 cinit CODE >827:C:\Users\HP\AppData\Local\Temp\xcAs10c8.s
+13 cinit CODE >828:C:\Users\HP\AppData\Local\Temp\xcAs10c8.s
 4 intentry CODE >45:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE1.X\MAIN_S1.c
 1EB text10 CODE >29:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE1.X\SPIS1.c
 1EB text10 CODE >31:C:\Users\HP\Documents\2023 Segundo semestre\Electronica digital 2\Laboratorios\Lab3\SLAVE1.X\SPIS1.c
@@ -356,21 +356,21 @@ spiInit@sTransmitEdge 76 0 COMMON 1 cstackCOMMON dist/default/production\SLAVE1.
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 __end_of_OSCILLATOR 22E 0 CODE 0 text3 dist/default/production\SLAVE1.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\HP\AppData\Local\Temp\xcAslos.o
+___sp 0 0 STACK 2 stack C:\Users\HP\AppData\Local\Temp\xcAs10c8.o
 _cont 77 0 COMMON 1 bssCOMMON dist/default/production\SLAVE1.X.production.o
 _main 38C 0 CODE 0 maintext dist/default/production\SLAVE1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\SLAVE1.X.production.o
-start 18 0 CODE 0 init C:\Users\HP\AppData\Local\Temp\xcAslos.o
+start 18 0 CODE 0 init C:\Users\HP\AppData\Local\Temp\xcAs10c8.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production\SLAVE1.X.production.o
 IOC_INT@a 74 0 COMMON 1 cstackCOMMON dist/default/production\SLAVE1.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAslos.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAslos.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAslos.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAslos.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAslos.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAslos.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAs10c8.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAs10c8.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAs10c8.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAs10c8.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAs10c8.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\HP\AppData\Local\Temp\xcAs10c8.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\SLAVE1.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\SLAVE1.X.production.o
@@ -384,8 +384,8 @@ _ADC_READ 364 0 CODE 0 text6 dist/default/production\SLAVE1.X.production.o
 ADC_INIT@c 76 0 COMMON 1 cstackCOMMON dist/default/production\SLAVE1.X.production.o
 __end_of_ADC_INIT 196 0 CODE 0 text5 dist/default/production\SLAVE1.X.production.o
 __end_of_ADC_READ 38C 0 CODE 0 text6 dist/default/production\SLAVE1.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\HP\AppData\Local\Temp\xcAslos.o
-___stacklo 0 0 ABS 0 - C:\Users\HP\AppData\Local\Temp\xcAslos.o
+___stackhi 0 0 ABS 0 - C:\Users\HP\AppData\Local\Temp\xcAs10c8.o
+___stacklo 0 0 ABS 0 - C:\Users\HP\AppData\Local\Temp\xcAs10c8.o
 spiInit@sDataSample 74 0 COMMON 1 cstackCOMMON dist/default/production\SLAVE1.X.production.o
 _WPUBbits 95 0 ABS 0 - dist/default/production\SLAVE1.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\SLAVE1.X.production.o
@@ -395,7 +395,7 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\SLAVE1.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\SLAVE1.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\SLAVE1.X.production.o
 _TRISC5 43D 0 ABS 0 - dist/default/production\SLAVE1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\HP\AppData\Local\Temp\xcAslos.o
+___int_sp 0 0 STACK 2 stack C:\Users\HP\AppData\Local\Temp\xcAs10c8.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -445,7 +445,7 @@ _isr 22E 0 CODE 0 text7 dist/default/production\SLAVE1.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\SLAVE1.X.production.o
 __end_of_isr 2C2 0 CODE 0 text7 dist/default/production\SLAVE1.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\HP\AppData\Local\Temp\xcAslos.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\HP\AppData\Local\Temp\xcAs10c8.o
 OSCILLATOR@f 76 0 COMMON 1 cstackCOMMON dist/default/production\SLAVE1.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\SLAVE1.X.production.o
 __ptext10 3D6 0 CODE 0 text10 dist/default/production\SLAVE1.X.production.o
