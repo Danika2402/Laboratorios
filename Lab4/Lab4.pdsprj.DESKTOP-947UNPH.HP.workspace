@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c00000002000000020000000083ffff0083ffffffffffffffffffff7f0200002500000046070000f4030000</PLACEMENT>
+  <PLACEMENT>2c00000002000000030000000083ffff0083ffffffffffffffffffff0d00000045000000ce03000014040000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
  </FRAME>
  <MODULE name="VSMDEBUG">
@@ -140,7 +140,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="450" x="48" flags="00000023" y="160" h="250" pid="0" iid="9">
+   <POPUP w="450" x="107" flags="00000022" y="680" h="250" pid="0" iid="9">
     <PROPERTIES>
      <ITEM name="ComboBox1000">S</ITEM>
      <ITEM name="ComboBox1001">Sr</ITEM>
@@ -156,7 +156,7 @@
      <ITEM name="VSplitter1Pos">298</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="178" x="844" flags="00008001" y="214" h="86" pid="1" iid="10">
+   <POPUP w="178" x="727" flags="00008001" y="255" h="86" pid="1" iid="10">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="88" flags="00000008" y="200" h="8" pid="2" iid="10">

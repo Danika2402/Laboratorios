@@ -4,6 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/HP/Documents/2023%20Segundo%20semestre/Electronica%20digital%202/Laboratorios/Lab4/I2C_SLAVE.X/MAIN_S.c</file>
+            <file>file:/C:/Users/HP/Documents/2023%20Segundo%20semestre/Electronica%20digital%202/Laboratorios/Lab4/I2C_SLAVE.X/I2CS.c</file>
+            <file>file:/C:/Users/HP/Documents/2023%20Segundo%20semestre/Electronica%20digital%202/Laboratorios/Lab4/I2C_SLAVE.X/ADC.c</file>
+            <file>file:/C:/Users/HP/Documents/2023%20Segundo%20semestre/Electronica%20digital%202/Laboratorios/Lab4/I2C_SLAVE.X/I2CS.h</file>
+            <file>file:/C:/Users/HP/Documents/2023%20Segundo%20semestre/Electronica%20digital%202/Laboratorios/Lab4/I2C_SLAVE.X/ADC.h</file>
         </group>
     </open-files>
 </project-private>
