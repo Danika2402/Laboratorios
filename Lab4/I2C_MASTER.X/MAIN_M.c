@@ -7,12 +7,22 @@
 //*****************************************************************************
 /* Electronica Digital 2 - 2023
  * Laboratorio 4 - I2C MASTER
- * Comunicacion I2C usando 2 PICs, un RTC DS1307 (Tiny RTC I2C module), 
- * un LCD 2x16 y un Potenciometro(SLAVE 1)
+ * Comunicacion I2C usando 2 PICs, un RTC DS1307 (Tiny RTC I2C module) o 
+ * el DS3231, un LCD 2x16 y un Potenciometro(SLAVE 1)
  * 
+ * I2C = comunicacion con PIC SLAVE y RTC
+ * PULL UP = configuracion para botones
+ * LCD = muestra valores del potenciometro y el RTC
  * 
- * 
- * FUNCION: 
+ * FUNCION: con I2C, se comunica con un PIC y con un RTC, donde el PIC envia los
+ * valores de un potenciometro que tiene el mismo, el RTC envia los valores de 
+ * la fecha y la hora. Todos estos valores son luego imprimidos y mostrados en 
+ * una pantalla LCD.
+ * Tambien con la comunicacion I2C, reescribimos los valores del RTC para 
+ * cambiar la fecha y hora, usando 2 botones para seleccionar la direccion del
+ * parametro eh incrementar su valor.
+ * Adicionalmente, se configuro un efecto de parpadeo al LCD cuando estemos
+ * configuranco el RTC.
 */
 //******************************************************************************
 #pragma config  FOSC    = INTRC_NOCLKOUT
@@ -52,23 +62,23 @@ static char Date[]="00/00/2000";
 //FUNCIONES*********************************************************************
 void setup(void);
 __bit ANTI_REBOTE(void);
+
 void RTC_PRINT(void);
+void RTC_WRITE(unsigned I2C,unsigned d,char parametro);
+unsigned short RTC_READ(unsigned I2C,unsigned d);
+
 uint8_t PAM(uint8_t parametro,uint8_t rtc);
 uint8_t CONFIGURAR_v2(uint8_t x, uint8_t y, uint8_t parametro,uint8_t rtc);
-unsigned short RTC_READ(unsigned I2C,unsigned d);
-void RTC_WRITE(unsigned I2C,unsigned d,char parametro);
+void Parpadeo(void);
 
 uint8_t DECIMAL_BCD(uint8_t num);
 uint8_t BCD_DECIMAL(uint8_t num);
-
-void Parpadeo(void);
 
 void __interrupt() isr(void){
     if (INTCONbits.RBIF==1){               //Interrupciones de botones en PORTB con PULL UP
         if (PUSH1==0){
             if(ANTI_REBOTE())                   //RB0 incrementa select
                 select++;
-
         } else if (PUSH2==0){               //RB1 incrementa parametro solo si 
             if(select != 0)                 //select no es 0
                 if(ANTI_REBOTE()) 
@@ -83,7 +93,7 @@ void __interrupt() isr(void){
             parametro = 0;
         if(select == 3 && parametro >12) //meses
             parametro = 1;
-        if(select == 3 && parametro ==0) //años
+        if(select == 3 && parametro ==0) //meses
             parametro = 1;
         if(select == 4 && parametro >99) //años
             parametro = 0;
@@ -129,7 +139,7 @@ void main(void) {
                 year = CONFIGURAR_v2(2,14,parametro,year);
             }
             if(select == 5){
-                RTC_WRITE(0xD0,0x02,hora);      //funcion para leer el RTC
+                RTC_WRITE(0xD0,0x02,hora);      //funcion para reescribir el RTC
                 RTC_WRITE(0xD0,0x01,min);
                 RTC_WRITE(0xD0,0x05,mes);
                 RTC_WRITE(0xD0,0x06,year);
@@ -290,9 +300,9 @@ void RTC_WRITE(unsigned I2C,unsigned d,char parametro){
  
 uint8_t PAM(uint8_t parametro,uint8_t rtc){
     if(!PUSH1){
-        if(ANTI_REBOTE())
-            parametro = BCD_DECIMAL(rtc);  //RTC envia sus datos en leguaje
-                                            //BCD, para que no alla conflicto
+        if(ANTI_REBOTE())                   //RTC envia sus datos en lenguaje
+            parametro = BCD_DECIMAL(rtc);   //BCD, para que no alla conflicto
+        
     }                                   //causa efecto de precionar PUSH cierto tiempo
     return parametro;                   //parametro = rtc, si no rtc = parametro = 0 u dato anterior
 }
@@ -326,7 +336,7 @@ uint8_t CONFIGURAR_v2(uint8_t x, uint8_t y, uint8_t parametro,uint8_t rtc){
 __bit ANTI_REBOTE(void){
     uint8_t contador = 0;
     for(uint8_t i=0;i<5;i++){       //Funcion para evitar antirebote
-        if(!PUSH1 || !PUSH2)                  //Mas que todo utilizado para el PUSH1
+        if(!PUSH1 || !PUSH2)        //Mas que todo utilizado para el PUSH1
             contador++;
         __delay_ms(10);
     }

@@ -6,12 +6,16 @@
  */
 //******************************************************************************
 /* Electronica Digital 2 - 2023
- * Laboratorio 4 - 
+ * Laboratorio 4 - I2C SLAVE
+ * Comunicacion I2C usando 2 PICs, un RTC DS1307 (Tiny RTC I2C module) o 
+ * el DS3231, un LCD 2x16 y un Potenciometro(SLAVE)
  * 
+ * I2C = comunicacion con PIC MASTER
+ * ADC = leer potenciometro
  * 
- * FUNCION: con la configuracion SPI 3 pics se comunican entre si, 2 pics 
- * llamados SLAVES le envian el valor de un potenciometro cada uno y un contador
- * al MAESTRO, que lo muestra en un LCD
+ * FUNCION: con I2C, se comunica con el PIC MASTER, donde se envia los
+ * valores de un potenciometro, que luego son imprimidos y mostrados en 
+ * una pantalla LCD.
 */
 //******************************************************************************
 #pragma config  FOSC    = INTRC_NOCLKOUT
@@ -58,8 +62,8 @@ void __interrupt() isr(void){
             __delay_us(250);
             
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
-            z = SSPBUF;
-            BF = 0;
+            z = SSPBUF;                 //Envio de la varialbe POT al MASTER
+            BF = 0;                     
             SSPBUF = POT;
             SSPCONbits.CKP = 1;
             __delay_us(250);
@@ -67,14 +71,12 @@ void __interrupt() isr(void){
         }
         PIR1bits.SSPIF = 0;    
     }
-    
 }
 
 void main(void) {
     setup();
     while(1){
-        POT = ADC_READ();
-        
+        POT = ADC_READ();   //lectura del potenciometro
     }
     return;
 }
@@ -85,9 +87,6 @@ void setup(void){
     
     ANSEL =  0b00100000;
     ANSELH = 0x00;
-    
-    //PORTD = 0X00;
-    //TRISD = 0X00;
     
     //Config. ADC
     ADC_INIT(5);            //canal 5
